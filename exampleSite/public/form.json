@@ -1,0 +1,159 @@
+{
+    "form": {
+        "title": "Sample Form",
+        "sections": [
+            {
+                "title": "Personal Information",
+                "subsections": [
+                    {
+                        "title": "Basic Info",
+                        "fields": [
+                            {
+                                "type": "text",
+                                "label": "First Name",
+                                "name": "first_name",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "Last Name",
+                                "name": "last_name",
+                                "required": true
+                            },
+                            {
+                                "type": "email",
+                                "label": "Email",
+                                "name": "email",
+                                "required": true
+                            },
+                            {
+                                "type": "date",
+                                "label": "Date of Birth",
+                                "name": "dob",
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Contact Info",
+                        "fields": [
+                            {
+                                "type": "text",
+                                "label": "Phone Number",
+                                "name": "phone",
+                                "required": false
+                            },
+                            {
+                                "type": "text",
+                                "label": "Address",
+                                "name": "address",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "City",
+                                "name": "city",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "State",
+                                "name": "state",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "Zip Code",
+                                "name": "zip",
+                                "required": true
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Preferences",
+                "subsections": [
+                    {
+                        "title": "Notifications",
+                        "fields": [
+                            {
+                                "type": "checkbox",
+                                "label": "Email Notifications",
+                                "name": "email_notifications",
+                                "required": false
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "SMS Notifications",
+                                "name": "sms_notifications",
+                                "required": false
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Newsletter",
+                        "fields": [
+                            {
+                                "type": "radio",
+                                "label": "Subscribe to Newsletter",
+                                "name": "newsletter",
+                                "options": [
+                                    {
+                                        "label": "Yes",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "no"
+                                    }
+                                ],
+                                "required": true
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Feedback",
+                "subsections": [
+                    {
+                        "title": "Experience",
+                        "fields": [
+                            {
+                                "type": "dropdown",
+                                "label": "Rate your experience",
+                                "name": "experience_rating",
+                                "options": [
+                                    {
+                                        "label": "Excellent",
+                                        "value": "excellent"
+                                    },
+                                    {
+                                        "label": "Good",
+                                        "value": "good"
+                                    },
+                                    {
+                                        "label": "Average",
+                                        "value": "average"
+                                    },
+                                    {
+                                        "label": "Poor",
+                                        "value": "poor"
+                                    }
+                                ],
+                                "required": true
+                            },
+                            {
+                                "type": "textarea",
+                                "label": "Comments",
+                                "name": "comments",
+                                "required": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
