@@ -1,0 +1,107 @@
+<section
+  id="formSummary"
+  class="col-3 gap-0 border-end h-100 d-flex flex-column"
+>
+  <div class="overflow-y-scroll flex-grow-1 pb-4" id="editContainer">
+    <div class="p-2 border-bottom sticky-top bg-white">
+      <h3 class="m-0 p-0">Review Form</h3>
+    </div>
+    <template x-if="selectedEntityIndex !== null">
+      <div
+        data-bs-spy="scroll"
+        data-bs-target="#formSummary"
+        data-bs-offset="0"
+        class="scrollspy-example"
+        tabindex="0"
+      >
+        <template
+          x-for="(section, sectionIndex) in entities[selectedEntityIndex].form.sections"
+          :key="section.title"
+        >
+          <div>
+            <button
+              class="mt-4 w-100 d-flex w-100 justify-content-between text-start mb-2 fw-bold border-0 bg-transparent d-flex align-items-center gap-1"
+              x-bind:class="countFields(sectionIndex) === countFilledFields(sectionIndex) ? 'text-success' : 'xtext-warning'"
+              @click="scrollFormToSection(sectionIndex, 'scroll-form-section')"
+            >
+              <div class="h5">
+                <span
+                  x-bind:class="countFields(sectionIndex) === countFilledFields(sectionIndex) ? 'text-success' : ''"
+                >
+                  <svg
+                    x-show="countFields(sectionIndex) === countFilledFields(sectionIndex)"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+                <span x-text="section.title"></span>
+              </div>
+              <!-- <div>
+                <div
+                  class="badge"
+                  x-bind:class="countFields(sectionIndex) === countFilledFields(sectionIndex) ? 'bg-success-subtle text-success' : 'text-bg-warning'"
+                >
+                  <span x-text="countFields(sectionIndex)"></span> /
+                  <span x-text="countFilledFields(sectionIndex)"></span>
+                </div>
+              </div> -->
+            </button>
+            <section class="d-flex flex-column border-bottom">
+              <div class="p-2">
+                <p>
+                  When applicable, I confirm that I have not identified any
+                  risks in the screenings * carried out. *
+                </p>
+                <p>
+                  (*) Google keywords search on R4 or R3 relationships (account
+                  holder and related parties) + Full JORDAN search on the
+                  environment of R4 relationships (all relationships for
+                  Singapore). Please attach the results of your research.
+                </p>
+              </div>
+              <div class="p-2 bg-info" style="--bs-bg-opacity: 0.2">
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="flexSwitchCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexSwitchCheckDefault"
+                    >Yes</label
+                  >
+                </div>
+              </div>
+            </section>
+            <div class="p-2">
+              <ul class="list-group">
+                <template
+                  x-for="(field, fieldIndex) in section.fields"
+                  :key="field.name"
+                >
+                  <li
+                    x-bind:class="fieldIndex ? '' : 'rounded-top'"
+                    class="list-group-item"
+                    x-text="field.label"
+                  ></li>
+                </template>
+              </ul>
+            </div>
+          </div>
+        </template>
+      </div>
+    </template>
+  </div>
+  <div class="d-flex gap-2 justify-content-end p-2 border-top">
+    <button class="btn btn-primary">Confirm No Change Review</button>
+    <button class="btn btn-primary">Full Review</button>
+  </div>
+</section>

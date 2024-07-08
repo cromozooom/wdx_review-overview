@@ -1,0 +1,521 @@
+<script>
+  function entityComponent() {
+    return {
+      entities: [],
+      widgetOnly: false,
+      showHistory: false,
+      filteredEntities: [],
+      searchQuery: "",
+      selectedEntity: null,
+      selectedEntityIndex: 0,
+      currentSection: 0,
+      users: [
+        { name: "Razvan Nicu", role: "admin" },
+        { name: "Luna Nicu", role: "operator" },
+        { name: "Calina Nicu", role: "operator" },
+      ],
+      activeUser: "Razvan Nicu",
+      originalValues: {},
+      loadData() {
+        const storedEntities = localStorage.getItem("entities");
+        if (storedEntities) {
+          this.entities = JSON.parse(storedEntities);
+          if (this.entities.length > 0) {
+            this.selectEntity(this.entities[0].id, 0);
+          }
+        } else {
+          fetch("entities.json")
+            .then((response) => response.json())
+            .then((data) => {
+              this.entities = data.persons_companies.map((entity, index) => ({
+                ...entity,
+                id: index + 1,
+              }));
+              this.saveToLocalStorage();
+              if (this.entities.length > 0) {
+                this.selectEntity(this.entities[0].id, 0);
+              }
+            });
+        }
+        this.filteredEntities = this.entities;
+      },
+      saveToLocalStorage() {
+        localStorage.setItem("entities", JSON.stringify(this.entities));
+      },
+
+      saveForm() {
+        this.entities.forEach((entity, entityIndex) => {
+          entity.form.sections.forEach((section, sectionIndex) => {
+            section.fields.forEach((field, fieldIndex) => {
+              if (
+                this.isFieldChanged(
+                  entityIndex,
+                  sectionIndex,
+                  fieldIndex,
+                  field.value
+                )
+              ) {
+                this.trackChange(
+                  field,
+                  this.originalValues[
+                    `${entityIndex}-${sectionIndex}-${fieldIndex}`
+                  ]
+                );
+
+                // Check if the field is for name or surname and update accordingly
+                console.log(field.name);
+                if (field.name === "first_name") {
+                  console.log(this.entities[entityIndex]);
+                  this.entities[entityIndex].name = field.value;
+                }
+                if (field.name === "last_name") {
+                  this.entities[entityIndex].surname = field.value;
+                }
+              }
+            });
+          });
+        });
+        this.saveToLocalStorage();
+        alert("Form data saved successfully!");
+      },
+
+      selectEntity(entityId, index) {
+        const originalIndex = this.entities.findIndex(
+          (entity) => entity.id === entityId
+        );
+        this.selectedEntity = this.entities[originalIndex];
+        this.selectedEntityIndex = index;
+        this.currentSection = 0;
+        this.cacheOriginalValues();
+        this.$nextTick(() => {
+          this.scrollToSelectedEntity();
+        });
+      },
+      scrollToSelectedEntity() {
+        let selectedElement = document.querySelector(
+          '[x-ref="entity-' + this.selectedEntityIndex + '"]'
+        );
+        if (selectedElement) {
+          selectedElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      },
+      scrollFormToSection(index, type) {
+        let selectedElement = document.querySelector(
+          '[x-ref="' + type + index + '"]'
+        );
+        console.log(selectedElement);
+
+        if (selectedElement) {
+          selectedElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+
+          selectedElement.classList.add("spotted");
+
+          setTimeout(() => {
+            selectedElement.classList.remove("spotted");
+          }, 3000); // 3000 milliseconds = 3 seconds
+        }
+      },
+      scrollToSection(index) {
+        const sectionId = `section${index}`;
+        const sectionElement = document.getElementById(sectionId);
+        const container = document.getElementById("editContainer");
+        if (sectionElement && container) {
+          container.scrollTo({
+            top: sectionElement.offsetTop - container.offsetTop,
+            behavior: "smooth",
+          });
+        }
+      },
+      filterEntities() {
+        if (this.searchQuery.trim() === "") {
+          this.filteredEntities = this.entities;
+        } else {
+          const query = this.searchQuery.toLowerCase();
+          this.filteredEntities = this.entities.filter((entity) => {
+            const fullName =
+              entity.type === "person"
+                ? `${entity.name} ${entity.surname}`
+                : entity.name;
+            return fullName.toLowerCase().includes(query);
+          });
+        }
+        this.selectedEntity = null;
+        this.selectedEntityIndex = null;
+      },
+      nextEntity() {
+        if (this.selectedEntityIndex < this.filteredEntities.length - 1) {
+          this.selectedEntityIndex++;
+          const selectedEntityId =
+            this.filteredEntities[this.selectedEntityIndex].id;
+          this.selectEntity(selectedEntityId, this.selectedEntityIndex);
+        }
+      },
+      previousEntity() {
+        if (this.selectedEntityIndex > 0) {
+          this.selectedEntityIndex--;
+          const selectedEntityId =
+            this.filteredEntities[this.selectedEntityIndex].id;
+          this.selectEntity(selectedEntityId, this.selectedEntityIndex);
+        }
+      },
+      duplicateEntity() {
+        if (this.selectedEntity !== null) {
+          const newEntity = JSON.parse(JSON.stringify(this.selectedEntity));
+          newEntity.id = this.entities.length
+            ? Math.max(...this.entities.map((e) => e.id)) + 1
+            : 1;
+          newEntity.name = `${newEntity.name} Copy`;
+          this.entities.push(newEntity);
+          this.updateFilteredEntities();
+          this.saveToLocalStorage();
+        }
+      },
+      updateFilteredEntities() {
+        const query = this.searchQuery.toLowerCase();
+        this.filteredEntities = this.entities.filter((entity) => {
+          const fullName =
+            entity.type === "person"
+              ? `${entity.name} ${entity.surname}`
+              : entity.name;
+          return fullName.toLowerCase().includes(query);
+        });
+      },
+      downloadData() {
+        const dataStr = JSON.stringify(this.entities, null, 2);
+        const dataUri =
+          "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
+        const exportFileDefaultName = "entities.json";
+        const linkElement = document.createElement("a");
+        linkElement.setAttribute("href", dataUri);
+        linkElement.setAttribute("download", exportFileDefaultName);
+        linkElement.click();
+      },
+      uploadData(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const contents = e.target.result;
+            this.entities = JSON.parse(contents);
+            this.entities.forEach((entity, index) => (entity.id = index + 1));
+            this.updateFilteredEntities();
+            this.saveToLocalStorage();
+          };
+          reader.readAsText(file);
+        }
+      },
+      cacheOriginalValues() {
+        this.originalValues = {};
+        this.entities.forEach((entity, entityIndex) => {
+          entity.form.sections.forEach((section, sectionIndex) => {
+            section.fields.forEach((field, fieldIndex) => {
+              this.originalValues[
+                `${entityIndex}-${sectionIndex}-${fieldIndex}`
+              ] = field.value;
+            });
+          });
+        });
+      },
+      isFieldChanged(entityIndex, sectionIndex, fieldIndex, newValue) {
+        return (
+          this.originalValues[
+            `${entityIndex}-${sectionIndex}-${fieldIndex}`
+          ] !== newValue
+        );
+      },
+      trackChange(field, oldValue) {
+        const currentTime = new Date().toISOString(); // Save time in ISO format
+        const changeEntry = {
+          time: currentTime,
+          valueAfter: field.value,
+          value: oldValue,
+          user: this.activeUser,
+        };
+        if (!field.history) {
+          field.history = [];
+        }
+        field.history.push(changeEntry);
+      },
+      countFields(sectionIndex) {
+        return this.selectedEntity.form.sections[sectionIndex].fields.length;
+      },
+      countFilledFields(sectionIndex) {
+        return this.selectedEntity.form.sections[sectionIndex].fields.filter(
+          (field) => field.value
+        ).length;
+      },
+
+      calculateTimeDifference(entryTime) {
+        const currentTime = new Date();
+        const entryDate = new Date(entryTime); // Parsing the time in ISO format
+        const diffMilliseconds = currentTime - entryDate;
+
+        const diffDays = Math.floor(diffMilliseconds / (1000 * 60 * 60 * 24));
+        const diffHours = Math.floor(
+          (diffMilliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const diffMinutes = Math.floor(
+          (diffMilliseconds % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const diffSeconds = Math.floor((diffMilliseconds % (1000 * 60)) / 1000);
+
+        if (diffDays > 0) {
+          return `${diffDays} days ago`;
+        } else if (diffHours > 0) {
+          return `${diffHours} hr ago`;
+        } else if (diffMinutes > 0) {
+          return `${diffMinutes} min ago`;
+        } else {
+          return `${diffSeconds} sec ago`;
+        }
+      },
+
+      getRole(name) {
+        const user = this.users.find((user) => user.name === name);
+        return user ? user.role : null;
+      },
+
+      entityHasHistory(entity) {
+        return entity.form.sections.some((section) =>
+          section.fields.some(
+            (field) => field.history && field.history.length > 0
+          )
+        );
+      },
+
+      get hasNext() {
+        return (
+          this.selectedEntityIndex !== null &&
+          this.selectedEntityIndex < this.filteredEntities.length - 1
+        );
+      },
+
+      removeHistoryItem(sectionIndex, fieldIndex, historyIndex) {
+        const field =
+          this.selectedEntity.form.sections[sectionIndex].fields[fieldIndex];
+        const history = field.history.slice().reverse();
+        if (historyIndex >= 0 && historyIndex < history.length) {
+          field.history.splice(field.history.length - 1 - historyIndex, 1);
+          this.saveToLocalStorage();
+        }
+      },
+
+      revertHistoryItem(sectionIndex, fieldIndex, historyIndex) {
+        console.log(sectionIndex, fieldIndex, historyIndex);
+        const field =
+          this.selectedEntity.form.sections[sectionIndex].fields[fieldIndex];
+        const history = field.history.slice().reverse();
+        if (historyIndex >= 0 && historyIndex < history.length) {
+          const historyItem = history[historyIndex];
+          field.value = historyItem.value; // Revert the field value to the historical value
+          this.saveToLocalStorage();
+        }
+      },
+
+      get hasPrevious() {
+        return (
+          this.selectedEntityIndex !== null && this.selectedEntityIndex > 0
+        );
+      },
+    };
+  }
+</script>
+
+<!-- <script>
+  function entityComponent() {
+    return {
+      entities: [],
+      filteredEntities: [],
+      searchQuery: "",
+      selectedEntity: null,
+      selectedEntityIndex: 0,
+      currentSection: 0,
+      loadData() {
+        const storedEntities = localStorage.getItem("entities");
+        if (storedEntities) {
+          this.entities = JSON.parse(storedEntities);
+          if (this.entities.length > 0) {
+            this.selectEntity(this.entities[0].id, 0);
+          }
+        } else {
+          fetch("entities.json")
+            .then((response) => response.json())
+            .then((data) => {
+              this.entities = data.persons_companies.map((entity, index) => ({
+                ...entity,
+                id: index + 1,
+              }));
+              this.saveToLocalStorage();
+              if (this.entities.length > 0) {
+                this.selectEntity(this.entities[0].id, 0);
+              }
+            });
+        }
+        this.filteredEntities = this.entities;
+      },
+      saveToLocalStorage() {
+        localStorage.setItem("entities", JSON.stringify(this.entities));
+      },
+      saveForm() {
+        this.saveToLocalStorage();
+        alert("Form data saved successfully!");
+      },
+      selectEntity(entityId, index) {
+        const originalIndex = this.entities.findIndex(
+          (entity) => entity.id === entityId
+        );
+        this.selectedEntity = this.entities[originalIndex];
+        this.selectedEntityIndex = index;
+        this.currentSection = 0;
+        this.$nextTick(() => {
+          this.scrollToSelectedEntity();
+        });
+      },
+      scrollToSelectedEntity() {
+        let selectedElement = document.querySelector(
+          '[x-ref="entity-' + this.selectedEntityIndex + '"]'
+        );
+        if (selectedElement) {
+          selectedElement.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+          });
+        }
+      },
+      scrollToSection(index) {
+        const sectionId = `section${index}`;
+        const sectionElement = document.getElementById(sectionId);
+        const container = document.getElementById("editContainer");
+        if (sectionElement && container) {
+          container.scrollTo({
+            top: sectionElement.offsetTop - container.offsetTop,
+            behavior: "smooth",
+          });
+        }
+      },
+      filterEntities() {
+        if (this.searchQuery.trim() === "") {
+          this.filteredEntities = this.entities;
+        } else {
+          const query = this.searchQuery.toLowerCase();
+          this.filteredEntities = this.entities.filter((entity) => {
+            const fullName =
+              entity.type === "person"
+                ? `${entity.name} ${entity.surname}`
+                : entity.name;
+            return fullName.toLowerCase().includes(query);
+          });
+        }
+        this.selectedEntity = null;
+        this.selectedEntityIndex = null;
+      },
+      nextEntity() {
+        if (this.selectedEntityIndex < this.filteredEntities.length - 1) {
+          this.selectedEntityIndex++;
+          const selectedEntityId =
+            this.filteredEntities[this.selectedEntityIndex].id;
+          this.selectEntity(selectedEntityId, this.selectedEntityIndex);
+        }
+      },
+      previousEntity() {
+        if (this.selectedEntityIndex > 0) {
+          this.selectedEntityIndex--;
+          const selectedEntityId =
+            this.filteredEntities[this.selectedEntityIndex].id;
+          this.selectEntity(selectedEntityId, this.selectedEntityIndex);
+        }
+      },
+      duplicateEntity() {
+        if (this.selectedEntity !== null) {
+          const newEntity = JSON.parse(JSON.stringify(this.selectedEntity));
+          newEntity.id = this.entities.length
+            ? Math.max(...this.entities.map((e) => e.id)) + 1
+            : 1;
+          newEntity.name = `${newEntity.name} Copy`;
+          this.entities.push(newEntity);
+          this.updateFilteredEntities();
+          this.saveToLocalStorage();
+        }
+      },
+      updateFilteredEntities() {
+        const query = this.searchQuery.toLowerCase();
+        this.filteredEntities = this.entities.filter((entity) => {
+          const fullName =
+            entity.type === "person"
+              ? `${entity.name} ${entity.surname}`
+              : entity.name;
+          return fullName.toLowerCase().includes(query);
+        });
+      },
+      downloadData() {
+        const dataStr = JSON.stringify(this.entities, null, 2);
+        const dataUri =
+          "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
+
+        const exportFileDefaultName = "entities.json";
+
+        const linkElement = document.createElement("a");
+        linkElement.setAttribute("href", dataUri);
+        linkElement.setAttribute("download", exportFileDefaultName);
+        linkElement.click();
+      },
+      uploadData(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const contents = e.target.result;
+            this.entities = JSON.parse(contents);
+            this.entities.forEach((entity, index) => (entity.id = index + 1));
+            this.updateFilteredEntities();
+            this.saveToLocalStorage();
+          };
+          reader.readAsText(file);
+        }
+      },
+      updateName(fieldName, value) {
+        if (fieldName === "first_name" || fieldName === "last_name") {
+          const originalIndex = this.entities.findIndex(
+            (entity) => entity.id === this.selectedEntity.id
+          );
+          if (originalIndex !== -1) {
+            if (fieldName === "first_name") {
+              this.entities[originalIndex].name = value;
+            } else if (fieldName === "last_name") {
+              this.entities[originalIndex].surname = value;
+            }
+            this.updateFilteredEntities();
+            this.saveToLocalStorage();
+          }
+        }
+      },
+
+      countFields(sectionIndex) {
+        return this.selectedEntity.form.sections[sectionIndex].fields.length;
+      },
+      countFilledFields(sectionIndex) {
+        return this.selectedEntity.form.sections[sectionIndex].fields.filter(
+          (field) => field.value
+        ).length;
+      },
+
+      get hasNext() {
+        return (
+          this.selectedEntityIndex !== null &&
+          this.selectedEntityIndex < this.filteredEntities.length - 1
+        );
+      },
+      get hasPrevious() {
+        return (
+          this.selectedEntityIndex !== null && this.selectedEntityIndex > 0
+        );
+      },
+    };
+  }
+</script> -->

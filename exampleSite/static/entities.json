@@ -1,0 +1,538 @@
+{
+    "persons_companies": [
+        {
+            "type": "person",
+            "name": "John",
+            "surname": "Doe",
+            "stage": "Onboarding",
+            "form": {
+                "title": "Personal Information",
+                "sections": [
+                    {
+                        "title": "Basic Info",
+                        "fields": [
+                            {
+                                "type": "text",
+                                "label": "First Name",
+                                "name": "first_name",
+                                "value": "John",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "Last Name",
+                                "name": "last_name",
+                                "value": "Doe",
+                                "required": true
+                            },
+                            {
+                                "type": "email",
+                                "label": "Email",
+                                "name": "email",
+                                "value": "john.doe@example.com",
+                                "required": true
+                            },
+                            {
+                                "type": "date",
+                                "label": "Date of Birth",
+                                "name": "dob",
+                                "value": "1985-06-15",
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Contact Info",
+                        "fields": [
+                            {
+                                "type": "text",
+                                "label": "Phone Number",
+                                "name": "phone",
+                                "value": "123-456-7890",
+                                "required": false
+                            },
+                            {
+                                "type": "text",
+                                "label": "Address",
+                                "name": "address",
+                                "value": "123 Main St",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "City",
+                                "name": "city",
+                                "value": "Anytown",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "State",
+                                "name": "state",
+                                "value": "CA",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "Zip Code",
+                                "name": "zip",
+                                "value": "12345",
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Experience",
+                        "fields": [
+                            {
+                                "type": "dropdown",
+                                "label": "Rate your experience",
+                                "name": "experience_rating",
+                                "options": [
+                                    {
+                                        "label": "Excellent",
+                                        "value": "excellent"
+                                    },
+                                    {
+                                        "label": "Good",
+                                        "value": "good"
+                                    },
+                                    {
+                                        "label": "Average",
+                                        "value": "average"
+                                    },
+                                    {
+                                        "label": "Poor",
+                                        "value": "poor"
+                                    }
+                                ],
+                                "value": "good",
+                                "required": true
+                            },
+                            {
+                                "type": "textarea",
+                                "label": "Comments",
+                                "name": "comments",
+                                "value": "Great service!",
+                                "required": false
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Notifications",
+                        "fields": [
+                            {
+                                "type": "checkbox",
+                                "label": "Email Notifications",
+                                "name": "email_notifications",
+                                "value": true,
+                                "required": false
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "SMS Notifications",
+                                "name": "sms_notifications",
+                                "value": false,
+                                "required": false
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Newsletter",
+                        "fields": [
+                            {
+                                "type": "radio",
+                                "label": "Subscribe to Newsletter",
+                                "name": "newsletter",
+                                "options": [
+                                    {
+                                        "label": "Yes",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "no"
+                                    }
+                                ],
+                                "value": "yes",
+                                "required": true
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "person",
+            "name": "Sebastiano",
+            "surname": "Doe",
+            "stage": "Onboarding",
+            "form": {
+                "title": "Personal Information",
+                "sections": [
+                    {
+                        "title": "Basic Info",
+                        "fields": [
+                            {
+                                "type": "text",
+                                "label": "First Name",
+                                "name": "first_name",
+                                "value": "Sebastiano",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "Last Name",
+                                "name": "last_name",
+                                "value": "Doe",
+                                "required": true
+                            },
+                            {
+                                "type": "email",
+                                "label": "Email",
+                                "name": "email",
+                                "value": "sebastiano.doe@example.com",
+                                "required": true
+                            },
+                            {
+                                "type": "date",
+                                "label": "Date of Birth",
+                                "name": "dob",
+                                "value": "1985-06-15",
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Contact Info",
+                        "fields": [
+                            {
+                                "type": "text",
+                                "label": "Phone Number",
+                                "name": "phone",
+                                "value": "123-456-7890",
+                                "required": false
+                            },
+                            {
+                                "type": "text",
+                                "label": "Address",
+                                "name": "address",
+                                "value": "123 Main St",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "City",
+                                "name": "city",
+                                "value": "Anytown",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "State",
+                                "name": "state",
+                                "value": "CA",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "Zip Code",
+                                "name": "zip",
+                                "value": "12345",
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Experience",
+                        "fields": [
+                            {
+                                "type": "dropdown",
+                                "label": "Rate your experience",
+                                "name": "experience_rating",
+                                "options": [
+                                    {
+                                        "label": "Excellent",
+                                        "value": "excellent"
+                                    },
+                                    {
+                                        "label": "Good",
+                                        "value": "good"
+                                    },
+                                    {
+                                        "label": "Average",
+                                        "value": "average"
+                                    },
+                                    {
+                                        "label": "Poor",
+                                        "value": "poor"
+                                    }
+                                ],
+                                "value": "good",
+                                "required": true
+                            },
+                            {
+                                "type": "textarea",
+                                "label": "Comments",
+                                "name": "comments",
+                                "value": "Great service!",
+                                "required": false
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Notifications",
+                        "fields": [
+                            {
+                                "type": "checkbox",
+                                "label": "Email Notifications",
+                                "name": "email_notifications",
+                                "value": true,
+                                "required": false
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "SMS Notifications",
+                                "name": "sms_notifications",
+                                "value": false,
+                                "required": false
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Newsletter",
+                        "fields": [
+                            {
+                                "type": "radio",
+                                "label": "Subscribe to Newsletter",
+                                "name": "newsletter",
+                                "options": [
+                                    {
+                                        "label": "Yes",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "no"
+                                    }
+                                ],
+                                "value": "yes",
+                                "required": true
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "person",
+            "name": "Argenti",
+            "surname": "Doe",
+            "stage": "Onboarding",
+            "form": {
+                "title": "Personal Information",
+                "sections": [
+                    {
+                        "title": "Basic Info",
+                        "fields": [
+                            {
+                                "type": "text",
+                                "label": "First Name",
+                                "name": "first_name",
+                                "value": "Argenti",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "Last Name",
+                                "name": "last_name",
+                                "value": "Doe",
+                                "required": true
+                            },
+                            {
+                                "type": "email",
+                                "label": "Email",
+                                "name": "email",
+                                "value": "argenti.doe@example.com",
+                                "required": true
+                            },
+                            {
+                                "type": "date",
+                                "label": "Date of Birth",
+                                "name": "dob",
+                                "value": "1985-06-15",
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Contact Info",
+                        "fields": [
+                            {
+                                "type": "text",
+                                "label": "Phone Number",
+                                "name": "phone",
+                                "value": "123-456-7890",
+                                "required": false
+                            },
+                            {
+                                "type": "text",
+                                "label": "Address",
+                                "name": "address",
+                                "value": "123 Main St",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "City",
+                                "name": "city",
+                                "value": "Anytown",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "State",
+                                "name": "state",
+                                "value": "CA",
+                                "required": true
+                            },
+                            {
+                                "type": "text",
+                                "label": "Zip Code",
+                                "name": "zip",
+                                "value": "12345",
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Experience",
+                        "fields": [
+                            {
+                                "type": "dropdown",
+                                "label": "Rate your experience",
+                                "name": "experience_rating",
+                                "options": [
+                                    {
+                                        "label": "Excellent",
+                                        "value": "excellent"
+                                    },
+                                    {
+                                        "label": "Good",
+                                        "value": "good"
+                                    },
+                                    {
+                                        "label": "Average",
+                                        "value": "average"
+                                    },
+                                    {
+                                        "label": "Poor",
+                                        "value": "poor"
+                                    }
+                                ],
+                                "value": "good",
+                                "required": true
+                            },
+                            {
+                                "type": "textarea",
+                                "label": "Comments",
+                                "name": "comments",
+                                "value": "Great service!",
+                                "required": false
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Notifications",
+                        "fields": [
+                            {
+                                "type": "checkbox",
+                                "label": "Email Notifications",
+                                "name": "email_notifications",
+                                "value": true,
+                                "required": false
+                            },
+                            {
+                                "type": "checkbox",
+                                "label": "SMS Notifications",
+                                "name": "sms_notifications",
+                                "value": false,
+                                "required": false
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Newsletter",
+                        "fields": [
+                            {
+                                "type": "radio",
+                                "label": "Subscribe to Newsletter",
+                                "name": "newsletter",
+                                "options": [
+                                    {
+                                        "label": "Yes",
+                                        "value": "yes"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "no"
+                                    }
+                                ],
+                                "value": "yes",
+                                "required": true
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "corporation",
+            "name": "Acme Corp",
+            "surname": "",
+            "stage": "Prospect",
+            "form": {
+                "title": "Feedback",
+                "sections": [
+                    {
+                        "title": "Experience",
+                        "fields": [
+                            {
+                                "type": "dropdown",
+                                "label": "Rate your experience",
+                                "name": "experience_rating",
+                                "options": [
+                                    {
+                                        "label": "Excellent",
+                                        "value": "excellent"
+                                    },
+                                    {
+                                        "label": "Good",
+                                        "value": "good"
+                                    },
+                                    {
+                                        "label": "Average",
+                                        "value": "average"
+                                    },
+                                    {
+                                        "label": "Poor",
+                                        "value": "poor"
+                                    }
+                                ],
+                                "value": "good",
+                                "required": true
+                            },
+                            {
+                                "type": "textarea",
+                                "label": "Comments",
+                                "name": "comments",
+                                "value": "Great service!",
+                                "required": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

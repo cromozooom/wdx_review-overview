@@ -1,0 +1,90 @@
+<section id="users" class="col-3 gap-0 border-end h-100 d-flex flex-column">
+  <div class="overflow-y-scroll flex-grow-1">
+    <div class="d-flex flex-column gap-3 p-2">
+      <template x-for="(entity, index) in filteredEntities" :key="entity.id">
+        <button
+          class="cursor-pointer rounded shadow shadow-sm d-block user"
+          style="--bs-bg-opacity: 0.05"
+          x-bind:class="index === selectedEntityIndex ? 'bg-info active' : ''"
+          @click="selectEntity(entity.id, index)"
+          :x-ref="`entity-${index}`"
+          x-ref="`entity-${index}`"
+        >
+          <div
+            class="px-2 py-3 w-100 d-flex justify-content-start flex-column text-start"
+            x-bind:class="index ? 'xborder-top' : ''"
+          >
+            <template x-if="entity.type === 'person'">
+              <div
+                class="d-flex justify-content-between align-items-center pb-2"
+              >
+                <strong
+                  class="text-primary"
+                  x-text="`${entity.name} ${entity.surname}`"
+                ></strong>
+                <div>
+                  <svg
+                    x-show="!entityHasHistory(entity)"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-bell text-muted"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"
+                    />
+                  </svg>
+
+                  <svg
+                    x-show="entityHasHistory(entity)"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-bell-fill text-primary"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </template>
+            <template x-if="entity.type === 'corporation'">
+              <strong x-text="entity.name"></strong>
+            </template>
+            <div class="row" style="--bs-bg-opacity: 1">
+              <div class="col-6 py-2">Manager</div>
+              <div class="col-6 py-2">
+                <span class="badge text-bg-light me-2">4</span>
+                Mandatory Doc.
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 py-2">
+                Risc Level
+                <strong> Low </strong>
+              </div>
+              <div class="col-6 py-2">
+                KYC Update
+                <strong> 12/06/2024 </strong>
+              </div>
+            </div>
+            <!-- 20 to 2 entity -->
+            <!-- <div class="wysiwyg">
+              <p>
+                <strong> Stage: </strong>
+
+                <span x-text="entity.stage"></span>
+              </p>
+              <p>more info if available</p>
+            </div> -->
+          </div>
+        </button>
+      </template>
+    </div>
+  </div>
+</section>

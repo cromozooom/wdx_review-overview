@@ -1,0 +1,265 @@
+<div x-data="{show: false}">
+  <!-- <span x-text="showHistory"></span> -->
+  <template x-if="showHistory && field.history">
+    <template
+      x-for="(historyItem, historyIndex) in field.history.slice().reverse()"
+      :key="historyIndex"
+    >
+      <template x-if="!historyIndex">
+        <section
+          :class="field.history.length >= 2 ? 'history-0' : ''"
+          class="history pb-3 mx-2"
+        >
+          <div class="history--name pt-2 mb-2">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <small
+                  ><strong><span x-text="historyItem.user"></span></strong>
+                  <i
+                    >(
+                    <span x-text="getRole(historyItem.user)"></span>
+                    )</i
+                  >
+                  <span
+                    x-text="calculateTimeDifference(historyItem.time)"
+                  ></span
+                ></small>
+              </div>
+              <div class="d-flex align-items-center btn-group">
+                <button
+                  class="btn btn-sm btn-outline-primary"
+                  @click="revertHistoryItem(sectionIndex, fieldIndex, historyIndex)"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-counterclockwise"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"
+                    />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="btn btn-sm btn-outline-primary"
+                  @click="removeHistoryItem(sectionIndex, fieldIndex, historyIndex)"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-trash3"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+
+                <template x-if="field.history.length >= 2">
+                  <button
+                    @click="show = !show"
+                    class="btn btn-sm btn-outline-primary"
+                  >
+                    <svg
+                      x-show="!show"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-arrows-expand"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10"
+                      />
+                    </svg>
+                    <svg
+                      x-show="show"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-arrows-collapse"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8m7-8a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 4.293V.5A.5.5 0 0 1 8 0m-.5 11.707-1.146 1.147a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 11.707V15.5a.5.5 0 0 1-1 0z"
+                      />
+                    </svg>
+                  </button>
+                </template>
+              </div>
+            </div>
+          </div>
+          <div class="history--values rounded border p-2 bg-white">
+            <div class="history--grid">
+              <div class="d-flex justify-content-end align-items-center">
+                <span
+                  class="badge text-bg-light text-muted"
+                  x-show="!historyItem.value.length"
+                  >null</span
+                >
+                <span
+                  x-show="historyItem.value.length"
+                  class="badge text-bg-light text-muted"
+                  x-text="historyItem.value"
+                ></span>
+              </div>
+              <div
+                class="d-flex justify-content-center align-items-center text-success"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right-short"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
+                  />
+                </svg>
+              </div>
+              <div class="d-flex justify-content-start align-items-center">
+                <span
+                  class="badge bg-success-subtle text-success"
+                  x-text="historyItem.valueAfter"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </template>
+    </template>
+  </template>
+  <template x-if="field.history && showHistory && field.history.length > 1">
+    <div class="ps-3">
+      <button
+        class="btn btn-sm btn-link"
+        @click="show = !show"
+        x-show="!show"
+        x-text="field.history.length + ' more changes ...'"
+      ></button>
+    </div>
+  </template>
+  <template x-if="show && field.history">
+    <template
+      x-for="(historyItem, historyIndex) in field.history.slice().reverse()"
+      :key="historyIndex"
+    >
+      <template x-if="historyIndex">
+        <section class="history pb-3 mx-2">
+          <div class="history--name pt-2 mb-2">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <small
+                  ><strong><span x-text="historyItem.user"></span></strong>
+                  <i
+                    >(
+                    <span x-text="getRole(historyItem.user)"></span>
+                    )</i
+                  >
+                  <span
+                    x-text="calculateTimeDifference(historyItem.time)"
+                  ></span
+                ></small>
+              </div>
+
+              <div class="btn-group">
+                <button
+                  class="btn btn-sm btn-outline-primary"
+                  @click="revertHistoryItem(sectionIndex, fieldIndex, historyIndex)"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-counterclockwise"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"
+                    />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="btn btn-sm btn-outline-primary"
+                  @click="removeHistoryItem(sectionIndex, fieldIndex, historyIndex)"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-trash3"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="history--values rounded border p-2 bg-white">
+            <div class="history--grid">
+              <div class="d-flex justify-content-end align-items-center">
+                <span
+                  class="badge text-bg-light text-muted"
+                  x-show="!historyItem.value.length"
+                  >null</span
+                >
+                <span
+                  x-show="historyItem.value.length"
+                  class="badge text-bg-light text-muted"
+                  x-text="historyItem.value"
+                ></span>
+              </div>
+              <div class="d-flex justify-content-center align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right-short"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
+                  />
+                </svg>
+              </div>
+              <div class="d-flex justify-content-start align-items-center">
+                <span
+                  class="badge bg-success-subtle text-success"
+                  x-text="historyItem.valueAfter"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </template>
+    </template>
+  </template>
+</div>
