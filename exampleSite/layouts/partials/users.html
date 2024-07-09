@@ -196,7 +196,7 @@
         <template x-for="(entity, index) in filteredEntities" :key="entity.id">
           <div class="w-100 d-flex flex-column position-relative">
             <button
-              class="cursor-pointer rounded shadow shadow-sm d-block user pb-button"
+              class="cursor-pointer rounded shadow shadow-sm d-block user px-0"
               style="--bs-bg-opacity: 0.05"
               x-bind:class="index === selectedEntityIndex ? 'bg-primary active' : ''"
               @click="selectEntity(entity.id, index)"
@@ -204,7 +204,7 @@
               x-ref="`entity-${index}`"
             >
               <div
-                class="px-2 py-3 w-100 d-flex justify-content-start flex-column text-start"
+                class="px-2 py-2 w-100 d-flex justify-content-start flex-column text-start"
                 x-bind:class="index ? 'xborder-top' : ''"
               >
                 <template
@@ -262,7 +262,7 @@
                         </template>
                       </header>
                       <main>
-                        <div class="row py-2">
+                        <div class="row py-1">
                           <div class="col-6">
                             <template
                               x-for="(field, fieldIndex) in section.fields"
@@ -314,7 +314,7 @@
                             </template>
                           </div>
                         </div>
-                        <div class="row py-2">
+                        <div class="row py-1">
                           <div class="col-6">
                             <template
                               x-for="(field, fieldIndex) in section.fields"
@@ -370,7 +370,7 @@
                             </template>
                           </div>
                         </div>
-                        <div class="row py-2">
+                        <div class="row py-1">
                           <div class="col-6">
                             <template
                               x-for="(field, fieldIndex) in section.fields"
