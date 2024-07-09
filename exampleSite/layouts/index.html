@@ -156,24 +156,60 @@
                 @input="filterEntities"
               />
             </div>
-            <div>
-              <div class="dropdown z-2">
-                <button
-                  class="btn btn-outline-primary dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Connection Role
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item">Individual</button></li>
-                  <li><button class="dropdown-item">Family</button></li>
-                  <li><button class="dropdown-item">Company</button></li>
-                  <li><button class="dropdown-item">Organization</button></li>
-                </ul>
-              </div>
+
+            <div class="dropdown z-2">
+              <button
+                class="btn btn-outline-primary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Connection Role
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <button
+                    class="dropdown-item"
+                    @click="contactTypeFilter=''; filterEntities()"
+                  >
+                    All
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    @click="contactTypeFilter='individual'; filterEntities()"
+                  >
+                    Individual
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    @click="contactTypeFilter='family'; filterEntities()"
+                  >
+                    Family
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    @click="contactTypeFilter='company'; filterEntities()"
+                  >
+                    Company
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    @click="contactTypeFilter='organization'; filterEntities()"
+                  >
+                    Organization
+                  </button>
+                </li>
+              </ul>
             </div>
+
             <div>
               <div class="dropdown z-2">
                 <button

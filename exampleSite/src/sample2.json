@@ -1,0 +1,6139 @@
+[
+  {
+    "type": "person",
+    "name": "John",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "individual",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 1
+  },
+  {
+    "type": "person",
+    "name": "John Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "low",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "family",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 2
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "medium",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 3
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "low",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 4
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "low",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 5
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 6
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 7
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 8
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 9
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 10
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 11
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 12
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 13
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 14
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 15
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 16
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 17
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 18
+  },
+  {
+    "type": "person",
+    "name": "John Copy Copy Copy Copy Copy",
+    "surname": "Doe",
+    "stage": "Onboarding",
+    "form": {
+      "title": "Personal Information",
+      "sections": [
+        {
+          "title": "Basic Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "First Name",
+              "name": "first_name",
+              "value": "John",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Last Name",
+              "name": "last_name",
+              "value": "Doe",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "email",
+              "label": "Email",
+              "name": "email",
+              "value": "john.doe@example.com",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "Date of Birth",
+              "name": "dob",
+              "value": "1988-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:11.206Z",
+                  "valueAfter": "1988-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Update",
+              "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Risk Level",
+              "name": "risk_level",
+              "options": [
+                {
+                  "label": "Low",
+                  "value": "low"
+                },
+                {
+                  "label": "Medium",
+                  "value": "medium"
+                },
+                {
+                  "label": "Heigh",
+                  "value": "heigh"
+                }
+              ],
+              "value": "heigh",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:55:48.506Z",
+                  "valueAfter": "heigh",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Stage",
+              "name": "stage",
+              "options": [
+                {
+                  "label": "Onboarding",
+                  "value": "onboarding"
+                },
+                {
+                  "label": "Lead",
+                  "value": "lead"
+                },
+                {
+                  "label": "Pitching",
+                  "value": "pitching"
+                },
+                {
+                  "label": "Committed",
+                  "value": "committed"
+                },
+                {
+                  "label": "Open",
+                  "value": "open"
+                },
+                {
+                  "label": "Prospect",
+                  "value": "prospect"
+                }
+              ],
+              "value": "committed",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:43:40.704Z",
+                  "valueAfter": "committed",
+                  "value": "Onboarding",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "hidden": false,
+              "label": "Contact Type",
+              "name": "contact_type",
+              "options": [
+                {
+                  "label": "Individual",
+                  "value": "individual"
+                },
+                {
+                  "label": "Family",
+                  "value": "family"
+                },
+                {
+                  "label": "Company",
+                  "value": "company"
+                },
+                {
+                  "label": "Organization",
+                  "value": "organization"
+                }
+              ],
+              "value": "company",
+              "required": true
+            },
+            {
+              "hidden": true,
+              "type": "number",
+              "label": "Mandatory documents",
+              "name": "mandatory_documents",
+              "value": 6,
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "number",
+              "label": "Documents uploaded",
+              "name": "documents_uploaded",
+              "value": 2,
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:32:57.059Z",
+                  "valueAfter": "6",
+                  "value": 5,
+                  "user": "Razvan Nicu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Contact Info",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Phone Number",
+              "name": "phone",
+              "value": "123-456-7890",
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Address",
+              "name": "address",
+              "value": "123 Main St",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "City",
+              "name": "city",
+              "value": "Anytown",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "State",
+              "name": "state",
+              "value": "CA",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "text",
+              "label": "Zip Code",
+              "name": "zip",
+              "value": "12345",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Experience",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "dropdown",
+              "label": "Rate your experience",
+              "name": "experience_rating",
+              "options": [
+                {
+                  "label": "Excellent",
+                  "value": "excellent"
+                },
+                {
+                  "label": "Good",
+                  "value": "good"
+                },
+                {
+                  "label": "Average",
+                  "value": "average"
+                },
+                {
+                  "label": "Poor",
+                  "value": "poor"
+                }
+              ],
+              "value": "good",
+              "required": true
+            },
+            {
+              "hidden": false,
+              "type": "textarea",
+              "label": "Comments",
+              "name": "comments",
+              "value": "Great service!",
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Notifications",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "Email Notifications",
+              "name": "email_notifications",
+              "value": true,
+              "required": false
+            },
+            {
+              "hidden": false,
+              "type": "checkbox",
+              "label": "SMS Notifications",
+              "name": "sms_notifications",
+              "value": false,
+              "required": false
+            }
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "fields": [
+            {
+              "hidden": false,
+              "type": "radio",
+              "label": "Subscribe to Newsletter",
+              "name": "newsletter",
+              "options": [
+                {
+                  "label": "Yes",
+                  "value": "yes"
+                },
+                {
+                  "label": "No",
+                  "value": "no"
+                }
+              ],
+              "value": "yes",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    "id": 19
+  }
+]

@@ -10,6 +10,7 @@
       selectedEntity: null,
       selectedEntityIndex: 0,
       currentSection: 0,
+      contactTypeFilter: "",
       users: [
         { name: "Razvan Nicu", role: "admin" },
         { name: "Luna Nicu", role: "operator" },
@@ -134,6 +135,42 @@
         }
       },
       filterEntities() {
+        if (this.searchQuery.trim() === "" && this.contactTypeFilter === "") {
+          this.filteredEntities = this.entities;
+        } else {
+          const query = this.searchQuery.toLowerCase();
+          const contactTypeFilter = this.contactTypeFilter.toLowerCase();
+
+          this.filteredEntities = this.entities.filter((entity) => {
+            const fullName =
+              entity.type === "person"
+                ? `${entity.name} ${entity.surname}`
+                : entity.name;
+            const matchesQuery = fullName.toLowerCase().includes(query);
+            const matchesContactType =
+              contactTypeFilter === "" ||
+              entity.form.sections.some((section) =>
+                section.fields.some(
+                  (field) =>
+                    field.name === "contact_type" &&
+                    field.value.toLowerCase().includes(contactTypeFilter)
+                )
+              );
+            return matchesQuery && matchesContactType;
+          });
+        }
+
+        // Select the first entity in the filtered list
+        if (this.filteredEntities.length > 0) {
+          this.selectedEntity = this.filteredEntities[0];
+          this.selectedEntityIndex = 0;
+        } else {
+          this.selectedEntity = null;
+          this.selectedEntityIndex = null;
+        }
+      },
+
+      xxxfilterEntities() {
         if (this.searchQuery.trim() === "") {
           this.filteredEntities = this.entities;
         } else {
@@ -246,6 +283,7 @@
       countFields(sectionIndex) {
         return this.selectedEntity.form.sections[sectionIndex].fields.length;
       },
+
       countFilledFields(sectionIndex) {
         return this.selectedEntity.form.sections[sectionIndex].fields.filter(
           (field) => field.value

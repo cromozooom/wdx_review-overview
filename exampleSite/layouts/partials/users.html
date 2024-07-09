@@ -180,7 +180,7 @@
                               :key="field.name"
                             >
                               <template x-if="field.name === 'risk_level'">
-                                <div>
+                                <div class="d-flex align-items-center gap-1">
                                   <template x-if="field.history.length > 0">
                                     <svg
                                       xmlns="http://www.w3.org/2000/svg"
@@ -195,17 +195,18 @@
                                       ></path>
                                     </svg>
                                   </template>
-                                  <span>Risk level </span>
-                                  <span
-                                    class="badge"
+                                  <span class="text-muted"> Risk level </span>
+                                  <strong
+                                    class="text-uppercase badge"
                                     style="--bs-bg-opacity: 1"
-                                    x-bind:class="field.value === 'heigh' ? 'text-danger bg-danger-subtle' : 'text-info bg-info-subtle'"
+                                    x-text="field.value"
+                                    x-bind:class="{
+                                    'bg-danger-subtle text-danger': field.value === 'heigh',
+                                    'text-bg-light': field.value === 'medium',
+                                    'bg-success-subtle text-success': field.value === 'low'
+                                  }"
                                   >
-                                    <span
-                                      class="text-uppercase"
-                                      x-text="field.value"
-                                    ></span>
-                                  </span>
+                                  </strong>
                                 </div>
                               </template>
                             </template>
@@ -222,7 +223,11 @@
                               >
                                 <span
                                   class="d-flex align-items-center gap-1"
-                                  x-bind:class="field.value * 1 <= 5 ? 'text-danger' : 'text-success'"
+                                  x-bind:class="{
+                                    'text-danger': field.value * 1 === 0,
+                                    'text-black': field.value * 1 > 0 && field.value * 1 < 6,
+                                    'text-success': field.value * 1 === 6
+                                  }"
                                 >
                                   <template x-if="field.value * 1 === 6">
                                     <svg
@@ -256,7 +261,7 @@
                             >
                               <template x-if="field.name === 'kycu'">
                                 <span>
-                                  KYC Update:
+                                  <span class="text-muted"> KYC Update: </span>
                                   <span x-text="field.value"></span>
                                 </span>
                               </template>
@@ -270,8 +275,8 @@
                               :key="field.name"
                             >
                               <template x-if="field.name === 'stage'">
-                                <span
-                                  >Stage:
+                                <span>
+                                  <span class="text-muted"> Stage: </span>
                                   <span
                                     class="text-capitalize"
                                     x-text="field.value"

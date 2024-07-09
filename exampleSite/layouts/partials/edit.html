@@ -4,7 +4,19 @@
       <div style="--bs-bg-opacity: 0.1" class="bg-info text-info">
         <template x-if="selectedEntity !== null">
           <div class="d-flex align-items-center justify-content-between p-2">
-            <h1 class="h4 mb-0" x-text="selectedEntity.name"></h1>
+            <template
+              x-for="(section, sectionIndex) in selectedEntity.form.sections"
+              :key="section.title"
+            >
+              <template
+                x-for="(field, fieldIndex) in section.fields"
+                :key="field.name"
+              >
+                <template x-if="field.name === 'first_name'">
+                  <h1 class="h4 mb-0 text-primary" x-text="field.value"></span>
+                </template>
+              </template>
+            </template>
             <div class="btn-group">
               <button class="btn btn-outline-primary" @click="saveForm">
                 Save Form
