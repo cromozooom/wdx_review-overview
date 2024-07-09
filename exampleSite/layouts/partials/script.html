@@ -10,7 +10,7 @@
       selectedEntity: null,
       selectedEntityIndex: 0,
       currentSection: 0,
-      contactTypeFilter: "",
+      contactTypeFilter: "All",
       selectedRiskLevel: "All",
       users: [
         { name: "Razvan Nicu", role: "admin" },
@@ -149,9 +149,59 @@
       },
 
       filterEntities() {
+        const query = this.searchQuery.toLowerCase();
+        const contactTypeFilter = this.contactTypeFilter.toLowerCase();
+        const riskLevelFilter = this.selectedRiskLevel.toLowerCase();
+
+        this.filteredEntities = this.entities.filter((entity) => {
+          const fullName =
+            entity.type === "person"
+              ? `${entity.name} ${entity.surname}`
+              : entity.name;
+          const matchesQuery = fullName.toLowerCase().includes(query);
+
+          const matchesContactType =
+            contactTypeFilter === "all" ||
+            entity.form.sections.some((section) =>
+              section.fields.some(
+                (field) =>
+                  field.name === "contact_type" &&
+                  field.value.toLowerCase().includes(contactTypeFilter)
+              )
+            );
+
+          const matchesRiskLevel =
+            riskLevelFilter === "all" ||
+            entity.form.sections.some((section) =>
+              section.fields.some(
+                (field) =>
+                  field.name === "risk_level" &&
+                  field.value.toLowerCase() === riskLevelFilter
+              )
+            );
+
+          return matchesQuery && matchesContactType && matchesRiskLevel;
+        });
+
+        // Ensure the filtered entities are sorted by index
+        this.filteredEntities.sort((a, b) => a.id - b.id);
+
+        // Select the first entity in the filtered list
+        if (this.filteredEntities.length > 0) {
+          this.selectedEntity = this.filteredEntities[0];
+          this.selectedEntityIndex = this.entities.findIndex(
+            (entity) => entity.id === this.selectedEntity.id
+          );
+        } else {
+          this.selectedEntity = null;
+          this.selectedEntityIndex = null;
+        }
+      },
+
+      xxxfilterEntities() {
         if (
           this.searchQuery.trim() === "" &&
-          this.contactTypeFilter === "" &&
+          this.contactTypeFilter === "All" &&
           this.selectedRiskLevel === "All"
         ) {
           this.filteredEntities = [...this.entities]; // Make a copy to ensure no unintended side-effects
@@ -211,7 +261,7 @@
 
       resetFilters() {
         this.searchQuery = "";
-        this.contactTypeFilter = "";
+        this.contactTypeFilter = "All";
         this.selectedRiskLevel = "All";
         this.filterEntities();
       },
@@ -322,6 +372,13 @@
       },
 
       countFilledFields(sectionIndex) {
+        if (
+          !this.selectedEntity ||
+          !this.selectedEntity.form ||
+          !this.selectedEntity.form.sections[sectionIndex]
+        ) {
+          return 0;
+        }
         return this.selectedEntity.form.sections[sectionIndex].fields.filter(
           (field) => field.value
         ).length;
@@ -368,7 +425,7 @@
       get isFilterActive() {
         return (
           this.searchQuery.trim() !== "" ||
-          this.contactTypeFilter.trim() !== "" ||
+          this.contactTypeFilter.trim() !== "All" ||
           this.selectedRiskLevel !== "All"
         );
       },

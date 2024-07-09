@@ -170,17 +170,20 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Connection Role
+                Role:
+                <span class="text-capitalize" x-text="contactTypeFilter"></span>
               </button>
               <ul class="dropdown-menu">
-                <li>
-                  <button
-                    class="dropdown-item"
-                    @click="contactTypeFilter=''; filterEntities()"
-                  >
-                    All
-                  </button>
-                </li>
+                <template x-if="contactTypeFilter">
+                  <li>
+                    <button
+                      class="dropdown-item"
+                      @click="contactTypeFilter=''; filterEntities()"
+                    >
+                      All
+                    </button>
+                  </li>
+                </template>
                 <li>
                   <button
                     class="dropdown-item"

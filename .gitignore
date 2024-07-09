@@ -1,5 +1,5 @@
 resources/
-#public/
+public/
 .hugo_build.lock
 .vscode/
 exampleSite/assets/jsconfig.json
