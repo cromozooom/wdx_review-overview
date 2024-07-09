@@ -153,8 +153,8 @@ bodyx {
   transition: all 0.5s ease;
 }
 .spotted {
-  background: rgba($info, 0.1);
-  outline: 1px dashed $info;
+  background: rgba($warning, 0.1);
+  outline: 1px dashed $warning;
   outline-offset: -3px;
 }
 
@@ -178,11 +178,12 @@ bodyx {
   z-index: 2;
 }
 
-.pb-button {
-  padding-bottom: 2rem;
+.active-outline-rounded {
+  outline: 2px dashed $info;
+  outline-offset: -3px;
 }
 
-.overlay-button {
-  top: -3.5rem;
-  right: 0.5rem;
+tr[tabindex="0"]:focus {
+  outline: 2px solid $primary;
+  outline-offset: -3px;
 }

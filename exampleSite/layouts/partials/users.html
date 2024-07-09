@@ -1,111 +1,295 @@
-<section id="users" class="col-3 gap-0 border-end h-100 d-flex flex-column">
-  <div class="overflow-y-scroll flex-grow-1">
-    <div class="d-flex flex-column gap-3 p-2">
-      <template x-for="(entity, index) in filteredEntities" :key="entity.id">
-        <div class="w-100 d-flex flex-column position-relative">
-          <button
-            class="cursor-pointer rounded shadow shadow-sm d-block user pb-button"
-            style="--bs-bg-opacity: 0.05"
-            x-bind:class="index === selectedEntityIndex ? 'bg-info active' : ''"
-            @click="selectEntity(entity.id, index)"
-            :x-ref="`entity-${index}`"
-            x-ref="`entity-${index}`"
+<template x-if="gridView">
+  <section id="users" class="col-9 gap-0 border-end h-100 d-flex flex-column">
+    <div class="overflow-y-scroll flex-grow-1">
+      <table class="table users">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col"></th>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Documents</th>
+            <th scope="col">Risk</th>
+            <th scope="col">KYC Update</th>
+            <th scope="col">Something else</th>
+            <th scope="col">...</th>
+            <th scope="col">...</th>
+            <th scope="col">...</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template
+            x-for="(entity, index) in filteredEntities"
+            :key="entity.id"
           >
-            <div
-              class="px-2 py-3 w-100 d-flex justify-content-start flex-column text-start"
-              x-bind:class="index ? 'xborder-top' : ''"
+            <tr
+              tabindex="0"
+              @click="selectEntity(entity.id, index); gridView = false"
+              @keydown.enter="selectEntity(entity.id, index); gridView = false"
+              @keydown.space.prevent="selectEntity(entity.id, index); gridView = false"
+              x-bind:class="index === selectedEntityIndex ? 'active-outline-rounded' : ''"
             >
-              <template x-if="entity.type === 'person'">
-                <div
-                  class="d-flex justify-content-between align-items-center pb-2"
-                >
-                  <strong
-                    class="text-primary"
-                    x-text="`${entity.name} ${entity.surname}`"
-                  ></strong>
-                  <div>
-                    <svg
-                      x-show="!entityHasHistory(entity)"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-lightning-charge text-muted opacity-25"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41z"
-                      />
-                    </svg>
-
-                    <svg
-                      x-show="entityHasHistory(entity)"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-lightning-charge-fill text-primary"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </template>
-              <template x-if="entity.type === 'corporation'">
-                <strong x-text="entity.name"></strong>
-              </template>
-              <div class="row" style="--bs-bg-opacity: 1">
-                <div class="col-6 py-2">Manager</div>
-                <div class="col-6 py-2">
-                  <span class="badge text-bg-light me-2">4</span>
-                  Mandatory Doc.
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-6 py-2">
-                  Risc Level
-                  <strong> Low </strong>
-                </div>
-                <div class="col-6 py-2">
-                  KYC Update
-                  <strong> 12/06/2024 </strong>
-                </div>
-              </div>
-
-              <!-- 20 to 2 entity -->
-              <!-- <div class="wysiwyg">
-                <p>
-                  <strong> Stage: </strong>
-                  
-                  <span x-text="entity.stage"></span>
-                </p>
-                <p>more info if available</p>
-              </div> -->
-            </button>
-            <div class="row position-absolute overlay-button">
-              <div class="col">
-                <button class="btn btn-link">
+              <td>
+                <span x-text="index"></span>
+                <!-- <span x-text="selectedEntityIndex"></span> -->
+              </td>
+              <td>
+                <div>
                   <svg
+                    x-show="!entityHasHistory(entity)"
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-three-dots"
+                    class="bi bi-lightning-charge text-muted opacity-25"
                     viewBox="0 0 16 16"
                   >
                     <path
-                      d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                      d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41z"
                     />
                   </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </template>
+
+                  <svg
+                    x-show="entityHasHistory(entity)"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-lightning-charge-fill text-primary"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
+                    />
+                  </svg>
+                </div>
+              </td>
+              <td>
+                <span
+                  class="text-primary"
+                  x-text="`${entity.name} ${entity.surname}`"
+                ></span>
+              </td>
+              <td>Individual</td>
+              <td>
+                <span class="badge text-bg-light me-2">4 / 6</span>
+              </td>
+              <td>Low</td>
+              <td>12/06/2024</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
     </div>
-  </div>
-</section>
+  </section>
+</template>
+<template x-if="!gridView">
+  <section id="users" class="col-3 gap-0 border-end h-100 d-flex flex-column">
+    <div class="overflow-y-scroll flex-grow-1">
+      <div class="d-flex flex-column gap-3 p-2">
+        <template x-for="(entity, index) in filteredEntities" :key="entity.id">
+          <div class="w-100 d-flex flex-column position-relative">
+            <button
+              class="cursor-pointer rounded shadow shadow-sm d-block user pb-button"
+              style="--bs-bg-opacity: 0.05"
+              x-bind:class="index === selectedEntityIndex ? 'bg-info active' : ''"
+              @click="selectEntity(entity.id, index)"
+              :x-ref="`entity-${index}`"
+              x-ref="`entity-${index}`"
+            >
+              <div
+                class="px-2 py-3 w-100 d-flex justify-content-start flex-column text-start"
+                x-bind:class="index ? 'xborder-top' : ''"
+              >
+                <template
+                  x-for="(section, sectionIndex) in entity.form.sections"
+                  :key="section.title"
+                >
+                  <template x-if="section.title === 'Basic Info'">
+                    <section>
+                      <header>
+                        <template
+                          x-for="(field, fieldIndex) in section.fields"
+                          :key="field.name"
+                        >
+                          <div class="d-flex w-100">
+                            <template x-if="field.name === 'first_name'">
+                              <div
+                                class="d-flex justify-content-between align-items-center pb-2 w-100"
+                              >
+                                <strong
+                                  class="text-primary"
+                                  x-text="field.value"
+                                ></strong>
+                                <div>
+                                  <svg
+                                    x-show="!entityHasHistory(entity)"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-lightning-charge text-muted opacity-25"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path
+                                      d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41z"
+                                    />
+                                  </svg>
+
+                                  <svg
+                                    x-show="entityHasHistory(entity)"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-lightning-charge-fill text-primary"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path
+                                      d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
+                                    />
+                                  </svg>
+                                </div>
+                              </div>
+                            </template>
+                          </div>
+                        </template>
+                      </header>
+                      <main>
+                        <div class="row py-2">
+                          <div class="col-6">
+                            <template
+                              x-for="(field, fieldIndex) in section.fields"
+                              :key="field.name"
+                            >
+                              <template x-if="field.name === 'contact_type'">
+                                <span
+                                  class="text-capitalize"
+                                  x-text="field.value"
+                                ></span>
+                              </template>
+                            </template>
+                          </div>
+                          <div class="col-6">
+                            <template
+                              x-for="(field, fieldIndex) in section.fields"
+                              :key="field.name"
+                            >
+                              <template x-if="field.name === 'risk_level'">
+                                <div>
+                                  <template x-if="field.history.length > 0">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="16"
+                                      height="16"
+                                      fill="currentColor"
+                                      class="bi bi-lightning-charge-fill text-primary"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path
+                                        d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
+                                      ></path>
+                                    </svg>
+                                  </template>
+                                  <span>Risk level </span>
+                                  <span
+                                    class="badge"
+                                    style="--bs-bg-opacity: 1"
+                                    x-bind:class="field.value === 'heigh' ? 'text-danger bg-danger-subtle' : 'text-info bg-info-subtle'"
+                                  >
+                                    <span
+                                      class="text-uppercase"
+                                      x-text="field.value"
+                                    ></span>
+                                  </span>
+                                </div>
+                              </template>
+                            </template>
+                          </div>
+                        </div>
+                        <div class="row py-2">
+                          <div class="col-6">
+                            <template
+                              x-for="(field, fieldIndex) in section.fields"
+                              :key="field.name"
+                            >
+                              <template
+                                x-if="field.name === 'documents_uploaded'"
+                              >
+                                <span
+                                  class="d-flex align-items-center gap-1"
+                                  x-bind:class="field.value * 1 <= 5 ? 'text-danger' : 'text-success'"
+                                >
+                                  <template x-if="field.value * 1 === 6">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="16"
+                                      height="16"
+                                      fill="currentColor"
+                                      class="bi bi-check2-square"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path
+                                        d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5z"
+                                      />
+                                      <path
+                                        d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0"
+                                      />
+                                    </svg>
+                                  </template>
+                                  <span>Doc.</span>
+
+                                  <strong x-text="field.value"></strong> /
+                                  <strong>6</strong>
+                                </span>
+                              </template>
+                            </template>
+                          </div>
+                          <div class="col-6">
+                            <template
+                              x-for="(field, fieldIndex) in section.fields"
+                              :key="field.name"
+                            >
+                              <template x-if="field.name === 'kycu'">
+                                <span>
+                                  KYC Update:
+                                  <span x-text="field.value"></span>
+                                </span>
+                              </template>
+                            </template>
+                          </div>
+                        </div>
+                        <div class="row py-2">
+                          <div class="col-6">
+                            <template
+                              x-for="(field, fieldIndex) in section.fields"
+                              :key="field.name"
+                            >
+                              <template x-if="field.name === 'stage'">
+                                <span
+                                  >Stage:
+                                  <span
+                                    class="text-capitalize"
+                                    x-text="field.value"
+                                  ></span>
+                                </span>
+                              </template>
+                            </template>
+                          </div>
+                        </div>
+                      </main>
+                    </section>
+                  </template>
+                </template>
+              </div>
+            </button>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+</template>
