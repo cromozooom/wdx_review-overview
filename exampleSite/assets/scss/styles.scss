@@ -170,3 +170,19 @@ bodyx {
     background: rgba($info, 0.1);
   }
 }
+
+.z-1 {
+  z-index: 1;
+}
+.z-2 {
+  z-index: 2;
+}
+
+.pb-button {
+  padding-bottom: 2rem;
+}
+
+.overlay-button {
+  top: -3.5rem;
+  right: 0.5rem;
+}
