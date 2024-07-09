@@ -1,0 +1,4 @@
+tr[tabindex="0"]:focus {
+  outline: 2px solid $primary;
+  outline-offset: -3px;
+}

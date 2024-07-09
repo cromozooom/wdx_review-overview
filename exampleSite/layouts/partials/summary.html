@@ -2,8 +2,8 @@
   id="formSummary"
   class="col-3 gap-0 border-end h-100 d-flex flex-column"
 >
-  <div class="overflow-y-scroll flex-grow-1 pb-4 z-1" id="editContainer">
-    <div class="p-2 border-bottom sticky-top bg-white">
+  <div class="overflow-y-scroll flex-grow-1 z-1" id="editContainer">
+    <div class="p-2 border-bottom sticky-top bg-light">
       <h3 class="m-0 p-0">Review Form</h3>
     </div>
     <template x-if="selectedEntityIndex !== null">
@@ -18,9 +18,9 @@
           x-for="(section, sectionIndex) in entities[selectedEntityIndex].form.sections"
           :key="section.title"
         >
-          <div>
+          <div class="hover-primary-subtile pt-4">
             <button
-              class="mt-4 w-100 d-flex w-100 justify-content-between text-start mb-2 fw-bold border-0 bg-transparent d-flex align-items-center gap-1"
+              class="w-100 d-flex w-100 justify-content-between text-start mb-2 fw-bold border-0 bg-transparent d-flex align-items-center gap-1"
               x-bind:class="countFields(sectionIndex) === countFilledFields(sectionIndex) ? 'text-success' : 'xtext-warning'"
               @click="scrollFormToSection(sectionIndex, 'scroll-form-section')"
             >
@@ -67,21 +67,70 @@
                   Singapore). Please attach the results of your research.
                 </p>
               </div>
-              <div class="p-2 bg-info" style="--bs-bg-opacity: 0.2">
-                <div class="form-check form-switch">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    role="switch"
-                    id="flexSwitchCheckDefault"
+
+              <div class="p-2 bg-dark" style="--bs-bg-opacity: 0.05">
+                <div class="p-2 d-flex gap-2" x-data="{ a: true }">
+                  <button
+                    class="btn"
+                    :class="a ? 'btn-primary' : 'btn-outline-primary'"
+                    @click="a = !a"
+                  >
+                    Yes
+                  </button>
+                  <button
+                    @click="a = !a"
+                    class="btn"
+                    :class="a ? 'btn-outline-primary' : 'btn-primary'"
+                  >
+                    No
+                  </button>
+
+                  <!-- <input
+                    type="radio"
+                    class="btn-check"
+                    :name="'options-base'+ sectionIndex"
+                    :id="'yes' + sectionIndex"
+                    autocomplete="off"
+                    checked
                   />
-                  <label class="form-check-label" for="flexSwitchCheckDefault"
+                  <label
+                    class="btn btn-outline-primary"
+                    :for="'yes' + sectionIndex"
+                    checked
+                    >Yes</label
+                  > -->
+
+                  <!-- <input
+                    type="radio"
+                    class="btn-check"
+                    :name="'options-base'+ sectionIndex"
+                    :id="'yes' + sectionIndex"
+                    autocomplete="off"
+                    checked
+                  />
+                  <label
+                    class="btn btn-outline-primary"
+                    :for="'yes' + sectionIndex"
+                    checked
                     >Yes</label
                   >
+
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="options-base"
+                    :id="'no' + sectionIndex"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-primary"
+                    :for="'no' + sectionIndex"
+                    >No</label
+                  > -->
                 </div>
               </div>
             </section>
-            <div class="p-2">
+            <div class="d-none">
               <ul class="list-group">
                 <template
                   x-for="(field, fieldIndex) in section.fields"

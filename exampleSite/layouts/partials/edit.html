@@ -1,7 +1,7 @@
 <template x-if="!gridView">
   <section id="edit" class="col-6 flex-grow-1 h-100 d-flex flex-column">
     <div class="sticky-top bg-white shadow shadow-sm">
-      <div style="--bs-bg-opacity: 0.1" class="bg-info text-info">
+      <div style="--bs-bg-opacity: 1" class="bg-light text-info">
         <template x-if="selectedEntity !== null">
           <div class="d-flex align-items-center justify-content-between p-2">
             <template
@@ -107,7 +107,7 @@
                 >
                   <div
                     class="w-100 py-2"
-                    :class="showHistory ? 'hover-info-subtile' : ''"
+                    :class="showHistory ? 'hover-primary-subtile' : ''"
                   >
                     <template x-if="field.type === 'number'">
                       <div class="container-fluid px-0 mb-3">
