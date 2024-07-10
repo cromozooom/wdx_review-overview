@@ -169,3 +169,30 @@
   outline: 2px dashed $primary;
   outline-offset: -3px;
 }
+
+.banner-height {
+  min-height: 12rem;
+}
+
+.bannerInfo {
+  position: relative;
+
+  &--button {
+    z-index: 0;
+    left: 0.5rem;
+    position: absolute;
+    bottom: 0.5rem;
+    transform: translateX(-10rem);
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover {
+    .bannerInfo--button {
+      transform: translateY(0);
+    }
+  }
+}
+
+.plain-button {
+  background: transparent;
+  border: none;
+}

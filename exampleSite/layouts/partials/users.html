@@ -197,7 +197,7 @@
           <div class="w-100 d-flex flex-column position-relative">
             <button
               class="cursor-pointer rounded shadow shadow-sm d-block user px-0"
-              style="--bs-bg-opacity: 0.05"
+              style="--bs-bg-opacity: 0.08"
               x-bind:class="index === selectedEntityIndex ? 'bg-primary active' : ''"
               @click="selectEntity(entity.id, index)"
               :x-ref="`entity-${index}`"
@@ -228,33 +228,42 @@
                                   x-text="field.value"
                                 ></strong>
                                 <div>
-                                  <svg
+                                  <button
+                                    class="plain-button"
+                                    x-tooltip="No updates"
                                     x-show="!entityHasHistory(entity)"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    fill="currentColor"
-                                    class="bi bi-lightning-charge text-muted opacity-25"
-                                    viewBox="0 0 16 16"
                                   >
-                                    <path
-                                      d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41z"
-                                    />
-                                  </svg>
-
-                                  <svg
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="16"
+                                      height="16"
+                                      fill="currentColor"
+                                      class="bi bi-lightning-charge text-muted opacity-25"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path
+                                        d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41z"
+                                      />
+                                    </svg>
+                                  </button>
+                                  <button
+                                    class="plain-button"
+                                    x-tooltip="Updated"
                                     x-show="entityHasHistory(entity)"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    fill="currentColor"
-                                    class="bi bi-lightning-charge-fill text-primary"
-                                    viewBox="0 0 16 16"
                                   >
-                                    <path
-                                      d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
-                                    />
-                                  </svg>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="16"
+                                      height="16"
+                                      fill="currentColor"
+                                      class="bi bi-lightning-charge-fill text-primary"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path
+                                        d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
+                                      />
+                                    </svg>
+                                  </button>
                                 </div>
                               </div>
                             </template>
@@ -284,18 +293,23 @@
                               <template x-if="field.name === 'risk_level'">
                                 <div class="d-flex align-items-center gap-1">
                                   <template x-if="field.history.length > 0">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="16"
-                                      height="16"
-                                      fill="currentColor"
-                                      class="bi bi-lightning-charge-fill text-primary"
-                                      viewBox="0 0 16 16"
+                                    <button
+                                      class="plain-button"
+                                      x-tooltip="Updated"
                                     >
-                                      <path
-                                        d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
-                                      ></path>
-                                    </svg>
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-lightning-charge-fill text-primary"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
+                                        ></path>
+                                      </svg>
+                                    </button>
                                   </template>
                                   <span class="text-muted"> Risk level </span>
                                   <strong

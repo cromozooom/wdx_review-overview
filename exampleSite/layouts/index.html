@@ -37,94 +37,102 @@
     class="w-100 h-100 d-flex"
   >
     <template x-if="!widgetOnly">
-      <nav class="h-100 p-2 border-end bg-light d-flex flex-column">
-        <ul class="list-unstyled">
-          <li>
-            <button class="border-0 btn btn-link btn-lg bg-transparent">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-house"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
-                />
-              </svg>
-            </button>
-          </li>
-          <li>
-            <button class="border-0 btn btn-link btn-lg bg-transparent">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-speedometer"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.39.39 0 0 0-.029-.518z"
-                />
-                <path
-                  fill-rule="evenodd"
-                  d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.95 11.95 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0"
-                />
-              </svg>
-            </button>
-          </li>
-          <li>
-            <button class="border-0 btn btn-link btn-lg bg-transparent">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-backspace-reverse"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M9.854 5.146a.5.5 0 0 1 0 .708L7.707 8l2.147 2.146a.5.5 0 0 1-.708.708L7 8.707l-2.146 2.147a.5.5 0 0 1-.708-.708L6.293 8 4.146 5.854a.5.5 0 1 1 .708-.708L7 7.293l2.146-2.147a.5.5 0 0 1 .708 0"
-                />
-                <path
-                  d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7.08a2 2 0 0 0 1.519-.698l4.843-5.651a1 1 0 0 0 0-1.302L10.6 1.7A2 2 0 0 0 9.08 1zm7.08 1a1 1 0 0 1 .76.35L14.682 8l-4.844 5.65a1 1 0 0 1-.759.35H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"
-                />
-              </svg>
-            </button>
-          </li>
-          <li>
-            <button class="border-0 btn btn-link btn-lg bg-transparent">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-bag"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"
-                />
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </nav>
+      <template x-if="showSideNav">
+        <nav class="h-100 p-2 border-end bg-light d-flex flex-column">
+          <ul class="list-unstyled">
+            <li>
+              <button class="border-0 btn btn-link btn-lg bg-transparent">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-house"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button class="border-0 btn btn-link btn-lg bg-transparent">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-speedometer"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.39.39 0 0 0-.029-.518z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.95 11.95 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button class="border-0 btn btn-link btn-lg bg-transparent">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-backspace-reverse"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.854 5.146a.5.5 0 0 1 0 .708L7.707 8l2.147 2.146a.5.5 0 0 1-.708.708L7 8.707l-2.146 2.147a.5.5 0 0 1-.708-.708L6.293 8 4.146 5.854a.5.5 0 1 1 .708-.708L7 7.293l2.146-2.147a.5.5 0 0 1 .708 0"
+                  />
+                  <path
+                    d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7.08a2 2 0 0 0 1.519-.698l4.843-5.651a1 1 0 0 0 0-1.302L10.6 1.7A2 2 0 0 0 9.08 1zm7.08 1a1 1 0 0 1 .76.35L14.682 8l-4.844 5.65a1 1 0 0 1-.759.35H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button class="border-0 btn btn-link btn-lg bg-transparent">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-bag"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"
+                  />
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </template>
     </template>
-    <div class="flex-grow-1 d-flex flex-column">
+    <div class="d-flex flex-column w-100">
       <header class="d-flex flex-column">
         <template x-if="!widgetOnly">
           <div>
             <section
-              class="text-bg-primary p-2 d-flex justify-content-between align-items-center"
+              class="text-bg-primary p-2 d-flex justify-content-between align-items-center border-bottom"
             >
-              <nav>
-                <h1>WDX1 - Review Overview</h1>
+              <nav class="d-flex gap-2 align-items-center">
+                <button
+                  x-show="!showBannerInfo"
+                  class="btn btn-brand"
+                  @click="showBannerInfo = !showBannerInfo"
+                >
+                  Show info
+                </button>
+                <h1 class="m-0">WDX1 - Review Overview</h1>
               </nav>
               <div>
-                <!-- User switch -->
                 <select
                   class="form-select"
                   aria-label="Default select example"
@@ -140,334 +148,367 @@
                 </select>
               </div>
             </section>
-            <div class="p-2 border-bottom bg-light">
-              <strong> Banner Info </strong>
-            </div>
-            <div class="p-2 border-bottom bg-light">
-              <strong> TAB NAV </strong>
-            </div>
-          </div>
-        </template>
-
-        <div
-          class="border-bottom p-2 d-flex justify-content-between hover-opacity"
-        >
-          <div class="d-flex gap-2 align-items-center h-100">
-            <div>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Search by name"
-                x-model="searchQuery"
-                @input="filterEntities"
-              />
-            </div>
-
-            <div class="dropdown z-2">
+            <div class="bannerInfo" style="--bs-bg-opacity: 0.8">
               <button
-                class="btn btn-outline-primary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+                class="bannerInfo--button btn btn-brand"
+                @click="showBannerInfo = !showBannerInfo"
               >
-                Role:
-                <span class="text-capitalize" x-text="contactTypeFilter"></span>
+                Hide info
               </button>
-              <ul class="dropdown-menu">
-                <template x-if="contactTypeFilter">
-                  <li>
-                    <button
-                      class="dropdown-item"
-                      @click="contactTypeFilter=''; filterEntities()"
-                    >
-                      All
-                    </button>
-                  </li>
-                </template>
-                <li>
-                  <button
-                    class="dropdown-item"
-                    @click="contactTypeFilter='individual'; filterEntities()"
-                  >
-                    Individual
-                  </button>
-                </li>
-                <li>
-                  <button
-                    class="dropdown-item"
-                    @click="contactTypeFilter='family'; filterEntities()"
-                  >
-                    Family
-                  </button>
-                </li>
-                <li>
-                  <button
-                    class="dropdown-item"
-                    @click="contactTypeFilter='company'; filterEntities()"
-                  >
-                    Company
-                  </button>
-                </li>
-                <li>
-                  <button
-                    class="dropdown-item"
-                    @click="contactTypeFilter='organization'; filterEntities()"
-                  >
-                    Organization
-                  </button>
-                </li>
-              </ul>
-            </div>
-
-            <div class="dropdown">
-              <button
-                class="btn btn-outline-primary dropdown-toggle"
-                type="button"
-                id="riskLevelDropdown"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Risk Level: <span x-text="selectedRiskLevel"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="riskLevelDropdown">
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                    @click.prevent="setRiskLevelFilter('All')"
-                    >All</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                    @click.prevent="setRiskLevelFilter('low')"
-                    >Low</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                    @click.prevent="setRiskLevelFilter('medium')"
-                    >Medium</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                    @click.prevent="setRiskLevelFilter('heigh')"
-                    >High</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <template x-if="isFilterActive">
-              <button
-                class="btn btn-link d-flex align-items-center gap-1"
-                @click="resetFilters"
-              >
-                Filters
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-trash3"
-                  viewBox="0 0 16 16"
+              <template x-if="showBannerInfo">
+                <div
+                  class="p-2 text-bg-primary overflow-hidden banner-height d-flex justify-content-center align-items-center"
                 >
-                  <path
-                    d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"
-                  />
-                </svg>
-              </button>
-            </template>
-          </div>
-          <div class="d-flex gap-2">
-            <template x-if="activeUser === 'Razvan Nicu'">
-              <div class="btn-group hover-opacity_el">
-                <button
-                  class="btn btn-outline-primary d-flex align-items-center gap-2"
-                  @click="widgetOnly = !widgetOnly"
-                >
-                  WidgetOnly
-                </button>
-                <button
-                  class="btn btn-outline-primary d-flex align-items-center gap-2"
-                  @click="duplicateEntity"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-copy"
-                    viewBox="0 0 16 16"
+                  <div
+                    class="d-flex justify-content-center flex-column align-items-center"
                   >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
-                    />
-                  </svg>
-                  Duplicate
-                </button>
-                <button
-                  class="btn btn-outline-primary d-flex align-items-center gap-2"
-                  @click="downloadData"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-cloud-arrow-down"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M7.646 10.854a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 9.293V5.5a.5.5 0 0 0-1 0v3.793L6.354 8.146a.5.5 0 1 0-.708.708z"
-                    />
-                    <path
-                      d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"
-                    />
-                  </svg>
-                  JSON
-                </button>
-                <label
-                  class="btn btn-outline-primary mb-0 rounded-end d-flex align-items-center gap-2"
-                  for="uploadInput"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-cloud-arrow-up"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708z"
-                    />
-                    <path
-                      d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"
-                    />
-                  </svg>
-                  JSON</label
-                >
-                <input
-                  type="file"
-                  id="uploadInput"
-                  @change="uploadData"
-                  class="form-control-file d-none"
-                />
-              </div>
-            </template>
-
-            <div>
-              <template x-if="filteredEntities.length > 1 && !gridView">
-                <div class="btn-group">
-                  <button
-                    class="btn btn-outline-primary"
-                    @click="previousEntity"
-                    :disabled="!hasPrevious"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-arrow-left-short"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    class="btn btn-outline-primary"
-                    @click="nextEntity"
-                    :disabled="!hasNext"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-arrow-right-short"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
-                      />
-                    </svg>
-                  </button>
+                    <strong> Banner Info </strong>
+                    <small> hover me please ... </small>
+                  </div>
                 </div>
               </template>
             </div>
-            <div>
-              <button class="btn btn-link" @click="gridView = !gridView">
-                <svg
-                  x-show="gridView"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-layout-sidebar-inset-reverse"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M2 2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z"
-                  />
-                  <path
-                    d="M13 4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1z"
-                  />
-                </svg>
+            <div class="border-bottom bg-light">
+              <nav class="d-flex tab-nav">
+                <strong class="px-3 py-3 border-end"> Overview </strong>
+                <strong class="px-3 py-3 border-end"> Chat Box </strong>
+                <strong class="px-3 py-3 border-end">
+                  Individual Details
+                </strong>
+                <strong class="px-3 py-3 border-end">
+                  Commercial context details
+                </strong>
+                <strong class="px-3 py-3 border-end"> Account details </strong>
+                <strong class="px-3 py-3 active border-end text-bg-brand">
+                  Approval overview
+                </strong>
+              </nav>
+            </div>
+          </div>
+        </template>
+      </header>
+      <main
+        class="flex-grow-1 overflow-hidden d-flex p-2 bg-dark"
+        style="--bs-bg-opacity: 0.05"
+      >
+        <div class="d-flex flex-column border rounded bg-white">
+          <div
+            class="border-bottom p-2 d-flex justify-content-between hover-opacity"
+          >
+            <div class="d-flex gap-2 align-items-center h-100">
+              <div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search by name"
+                  x-model="searchQuery"
+                  @input="filterEntities"
+                />
+              </div>
 
-                <svg
-                  x-show="!gridView"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-table"
-                  viewBox="0 0 16 16"
+              <div class="dropdown z-2">
+                <button
+                  class="btn btn-outline-primary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
                 >
-                  <path
-                    d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"
+                  Role:
+                  <span
+                    class="text-capitalize"
+                    x-text="contactTypeFilter"
+                  ></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <template x-if="contactTypeFilter">
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="contactTypeFilter=''; filterEntities()"
+                      >
+                        All
+                      </button>
+                    </li>
+                  </template>
+                  <li>
+                    <button
+                      class="dropdown-item"
+                      @click="contactTypeFilter='individual'; filterEntities()"
+                    >
+                      Individual
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="dropdown-item"
+                      @click="contactTypeFilter='family'; filterEntities()"
+                    >
+                      Family
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="dropdown-item"
+                      @click="contactTypeFilter='company'; filterEntities()"
+                    >
+                      Company
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="dropdown-item"
+                      @click="contactTypeFilter='organization'; filterEntities()"
+                    >
+                      Organization
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="dropdown">
+                <button
+                  class="btn btn-outline-primary dropdown-toggle"
+                  type="button"
+                  id="riskLevelDropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Risk Level: <span x-text="selectedRiskLevel"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="riskLevelDropdown">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      @click.prevent="setRiskLevelFilter('All')"
+                      >All</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      @click.prevent="setRiskLevelFilter('low')"
+                      >Low</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      @click.prevent="setRiskLevelFilter('medium')"
+                      >Medium</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      @click.prevent="setRiskLevelFilter('heigh')"
+                      >High</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <template x-if="isFilterActive">
+                <button
+                  class="btn btn-link d-flex align-items-center gap-1"
+                  @click="resetFilters"
+                >
+                  Filters
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-trash3"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </template>
+            </div>
+
+            <div class="d-flex gap-2">
+              <template x-if="activeUser === 'Razvan Nicu'">
+                <div class="btn-group hover-opacity_el">
+                  <button
+                    class="btn btn-outline-primary d-flex align-items-center gap-2"
+                    @click="widgetOnly = !widgetOnly"
+                  >
+                    WidgetOnly
+                  </button>
+                  <button
+                    class="btn btn-outline-primary d-flex align-items-center gap-2"
+                    @click="duplicateEntity"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-copy"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+                      />
+                    </svg>
+                    Duplicate
+                  </button>
+                  <button
+                    class="btn btn-outline-primary d-flex align-items-center gap-2"
+                    @click="downloadData"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-cloud-arrow-down"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.646 10.854a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 9.293V5.5a.5.5 0 0 0-1 0v3.793L6.354 8.146a.5.5 0 1 0-.708.708z"
+                      />
+                      <path
+                        d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"
+                      />
+                    </svg>
+                    JSON
+                  </button>
+                  <label
+                    class="btn btn-outline-primary mb-0 rounded-end d-flex align-items-center gap-2"
+                    for="uploadInput"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-cloud-arrow-up"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708z"
+                      />
+                      <path
+                        d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"
+                      />
+                    </svg>
+                    JSON</label
+                  >
+                  <input
+                    type="file"
+                    id="uploadInput"
+                    @change="uploadData"
+                    class="form-control-file d-none"
                   />
-                </svg>
-                <!-- <svg
+                </div>
+              </template>
+
+              <div>
+                <template x-if="filteredEntities.length > 1 && !gridView">
+                  <div class="btn-group">
+                    <button
+                      class="btn btn-outline-primary"
+                      @click="previousEntity"
+                      :disabled="!hasPrevious"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-arrow-left-short"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="btn btn-outline-primary"
+                      @click="nextEntity"
+                      :disabled="!hasNext"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-arrow-right-short"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </template>
+              </div>
+
+              <div>
+                <button class="btn btn-link" @click="gridView = !gridView">
+                  <svg
                     x-show="gridView"
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-arrows-expand-vertical"
+                    class="bi bi-layout-sidebar-inset-reverse"
                     viewBox="0 0 16 16"
                   >
                     <path
-                      d="M8 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8"
+                      d="M2 2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z"
                     />
-                  </svg> -->
-              </button>
+                    <path
+                      d="M13 4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1z"
+                    />
+                  </svg>
+
+                  <svg
+                    x-show="!gridView"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-table"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2
+                      2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0
+                      1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1
+                      1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </header>
 
-      <div class="flex-grow-1 p-0 overflow-hidden">
-        <main class="h-100 d-flex">
-          {{ partial "summary.html" . }} {{ partial "users.html" . }} {{ partial
-          "edit.html" . }}
-        </main>
-      </div>
+          <div class="flex-grow-1 p-0 overflow-hidden">
+            <main class="h-100 d-flex">
+              {{ partial "summary.html" . }} {{ partial "users.html" . }} {{
+              partial "edit.html" . }}
+            </main>
+          </div>
+        </div>
+      </main>
     </div>
+
     {{ partial "script.html" . }}
   </body>
 </html>
