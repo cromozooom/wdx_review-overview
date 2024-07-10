@@ -155,7 +155,7 @@
         class="btn btn-sm btn-link"
         @click="show = !show"
         x-show="!show"
-        x-text="field.history.length + ' more changes ...'"
+        x-text="field.history.length >= 3 ? (field.history.length - 1) + ' more changes ...' : (field.history.length - 1) + ' more change ...' "
       ></button>
     </div>
   </template>
