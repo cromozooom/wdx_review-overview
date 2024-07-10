@@ -44,7 +44,8 @@ $red: #dc3545 !default;
 $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
 $green: #198754 !default;
-$teal: #20c997 !default;
+$teal: #44807e;
+$tealDark: #335669;
 $cyan: #0dcaf0 !default;
 // scss-docs-end color-variables
 
@@ -59,6 +60,7 @@ $colors: (
   "yellow": $yellow,
   "green": $green,
   "teal": $teal,
+  "tealDark": $tealDark,
   "cyan": $cyan,
   "black": $black,
   "white": $white,
@@ -156,15 +158,35 @@ $green-700: shade-color($green, 40%) !default;
 $green-800: shade-color($green, 60%) !default;
 $green-900: shade-color($green, 80%) !default;
 
-$teal-100: tint-color($teal, 80%) !default;
-$teal-200: tint-color($teal, 60%) !default;
-$teal-300: tint-color($teal, 40%) !default;
-$teal-400: tint-color($teal, 20%) !default;
-$teal-500: $teal !default;
-$teal-600: shade-color($teal, 20%) !default;
-$teal-700: shade-color($teal, 40%) !default;
-$teal-800: shade-color($teal, 60%) !default;
-$teal-900: shade-color($teal, 80%) !default;
+// $teal-100: tint-color($teal, 80%) !default;
+// $teal-200: tint-color($teal, 60%) !default;
+// $teal-300: tint-color($teal, 40%) !default;
+// $teal-400: tint-color($teal, 20%) !default;
+// $teal-500: $teal !default;
+// $teal-600: shade-color($teal, 20%) !default;
+// $teal-700: shade-color($teal, 40%) !default;
+// $teal-800: shade-color($teal, 60%) !default;
+// $teal-900: shade-color($teal, 80%) !default;
+
+$teal-100: #cffffd;
+$teal-200: #a2e8e6;
+$teal-300: #8acecc;
+$teal-400: #60a4a1;
+$teal-500: #4b8d8b;
+$teal-600: #1b6362;
+$teal-700: #003534;
+$teal-800: #001010;
+$teal-900: #000000;
+
+$tealDark-100: #f0faff;
+$tealDark-200: #add2e8;
+$tealDark-300: #8eb4c9;
+$tealDark-400: #597d91;
+$tealDark-500: #335669;
+$tealDark-600: #183b4d;
+$tealDark-700: #00202f;
+$tealDark-800: #000913;
+$tealDark-900: #000001;
 
 $cyan-100: tint-color($cyan, 80%) !default;
 $cyan-200: tint-color($cyan, 60%) !default;
@@ -284,6 +306,18 @@ $teals: (
   "teal-900": $teal-900,
 ) !default;
 
+$tealDark: (
+  "tealDark-100": $teal-100,
+  "tealDark-200": $teal-200,
+  "tealDark-300": $teal-300,
+  "tealDark-400": $teal-400,
+  "tealDark-500": $teal-500,
+  "tealDark-600": $teal-600,
+  "tealDark-700": $teal-700,
+  "tealDark-800": $teal-800,
+  "tealDark-900": $teal-900,
+) !default;
+
 $cyans: (
   "cyan-100": $cyan-100,
   "cyan-200": $cyan-200,
@@ -298,7 +332,8 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary: $indigo;
+$primary: $teal;
+$brand: $tealDark;
 $secondary: $gray-600 !default;
 $success: $green !default;
 $info: $cyan !default;
@@ -311,6 +346,7 @@ $dark: $gray-900 !default;
 // scss-docs-start theme-colors-map
 $theme-colors: (
   "primary": $primary,
+  "brand": $brand,
   "secondary": $secondary,
   "success": $success,
   "info": $info,
@@ -318,7 +354,7 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark,
-) !default;
+);
 // scss-docs-end theme-colors-map
 
 // scss-docs-start theme-text-variables
