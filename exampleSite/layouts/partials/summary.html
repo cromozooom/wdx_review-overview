@@ -2,10 +2,51 @@
   id="formSummary"
   class="col-3 gap-0 border-end h-100 d-flex flex-column"
 >
-  <div class="overflow-y-scroll flex-grow-1 z-1" id="editContainer">
-    <div class="p-2 border-bottom sticky-top bg-light">
+  <div
+    class="ps-2 py-1 border-bottom border-start bg-light d-flex justify-content-between hover-opacity"
+  >
+    <div class="d-flex flex-column">
       <h3 class="m-0 p-0">Review Form</h3>
+      <div class="d-flex align-items-center">
+        <p class="mb-0">
+          Risk level: r1 for
+          <span class="badge text-info-emphasis bg-info-subtle"
+            >Meno Sebastiano Argenti
+          </span>
+        </p>
+      </div>
     </div>
+    <div>
+      <button
+        class="btn btn-sm btn-link hover-opacity_el"
+        @click="switchColumns = !switchColumns"
+      >
+        <template x-if="!switchColumns">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use xlink:href="#switchColumns"></use>
+          </svg>
+        </template>
+        <template x-if="switchColumns">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use xlink:href="#switchColumnsReverse"></use>
+          </svg>
+        </template>
+      </button>
+    </div>
+  </div>
+  <div class="overflow-y-scroll flex-grow-1 z-1" id="editContainer">
     <template x-if="selectedEntityIndex !== null">
       <div
         data-bs-spy="scroll"
@@ -34,12 +75,9 @@
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-check"
                     viewBox="0 0 16 16"
                   >
-                    <path
-                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
-                    />
+                    <use xlink:href="#bi-check"></use>
                   </svg>
                 </span>
                 <span x-text="section.title"></span>

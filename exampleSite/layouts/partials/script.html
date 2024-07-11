@@ -2,11 +2,12 @@
   function entityComponent() {
     return {
       entities: [],
+      switchColumns: false,
       showBannerInfo: true,
       showSideNav: false,
       gridView: false,
       widgetOnly: false,
-      showHistory: false,
+      showHistory: true,
       filteredEntities: [],
       searchQuery: "",
       selectedEntity: null,
@@ -53,6 +54,7 @@
           });
         });
       },
+
       saveForm() {
         this.entities.forEach((entity, entityIndex) => {
           entity.form.sections.forEach((section, sectionIndex) => {
@@ -316,6 +318,13 @@
       },
 
       countFilledFields(sectionIndex) {
+        if (
+          !this.selectedEntity ||
+          !this.selectedEntity.form ||
+          !this.selectedEntity.form.sections[sectionIndex]
+        ) {
+          return 0;
+        }
         return this.selectedEntity.form.sections[sectionIndex].fields.filter(
           (field) => field.value
         ).length;
@@ -359,21 +368,6 @@
         );
       },
 
-      get isFilterActive() {
-        return (
-          this.searchQuery.trim() !== "" ||
-          this.contactTypeFilter.trim() !== "All" ||
-          this.selectedRiskLevel !== "All"
-        );
-      },
-
-      get hasNext() {
-        return (
-          this.selectedEntityIndex !== null &&
-          this.selectedEntityIndex < this.filteredEntities.length - 1
-        );
-      },
-
       removeHistoryItem(sectionIndex, fieldIndex, historyIndex) {
         const field =
           this.selectedEntity.form.sections[sectionIndex].fields[fieldIndex];
@@ -395,12 +389,6 @@
         }
       },
 
-      get hasPrevious() {
-        return (
-          this.selectedEntityIndex !== null && this.selectedEntityIndex > 0
-        );
-      },
-
       purgeData() {
         localStorage.removeItem("entities"); // Remove the data from local storage
         this.entities = []; // Reset the entities array
@@ -411,6 +399,27 @@
           "Data purged successfully! The application will start from scratch."
         );
         location.reload();
+      },
+
+      get isFilterActive() {
+        return (
+          this.searchQuery.trim() !== "" ||
+          this.contactTypeFilter.trim() !== "All" ||
+          this.selectedRiskLevel !== "All"
+        );
+      },
+
+      get hasNext() {
+        return (
+          this.selectedEntityIndex !== null &&
+          this.selectedEntityIndex < this.filteredEntities.length - 1
+        );
+      },
+
+      get hasPrevious() {
+        return (
+          this.selectedEntityIndex !== null && this.selectedEntityIndex > 0
+        );
       },
     };
   }

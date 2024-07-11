@@ -121,6 +121,22 @@
               ]
             },
             {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Last Update",
+              "name": "kylcu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
               "type": "dropdown",
               "hidden": false,
               "label": "Risk Level",
@@ -366,7 +382,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -498,6 +514,22 @@
               "type": "date",
               "label": "KYC Update",
               "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": [
+                {
+                  "time": "2024-07-09T12:42:01.119Z",
+                  "valueAfter": "1986-06-15",
+                  "value": "1985-06-15",
+                  "user": "Razvan Nicu"
+                }
+              ]
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Last Update",
+              "name": "kyclu",
               "value": "1986-06-15",
               "required": true,
               "history": [
@@ -755,7 +787,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -853,6 +885,15 @@
               "type": "date",
               "label": "KYC Update",
               "name": "kycu",
+              "value": "1991-06-15",
+              "required": true,
+              "history": []
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Last Update",
+              "name": "kyclu",
               "value": "1991-06-15",
               "required": true,
               "history": []
@@ -1065,7 +1106,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -1163,6 +1204,15 @@
               "type": "date",
               "label": "KYC Update",
               "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": []
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Last Update",
+              "name": "kyclu",
               "value": "1986-06-15",
               "required": true,
               "history": []
@@ -1368,7 +1418,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -1466,6 +1516,15 @@
               "type": "date",
               "label": "KYC Update",
               "name": "kycu",
+              "value": "1986-06-15",
+              "required": true,
+              "history": []
+            },
+            {
+              "hidden": false,
+              "type": "date",
+              "label": "KYC Last Update",
+              "name": "kyclu",
               "value": "1986-06-15",
               "required": true,
               "history": []
@@ -1671,7 +1730,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -1994,7 +2053,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -2297,7 +2356,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -2600,7 +2659,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -2903,7 +2962,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -3247,7 +3306,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -3624,7 +3683,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -4037,7 +4096,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -4340,7 +4399,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -4643,7 +4702,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -4946,7 +5005,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -5249,7 +5308,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -5559,7 +5618,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -5862,7 +5921,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
@@ -6165,7 +6224,7 @@
           "fields": [
             {
               "hidden": false,
-              "type": "checkbox",
+              "type": "switch",
               "label": "Email Notifications",
               "name": "email_notifications",
               "value": true,
