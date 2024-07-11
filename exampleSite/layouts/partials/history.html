@@ -151,6 +151,7 @@
   </template>
   <template x-if="field.history && showHistory && field.history.length > 1">
     <div class="ps-3">
+      <!-- <span x-text="showHistory"></span> -->
       <button
         class="btn btn-sm btn-link"
         @click="show = !show"
@@ -159,7 +160,7 @@
       ></button>
     </div>
   </template>
-  <template x-if="show && field.history">
+  <template x-if="showHistory && show && field.history">
     <template
       x-for="(historyItem, historyIndex) in field.history.slice().reverse()"
       :key="historyIndex"
