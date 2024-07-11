@@ -2,8 +2,6 @@
   function entityComponent() {
     return {
       entities: [],
-      showBannerInfo: true,
-      showSideNav: false,
       gridView: false,
       widgetOnly: false,
       showHistory: false,
@@ -21,28 +19,28 @@
       ],
       activeUser: "Luna Nicu",
       originalValues: {},
-      loadData() {
+      async loadData() {
         const storedEntities = localStorage.getItem("entities");
         if (storedEntities) {
           this.entities = JSON.parse(storedEntities);
-          if (this.entities.length > 0) {
-            this.selectEntity(this.entities[0].id, 0);
-          }
         } else {
-          fetch("entities.json")
-            .then((response) => response.json())
-            .then((data) => {
-              this.entities = data.persons_companies.map((entity, index) => ({
-                ...entity,
-                id: index + 1,
-              }));
-              this.saveToLocalStorage();
-              if (this.entities.length > 0) {
-                this.selectEntity(this.entities[0].id, 0);
-              }
-            });
+          const response = await fetch("entities.json");
+          const data = await response.json();
+          this.entities = data.persons_companies.map((entity, index) => ({
+            ...entity,
+            id: index + 1,
+          }));
+          this.saveToLocalStorage();
         }
 
+        this.initializeEntityData();
+        this.filterEntities();
+        this.selectFirstEntity();
+      },
+      saveToLocalStorage() {
+        localStorage.setItem("entities", JSON.stringify(this.entities));
+      },
+      initializeEntityData() {
         this.entities.forEach((entity) => {
           entity.form.sections.forEach((section) => {
             section.fields.forEach((field) => {
@@ -52,14 +50,7 @@
             });
           });
         });
-        this.filterEntities();
-
-        this.filteredEntities = this.entities;
       },
-      saveToLocalStorage() {
-        localStorage.setItem("entities", JSON.stringify(this.entities));
-      },
-
       saveForm() {
         this.entities.forEach((entity, entityIndex) => {
           entity.form.sections.forEach((section, sectionIndex) => {
@@ -80,9 +71,7 @@
                 );
 
                 // Check if the field is for name or surname and update accordingly
-                console.log(field.name);
                 if (field.name === "first_name") {
-                  console.log(this.entities[entityIndex]);
                   this.entities[entityIndex].name = field.value;
                 }
                 if (field.name === "last_name") {
@@ -95,7 +84,6 @@
         this.saveToLocalStorage();
         alert("Form data saved successfully!");
       },
-
       selectEntity(entityId, index) {
         const originalIndex = this.entities.findIndex(
           (entity) => entity.id === entityId
@@ -123,7 +111,6 @@
         let selectedElement = document.querySelector(
           '[x-ref="' + type + index + '"]'
         );
-        console.log(selectedElement);
 
         if (selectedElement) {
           selectedElement.scrollIntoView({
@@ -149,58 +136,7 @@
           });
         }
       },
-
       filterEntities() {
-        const query = this.searchQuery.toLowerCase();
-        const contactTypeFilter = this.contactTypeFilter.toLowerCase();
-        const riskLevelFilter = this.selectedRiskLevel.toLowerCase();
-
-        this.filteredEntities = this.entities.filter((entity) => {
-          const fullName =
-            entity.type === "person"
-              ? `${entity.name} ${entity.surname}`
-              : entity.name;
-          const matchesQuery = fullName.toLowerCase().includes(query);
-
-          const matchesContactType =
-            contactTypeFilter === "all" ||
-            entity.form.sections.some((section) =>
-              section.fields.some(
-                (field) =>
-                  field.name === "contact_type" &&
-                  field.value.toLowerCase().includes(contactTypeFilter)
-              )
-            );
-
-          const matchesRiskLevel =
-            riskLevelFilter === "all" ||
-            entity.form.sections.some((section) =>
-              section.fields.some(
-                (field) =>
-                  field.name === "risk_level" &&
-                  field.value.toLowerCase() === riskLevelFilter
-              )
-            );
-
-          return matchesQuery && matchesContactType && matchesRiskLevel;
-        });
-
-        // Ensure the filtered entities are sorted by index
-        this.filteredEntities.sort((a, b) => a.id - b.id);
-
-        // Select the first entity in the filtered list
-        if (this.filteredEntities.length > 0) {
-          this.selectedEntity = this.filteredEntities[0];
-          this.selectedEntityIndex = this.entities.findIndex(
-            (entity) => entity.id === this.selectedEntity.id
-          );
-        } else {
-          this.selectedEntity = null;
-          this.selectedEntityIndex = null;
-        }
-      },
-
-      xxxfilterEntities() {
         if (
           this.searchQuery.trim() === "" &&
           this.contactTypeFilter === "All" &&
@@ -245,6 +181,9 @@
         this.filteredEntities.sort((a, b) => a.id - b.id);
 
         // Select the first entity in the filtered list
+        this.selectFirstEntity();
+      },
+      selectFirstEntity() {
         if (this.filteredEntities.length > 0) {
           this.selectedEntity = this.filteredEntities[0];
           this.selectedEntityIndex = this.entities.findIndex(
@@ -255,7 +194,6 @@
           this.selectedEntityIndex = null;
         }
       },
-
       setRiskLevelFilter(riskLevel) {
         this.selectedRiskLevel = riskLevel;
         this.filterEntities();
@@ -374,13 +312,6 @@
       },
 
       countFilledFields(sectionIndex) {
-        if (
-          !this.selectedEntity ||
-          !this.selectedEntity.form ||
-          !this.selectedEntity.form.sections[sectionIndex]
-        ) {
-          return 0;
-        }
         return this.selectedEntity.form.sections[sectionIndex].fields.filter(
           (field) => field.value
         ).length;
@@ -450,7 +381,6 @@
       },
 
       revertHistoryItem(sectionIndex, fieldIndex, historyIndex) {
-        console.log(sectionIndex, fieldIndex, historyIndex);
         const field =
           this.selectedEntity.form.sections[sectionIndex].fields[fieldIndex];
         const history = field.history.slice().reverse();
@@ -465,6 +395,18 @@
         return (
           this.selectedEntityIndex !== null && this.selectedEntityIndex > 0
         );
+      },
+
+      purgeData() {
+        localStorage.removeItem("entities"); // Remove the data from local storage
+        this.entities = []; // Reset the entities array
+        this.filteredEntities = []; // Reset the filtered entities array
+        this.selectedEntity = null;
+        this.selectedEntityIndex = null;
+        alert(
+          "Data purged successfully! The application will start from scratch."
+        );
+        location.reload();
       },
     };
   }
