@@ -142,7 +142,14 @@
                 ],
                 "value": "heigh",
                 "required": true,
-                "history": []
+                "history": [
+                  {
+                    "time": "2024-07-11T08:21:57.687Z",
+                    "valueAfter": "medium",
+                    "value": "heigh",
+                    "user": "Luna Nicu"
+                  }
+                ]
               },
               {
                 "type": "dropdown",
@@ -870,9 +877,16 @@
                     "value": "heigh"
                   }
                 ],
-                "value": "heigh",
+                "value": "medium",
                 "required": true,
-                "history": []
+                "history": [
+                  {
+                    "time": "2024-07-11T08:21:34.602Z",
+                    "valueAfter": "medium",
+                    "value": "heigh",
+                    "user": "Luna Nicu"
+                  }
+                ]
               },
               {
                 "type": "dropdown",
@@ -2029,8 +2043,8 @@
     },
     {
       "type": "person",
-      "name": "John",
-      "surname": "Doe",
+      "name": "Naomi",
+      "surname": "Dougharty",
       "stage": "Onboarding",
       "form": {
         "title": "Personal Information",
@@ -2043,7 +2057,7 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Naomi",
                 "required": true,
                 "history": []
               },
@@ -2052,7 +2066,7 @@
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Dougharty",
                 "required": true,
                 "history": []
               },
@@ -2061,7 +2075,7 @@
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "ndougharty0@blogs.com",
                 "required": true,
                 "history": []
               },
@@ -2070,7 +2084,7 @@
                 "type": "date",
                 "label": "Date of Birth",
                 "name": "dob",
-                "value": "1988-06-15",
+                "value": "1993-03-18",
                 "required": true,
                 "history": []
               },
@@ -2079,7 +2093,7 @@
                 "type": "date",
                 "label": "KYC Update",
                 "name": "kycu",
-                "value": "1986-06-15",
+                "value": "1992-02-18",
                 "required": true,
                 "history": []
               },
@@ -2102,7 +2116,7 @@
                     "value": "heigh"
                   }
                 ],
-                "value": "heigh",
+                "value": "medium",
                 "required": true,
                 "history": []
               },
@@ -2137,7 +2151,7 @@
                     "value": "prospect"
                   }
                 ],
-                "value": "committed",
+                "value": "pitching",
                 "required": true,
                 "history": []
               },
@@ -2332,8 +2346,8 @@
     },
     {
       "type": "person",
-      "name": "John",
-      "surname": "Doe",
+      "name": "Kelcey",
+      "surname": "Antoszczyk",
       "stage": "Onboarding",
       "form": {
         "title": "Personal Information",
@@ -2346,7 +2360,7 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Kelcey",
                 "required": true,
                 "history": []
               },
@@ -2355,7 +2369,7 @@
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Antoszczyk",
                 "required": true,
                 "history": []
               },
@@ -2364,7 +2378,7 @@
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "kantoszczyk1@merriam-webster.com",
                 "required": true,
                 "history": []
               },
@@ -2373,32 +2387,18 @@
                 "type": "date",
                 "label": "Date of Birth",
                 "name": "dob",
-                "value": "1988-06-15",
+                "value": "1994-02-19",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:11.206Z",
-                    "valueAfter": "1988-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "hidden": false,
                 "type": "date",
                 "label": "KYC Update",
                 "name": "kycu",
-                "value": "1986-06-15",
+                "value": "1980-01-10",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:01.119Z",
-                    "valueAfter": "1986-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -2419,16 +2419,9 @@
                     "value": "heigh"
                   }
                 ],
-                "value": "heigh",
+                "value": "low",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -2461,16 +2454,9 @@
                     "value": "prospect"
                   }
                 ],
-                "value": "committed",
+                "value": "prospect",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:43:40.704Z",
-                    "valueAfter": "committed",
-                    "value": "Onboarding",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -2495,7 +2481,7 @@
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "individual",
                 "required": true,
                 "history": []
               },
@@ -2513,22 +2499,9 @@
                 "type": "number",
                 "label": "Documents uploaded",
                 "name": "documents_uploaded",
-                "value": 2,
+                "value": "6",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:32:57.059Z",
-                    "valueAfter": "6",
-                    "value": 5,
-                    "user": "Razvan Nicu"
-                  },
-                  {
-                    "time": "2024-07-09T13:20:39.327Z",
-                    "valueAfter": 2,
-                    "value": "6",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               }
             ]
           },
@@ -2676,8 +2649,8 @@
     },
     {
       "type": "person",
-      "name": "John",
-      "surname": "Doe",
+      "name": "Delainey",
+      "surname": "Bernhart",
       "stage": "Onboarding",
       "form": {
         "title": "Personal Information",
@@ -2690,7 +2663,7 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Delainey",
                 "required": true,
                 "history": []
               },
@@ -2699,7 +2672,7 @@
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Bernhart",
                 "required": true,
                 "history": []
               },
@@ -2708,7 +2681,7 @@
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "dbernhart2@example.com",
                 "required": true,
                 "history": []
               },
@@ -2717,32 +2690,18 @@
                 "type": "date",
                 "label": "Date of Birth",
                 "name": "dob",
-                "value": "1988-06-15",
+                "value": "1959-05-11",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:11.206Z",
-                    "valueAfter": "1988-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "hidden": false,
                 "type": "date",
                 "label": "KYC Update",
                 "name": "kycu",
-                "value": "1986-06-15",
+                "value": "",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:01.119Z",
-                    "valueAfter": "1986-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -2763,16 +2722,9 @@
                     "value": "heigh"
                   }
                 ],
-                "value": "heigh",
+                "value": "medium",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -2807,14 +2759,7 @@
                 ],
                 "value": "committed",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:43:40.704Z",
-                    "valueAfter": "committed",
-                    "value": "Onboarding",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -2859,20 +2804,7 @@
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:32:57.059Z",
-                    "valueAfter": "6",
-                    "value": 5,
-                    "user": "Razvan Nicu"
-                  },
-                  {
-                    "time": "2024-07-09T13:20:39.327Z",
-                    "valueAfter": 2,
-                    "value": "6",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               }
             ]
           },
@@ -3034,7 +2966,7 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Yehudi",
                 "required": true,
                 "history": []
               },
@@ -3043,7 +2975,7 @@
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "McPhate",
                 "required": true,
                 "history": []
               },
@@ -3052,7 +2984,7 @@
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "ymcphate3@reference.com",
                 "required": true,
                 "history": []
               },
@@ -3364,8 +3296,8 @@
     },
     {
       "type": "person",
-      "name": "John",
-      "surname": "Doe",
+      "name": "Delinda",
+      "surname": "Sweet",
       "stage": "Onboarding",
       "form": {
         "title": "Personal Information",
@@ -3378,34 +3310,55 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Delinda",
                 "required": true,
-                "history": []
+                "history": [
+                  {
+                    "time": "2024-07-11T08:24:41.715Z",
+                    "valueAfter": "Delinda",
+                    "value": "John",
+                    "user": "Luna Nicu"
+                  }
+                ]
               },
               {
                 "hidden": false,
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Sweet",
                 "required": true,
-                "history": []
+                "history": [
+                  {
+                    "time": "2024-07-11T08:24:41.716Z",
+                    "valueAfter": "Sweet",
+                    "value": "Doe",
+                    "user": "Luna Nicu"
+                  }
+                ]
               },
               {
                 "hidden": false,
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "dsweet4@imageshack.us",
                 "required": true,
-                "history": []
+                "history": [
+                  {
+                    "time": "2024-07-11T08:24:41.716Z",
+                    "valueAfter": "dsweet4@imageshack.us",
+                    "value": "john.doe@example.com",
+                    "user": "Luna Nicu"
+                  }
+                ]
               },
               {
                 "hidden": false,
                 "type": "date",
                 "label": "Date of Birth",
                 "name": "dob",
-                "value": "1988-06-15",
+                "value": "1953-10-09",
                 "required": true,
                 "history": [
                   {
@@ -3413,6 +3366,12 @@
                     "valueAfter": "1988-06-15",
                     "value": "1985-06-15",
                     "user": "Razvan Nicu"
+                  },
+                  {
+                    "time": "2024-07-11T08:24:41.716Z",
+                    "valueAfter": "1953-10-09",
+                    "value": "1988-06-15",
+                    "user": "Luna Nicu"
                   }
                 ]
               },
@@ -3421,7 +3380,7 @@
                 "type": "date",
                 "label": "KYC Update",
                 "name": "kycu",
-                "value": "1986-06-15",
+                "value": "1995-10-20",
                 "required": true,
                 "history": [
                   {
@@ -3429,6 +3388,12 @@
                     "valueAfter": "1986-06-15",
                     "value": "1985-06-15",
                     "user": "Razvan Nicu"
+                  },
+                  {
+                    "time": "2024-07-11T08:24:41.716Z",
+                    "valueAfter": "1995-10-20",
+                    "value": "1986-06-15",
+                    "user": "Luna Nicu"
                   }
                 ]
               },
@@ -3708,8 +3673,8 @@
     },
     {
       "type": "person",
-      "name": "John",
-      "surname": "Doe",
+      "name": "Ferdinanda",
+      "surname": "Andrick",
       "stage": "Onboarding",
       "form": {
         "title": "Personal Information",
@@ -3722,34 +3687,73 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Ferdinanda",
                 "required": true,
-                "history": []
+                "history": [
+                  {
+                    "time": "2024-07-11T08:25:28.341Z",
+                    "valueAfter": "Ferdinanda",
+                    "value": "John",
+                    "user": "Luna Nicu"
+                  },
+                  {
+                    "time": "2024-07-11T08:25:42.410Z",
+                    "valueAfter": "Ferdinanda",
+                    "value": "John",
+                    "user": "Luna Nicu"
+                  }
+                ]
               },
               {
                 "hidden": false,
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Andrick",
                 "required": true,
-                "history": []
+                "history": [
+                  {
+                    "time": "2024-07-11T08:25:28.344Z",
+                    "valueAfter": "Andrick",
+                    "value": "Doe",
+                    "user": "Luna Nicu"
+                  },
+                  {
+                    "time": "2024-07-11T08:25:42.412Z",
+                    "valueAfter": "Andrick",
+                    "value": "Doe",
+                    "user": "Luna Nicu"
+                  }
+                ]
               },
               {
                 "hidden": false,
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "fandrick5@ca.gov",
                 "required": true,
-                "history": []
+                "history": [
+                  {
+                    "time": "2024-07-11T08:25:28.344Z",
+                    "valueAfter": "fandrick5@ca.gov",
+                    "value": "john.doe@example.com",
+                    "user": "Luna Nicu"
+                  },
+                  {
+                    "time": "2024-07-11T08:25:42.413Z",
+                    "valueAfter": "fandrick5@ca.gov",
+                    "value": "john.doe@example.com",
+                    "user": "Luna Nicu"
+                  }
+                ]
               },
               {
                 "hidden": false,
                 "type": "date",
                 "label": "Date of Birth",
                 "name": "dob",
-                "value": "1988-06-15",
+                "value": "1995-10-22",
                 "required": true,
                 "history": [
                   {
@@ -3757,6 +3761,18 @@
                     "valueAfter": "1988-06-15",
                     "value": "1985-06-15",
                     "user": "Razvan Nicu"
+                  },
+                  {
+                    "time": "2024-07-11T08:25:28.344Z",
+                    "valueAfter": "1995-10-22",
+                    "value": "1988-06-15",
+                    "user": "Luna Nicu"
+                  },
+                  {
+                    "time": "2024-07-11T08:25:42.413Z",
+                    "valueAfter": "1995-10-22",
+                    "value": "1988-06-15",
+                    "user": "Luna Nicu"
                   }
                 ]
               },
@@ -3765,7 +3781,7 @@
                 "type": "date",
                 "label": "KYC Update",
                 "name": "kycu",
-                "value": "1986-06-15",
+                "value": "1989-10-12",
                 "required": true,
                 "history": [
                   {
@@ -3773,6 +3789,18 @@
                     "valueAfter": "1986-06-15",
                     "value": "1985-06-15",
                     "user": "Razvan Nicu"
+                  },
+                  {
+                    "time": "2024-07-11T08:25:28.344Z",
+                    "valueAfter": "1989-10-12",
+                    "value": "1986-06-15",
+                    "user": "Luna Nicu"
+                  },
+                  {
+                    "time": "2024-07-11T08:25:42.413Z",
+                    "valueAfter": "1989-10-12",
+                    "value": "1986-06-15",
+                    "user": "Luna Nicu"
                   }
                 ]
               },
@@ -3795,7 +3823,7 @@
                     "value": "heigh"
                   }
                 ],
-                "value": "heigh",
+                "value": "medium",
                 "required": true,
                 "history": [
                   {
@@ -3803,6 +3831,12 @@
                     "valueAfter": "heigh",
                     "value": "low",
                     "user": "Razvan Nicu"
+                  },
+                  {
+                    "time": "2024-07-11T08:25:42.413Z",
+                    "valueAfter": "medium",
+                    "value": "heigh",
+                    "user": "Luna Nicu"
                   }
                 ]
               },
@@ -4052,8 +4086,8 @@
     },
     {
       "type": "person",
-      "name": "John",
-      "surname": "Doe",
+      "name": "Hew",
+      "surname": "Minigo",
       "stage": "Onboarding",
       "form": {
         "title": "Personal Information",
@@ -4066,7 +4100,7 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Hew",
                 "required": true,
                 "history": []
               },
@@ -4075,7 +4109,7 @@
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Minigo",
                 "required": true,
                 "history": []
               },
@@ -4084,7 +4118,7 @@
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "hminigo6@meetup.com",
                 "required": true,
                 "history": []
               },
@@ -4093,32 +4127,18 @@
                 "type": "date",
                 "label": "Date of Birth",
                 "name": "dob",
-                "value": "1988-06-15",
+                "value": "1930-04-13",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:11.206Z",
-                    "valueAfter": "1988-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "hidden": false,
                 "type": "date",
                 "label": "KYC Update",
                 "name": "kycu",
-                "value": "1986-06-15",
+                "value": "1994-10-19",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:01.119Z",
-                    "valueAfter": "1986-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -4139,16 +4159,9 @@
                     "value": "heigh"
                   }
                 ],
-                "value": "heigh",
+                "value": "low",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -4181,16 +4194,9 @@
                     "value": "prospect"
                   }
                 ],
-                "value": "committed",
+                "value": "lead",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:43:40.704Z",
-                    "valueAfter": "committed",
-                    "value": "Onboarding",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -4235,20 +4241,7 @@
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:32:57.059Z",
-                    "valueAfter": "6",
-                    "value": 5,
-                    "user": "Razvan Nicu"
-                  },
-                  {
-                    "time": "2024-07-09T13:20:39.328Z",
-                    "valueAfter": 2,
-                    "value": "6",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               }
             ]
           },
@@ -4396,8 +4389,8 @@
     },
     {
       "type": "person",
-      "name": "John",
-      "surname": "Doe",
+      "name": "Reynold",
+      "surname": "Hay",
       "stage": "Onboarding",
       "form": {
         "title": "Personal Information",
@@ -4410,7 +4403,7 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Reynold",
                 "required": true,
                 "history": []
               },
@@ -4419,7 +4412,7 @@
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Hay",
                 "required": true,
                 "history": []
               },
@@ -4428,7 +4421,7 @@
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "rhay7@webnode.com",
                 "required": true,
                 "history": []
               },
@@ -4437,32 +4430,18 @@
                 "type": "date",
                 "label": "Date of Birth",
                 "name": "dob",
-                "value": "1988-06-15",
+                "value": "1998-11-13",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:11.206Z",
-                    "valueAfter": "1988-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "hidden": false,
                 "type": "date",
                 "label": "KYC Update",
                 "name": "kycu",
-                "value": "1986-06-15",
+                "value": "1994-10-08",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:01.119Z",
-                    "valueAfter": "1986-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -4483,16 +4462,9 @@
                     "value": "heigh"
                   }
                 ],
-                "value": "heigh",
+                "value": "low",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -4527,14 +4499,7 @@
                 ],
                 "value": "committed",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:43:40.704Z",
-                    "valueAfter": "committed",
-                    "value": "Onboarding",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -4559,7 +4524,7 @@
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "individual",
                 "required": true,
                 "history": []
               },
@@ -4579,20 +4544,7 @@
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:32:57.059Z",
-                    "valueAfter": "6",
-                    "value": 5,
-                    "user": "Razvan Nicu"
-                  },
-                  {
-                    "time": "2024-07-09T13:20:39.328Z",
-                    "valueAfter": 2,
-                    "value": "6",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               }
             ]
           },
@@ -4740,8 +4692,8 @@
     },
     {
       "type": "person",
-      "name": "John",
-      "surname": "Doe",
+      "name": "Sharline",
+      "surname": "Rodnight",
       "stage": "Onboarding",
       "form": {
         "title": "Personal Information",
@@ -4754,7 +4706,7 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Sharline",
                 "required": true,
                 "history": []
               },
@@ -4763,7 +4715,7 @@
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Rodnight",
                 "required": true,
                 "history": []
               },
@@ -4772,7 +4724,7 @@
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "srodnight8@taobao.com",
                 "required": true,
                 "history": []
               },
@@ -4781,32 +4733,18 @@
                 "type": "date",
                 "label": "Date of Birth",
                 "name": "dob",
-                "value": "1988-06-15",
+                "value": "1995-11-19",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:11.206Z",
-                    "valueAfter": "1988-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "hidden": false,
                 "type": "date",
                 "label": "KYC Update",
                 "name": "kycu",
-                "value": "1986-06-15",
+                "value": "1996-12-18",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:01.119Z",
-                    "valueAfter": "1986-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -4827,16 +4765,9 @@
                     "value": "heigh"
                   }
                 ],
-                "value": "heigh",
+                "value": "low",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -4871,14 +4802,7 @@
                 ],
                 "value": "committed",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:43:40.704Z",
-                    "valueAfter": "committed",
-                    "value": "Onboarding",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -4923,20 +4847,7 @@
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:32:57.059Z",
-                    "valueAfter": "6",
-                    "value": 5,
-                    "user": "Razvan Nicu"
-                  },
-                  {
-                    "time": "2024-07-09T13:20:39.328Z",
-                    "valueAfter": 2,
-                    "value": "6",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               }
             ]
           },
@@ -5084,8 +4995,8 @@
     },
     {
       "type": "person",
-      "name": "John",
-      "surname": "Doe",
+      "name": "Flory",
+      "surname": "Paine",
       "stage": "Onboarding",
       "form": {
         "title": "Personal Information",
@@ -5098,7 +5009,7 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Flory",
                 "required": true,
                 "history": []
               },
@@ -5107,7 +5018,7 @@
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Paine",
                 "required": true,
                 "history": []
               },
@@ -5116,7 +5027,7 @@
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "fpaine9@marketwatch.com",
                 "required": true,
                 "history": []
               },
@@ -5125,32 +5036,18 @@
                 "type": "date",
                 "label": "Date of Birth",
                 "name": "dob",
-                "value": "1988-06-15",
+                "value": "2014-01-20",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:11.206Z",
-                    "valueAfter": "1988-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "hidden": false,
                 "type": "date",
                 "label": "KYC Update",
                 "name": "kycu",
-                "value": "1986-06-15",
+                "value": "1979-10-11",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:01.119Z",
-                    "valueAfter": "1986-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -5171,16 +5068,9 @@
                     "value": "heigh"
                   }
                 ],
-                "value": "heigh",
+                "value": "low",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -5215,14 +5105,7 @@
                 ],
                 "value": "committed",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:43:40.704Z",
-                    "valueAfter": "committed",
-                    "value": "Onboarding",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -5265,22 +5148,9 @@
                 "type": "number",
                 "label": "Documents uploaded",
                 "name": "documents_uploaded",
-                "value": 2,
+                "value": "6",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:32:57.059Z",
-                    "valueAfter": "6",
-                    "value": 5,
-                    "user": "Razvan Nicu"
-                  },
-                  {
-                    "time": "2024-07-09T13:20:39.328Z",
-                    "valueAfter": 2,
-                    "value": "6",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               }
             ]
           },
@@ -5442,7 +5312,7 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Othelia",
                 "required": true,
                 "history": []
               },
@@ -5451,7 +5321,7 @@
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Dreini",
                 "required": true,
                 "history": []
               },
@@ -5471,14 +5341,7 @@
                 "name": "dob",
                 "value": "1988-06-15",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:11.206Z",
-                    "valueAfter": "1988-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "hidden": false,
@@ -5487,14 +5350,7 @@
                 "name": "kycu",
                 "value": "1986-06-15",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:01.119Z",
-                    "valueAfter": "1986-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -5559,14 +5415,7 @@
                 ],
                 "value": "committed",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:43:40.704Z",
-                    "valueAfter": "committed",
-                    "value": "Onboarding",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -5611,20 +5460,7 @@
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:32:57.059Z",
-                    "valueAfter": "6",
-                    "value": 5,
-                    "user": "Razvan Nicu"
-                  },
-                  {
-                    "time": "2024-07-09T13:20:39.329Z",
-                    "valueAfter": 2,
-                    "value": "6",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               }
             ]
           },
@@ -5772,8 +5608,8 @@
     },
     {
       "type": "person",
-      "name": "John",
-      "surname": "Doe",
+      "name": "Alvera",
+      "surname": "Paris",
       "stage": "Onboarding",
       "form": {
         "title": "Personal Information",
@@ -5786,7 +5622,7 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Alvera",
                 "required": true,
                 "history": []
               },
@@ -5795,7 +5631,7 @@
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Paris",
                 "required": true,
                 "history": []
               },
@@ -5804,7 +5640,7 @@
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "aparisb@cbslocal.com",
                 "required": true,
                 "history": []
               },
@@ -5813,32 +5649,18 @@
                 "type": "date",
                 "label": "Date of Birth",
                 "name": "dob",
-                "value": "1988-06-15",
+                "value": "1972-02-11",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:11.206Z",
-                    "valueAfter": "1988-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "hidden": false,
                 "type": "date",
                 "label": "KYC Update",
                 "name": "kycu",
-                "value": "1986-06-15",
+                "value": "1960-04-08",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:01.119Z",
-                    "valueAfter": "1986-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -5859,16 +5681,9 @@
                     "value": "heigh"
                   }
                 ],
-                "value": "heigh",
+                "value": "low",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -5901,16 +5716,9 @@
                     "value": "prospect"
                   }
                 ],
-                "value": "committed",
+                "value": "prospect",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:43:40.704Z",
-                    "valueAfter": "committed",
-                    "value": "Onboarding",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -5935,7 +5743,7 @@
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "individual",
                 "required": true,
                 "history": []
               },
@@ -5953,22 +5761,9 @@
                 "type": "number",
                 "label": "Documents uploaded",
                 "name": "documents_uploaded",
-                "value": 2,
+                "value": "6",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:32:57.059Z",
-                    "valueAfter": "6",
-                    "value": 5,
-                    "user": "Razvan Nicu"
-                  },
-                  {
-                    "time": "2024-07-09T13:20:39.329Z",
-                    "valueAfter": 2,
-                    "value": "6",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               }
             ]
           },
@@ -6116,8 +5911,8 @@
     },
     {
       "type": "person",
-      "name": "John",
-      "surname": "Doe",
+      "name": "Andromache",
+      "surname": "Van der Veldt",
       "stage": "Onboarding",
       "form": {
         "title": "Personal Information",
@@ -6130,7 +5925,7 @@
                 "type": "text",
                 "label": "First Name",
                 "name": "first_name",
-                "value": "John",
+                "value": "Andromache",
                 "required": true,
                 "history": []
               },
@@ -6139,7 +5934,7 @@
                 "type": "text",
                 "label": "Last Name",
                 "name": "last_name",
-                "value": "Doe",
+                "value": "Van der Veldt",
                 "required": true,
                 "history": []
               },
@@ -6148,7 +5943,7 @@
                 "type": "email",
                 "label": "Email",
                 "name": "email",
-                "value": "john.doe@example.com",
+                "value": "avanderveldtc@mac.com",
                 "required": true,
                 "history": []
               },
@@ -6157,32 +5952,18 @@
                 "type": "date",
                 "label": "Date of Birth",
                 "name": "dob",
-                "value": "1988-06-15",
+                "value": "2013-10-19",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:11.206Z",
-                    "valueAfter": "1988-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "hidden": false,
                 "type": "date",
                 "label": "KYC Update",
                 "name": "kycu",
-                "value": "1986-06-15",
+                "value": "1993-09-19",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:42:01.119Z",
-                    "valueAfter": "1986-06-15",
-                    "value": "1985-06-15",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -6203,16 +5984,9 @@
                     "value": "heigh"
                   }
                 ],
-                "value": "heigh",
+                "value": "low",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -6245,16 +6019,9 @@
                     "value": "prospect"
                   }
                 ],
-                "value": "committed",
+                "value": "onboarding",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:43:40.704Z",
-                    "valueAfter": "committed",
-                    "value": "Onboarding",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -6297,22 +6064,9 @@
                 "type": "number",
                 "label": "Documents uploaded",
                 "name": "documents_uploaded",
-                "value": 2,
+                "value": "6",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:32:57.059Z",
-                    "valueAfter": "6",
-                    "value": 5,
-                    "user": "Razvan Nicu"
-                  },
-                  {
-                    "time": "2024-07-09T13:20:39.329Z",
-                    "valueAfter": 2,
-                    "value": "6",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               }
             ]
           },
