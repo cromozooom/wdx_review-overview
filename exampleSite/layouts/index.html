@@ -337,6 +337,7 @@
               <template x-if="activeUser === 'Razvan Nicu'">
                 <div class="btn-group hover-opacity_el">
                   <button
+                    x-tooltip="Reset data from all entities"
                     class="btn btn-outline-primary d-flex align-items-center gap-2"
                     @click="purgeData"
                   >
@@ -358,6 +359,7 @@
                     Purge
                   </button>
                   <button
+                    x-tooltip="Full screen widget"
                     class="btn btn-outline-primary d-flex align-items-center gap-2"
                     @click="widgetOnly = !widgetOnly"
                   >
@@ -377,6 +379,7 @@
                     WidgetOnly
                   </button>
                   <button
+                    x-tooltip="Duplicate current entity"
                     class="btn btn-outline-primary d-flex align-items-center gap-2"
                     @click="duplicateEntity"
                   >
@@ -396,6 +399,7 @@
                     Duplicate
                   </button>
                   <button
+                    x-tooltip="Upload your data"
                     class="btn btn-outline-primary d-flex align-items-center gap-2"
                     @click="downloadData"
                   >
@@ -418,6 +422,7 @@
                     JSON
                   </button>
                   <label
+                    x-tooltip="Download your data"
                     class="btn btn-outline-primary mb-0 rounded-end d-flex align-items-center gap-2"
                     for="uploadInput"
                   >
