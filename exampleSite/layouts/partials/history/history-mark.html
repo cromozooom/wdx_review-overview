@@ -3,32 +3,58 @@
   <button
     x-tooltip="Expand history"
     @click="showFieldHistory = !showFieldHistory"
-    class="btn btn-sm d-flex align-items-center btn-link"
+    class="btn btn-sm d-flex align-items-center text-info-emphasis"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="currentColor"
-      viewBox="0 0 16 16"
-    >
-      <use xlink:href="#fas-arrow-flag"></use>
-    </svg>
+    <template x-if="!flagIcon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        viewBox="0 0 512 512"
+      >
+        <use xlink:href="#fas-info-circle"></use>
+      </svg>
+    </template>
+    <template x-if="flagIcon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+      >
+        <use xlink:href="#fas-arrow-flag"></use>
+      </svg>
+    </template>
   </button>
 </template>
 <template x-if="field.history.length * 1 === 0">
   <span
     class="btn btn-sm d-flex align-items-center text-muted opacity-25 cursor-default"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="currentColor"
-      viewBox="0 0 16 16"
-    >
-      <use xlink:href="#far-arrow-flag"></use>
-    </svg>
+    <template x-if="flagIcon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+      >
+        <use xlink:href="#far-arrow-flag"></use>
+      </svg>
+    </template>
+    <template x-if="!flagIcon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        viewBox="0 0 512 512"
+      >
+        <use xlink:href="#far-info-circle"></use>
+      </svg>
+    </template>
   </span>
 </template>
 <!-- <div class="dev">

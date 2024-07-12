@@ -162,7 +162,7 @@
                               style="--bs-bg-opacity: 1"
                               x-text="field.value"
                               x-bind:class="{
-                                    'bg-danger-subtle text-danger': field.value === 'heigh',
+                                    'bg-danger-subtle text-danger': field.value === 'high',
                                     'text-bg-light': field.value === 'medium',
                                     'bg-success-subtle text-success': field.value === 'low'
                                   }"
@@ -213,7 +213,7 @@
               x-ref="`entity-${index}`"
             >
               <div
-                class="px-2 py-2 w-100 d-flex justify-content-start flex-column text-start"
+                class="w-100 d-flex justify-content-start flex-column text-start"
                 x-bind:class="index ? 'xborder-top' : ''"
               >
                 <template
@@ -222,7 +222,7 @@
                 >
                   <template x-if="section.title === 'Basic Info'">
                     <section>
-                      <header>
+                      <header class="px-2 py-2">
                         <template
                           x-for="(field, fieldIndex) in section.fields"
                           :key="field.name"
@@ -232,42 +232,89 @@
                               <div
                                 class="d-flex justify-content-between align-items-center pb-2 w-100"
                               >
-                                <strong
-                                  class="text-primary"
-                                  x-text="field.value"
-                                ></strong>
+                                <div
+                                  class="text-primary d-flex gap-2 align-items-center"
+                                >
+                                  <span @click="showForms = !showForms">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="14"
+                                      height="14"
+                                      fill="currentColor"
+                                      class=""
+                                      viewBox="0 0 512 512"
+                                    >
+                                      <use xlink:href="#far-user"></use>
+                                    </svg>
+                                  </span>
+                                  <strong x-text="getFullName(entity)"></strong>
+                                </div>
                                 <div>
                                   <button
                                     class="plain-button"
                                     x-tooltip="No updates"
                                     x-show="!entityHasHistory(entity)"
+                                    @click="flagIcon = !flagIcon"
                                   >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="16"
-                                      height="16"
-                                      fill="currentColor"
-                                      class="text-muted opacity-25"
-                                      viewBox="0 0 16 16"
-                                    >
-                                      <use xlink:href="#far-arrow-flag"></use>
-                                    </svg>
+                                    <template x-if="flagIcon">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="text-muted opacity-25"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <use xlink:href="#far-arrow-flag"></use>
+                                      </svg>
+                                    </template>
+                                    <template x-if="!flagIcon">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="text-muted opacity-25"
+                                        viewBox="0 0 512 512"
+                                      >
+                                        <use
+                                          xlink:href="#far-info-circle"
+                                        ></use>
+                                      </svg>
+                                    </template>
                                   </button>
                                   <button
                                     class="plain-button"
                                     x-tooltip="Updated"
                                     x-show="entityHasHistory(entity)"
+                                    @click="flagIcon = !flagIcon"
                                   >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="16"
-                                      height="16"
-                                      fill="currentColor"
-                                      class="bi bi-lightning-charge-fill text-primary"
-                                      viewBox="0 0 16 16"
-                                    >
-                                      <use xlink:href="#fas-arrow-flag"></use>
-                                    </svg>
+                                    <template x-if="flagIcon">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="text-info-emphasis"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <use xlink:href="#fas-arrow-flag"></use>
+                                      </svg>
+                                    </template>
+                                    <template x-if="!flagIcon">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="text-info-emphasis"
+                                        viewBox="0 0 512 512"
+                                      >
+                                        <use
+                                          xlink:href="#fas-info-circle"
+                                        ></use>
+                                      </svg>
+                                    </template>
                                   </button>
                                 </div>
                               </div>
@@ -275,7 +322,7 @@
                           </div>
                         </template>
                       </header>
-                      <main>
+                      <main class="px-2 py-2">
                         <div class="row py-1">
                           <div class="col-6">
                             <div class="d-flex flex-column gap-1">
@@ -311,17 +358,32 @@
                                         class="plain-button d-flex align-items-center text-info-emphasis"
                                         x-tooltip="Updated"
                                       >
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="14"
-                                          height="14"
-                                          fill="currentColor"
-                                          viewBox="0 0 16 16"
-                                        >
-                                          <use
-                                            xlink:href="#fas-arrow-flag"
-                                          ></use>
-                                        </svg>
+                                        <template x-if="flagIcon">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="14"
+                                            height="14"
+                                            fill="currentColor"
+                                            viewBox="0 0 16 16"
+                                          >
+                                            <use
+                                              xlink:href="#fas-arrow-flag"
+                                            ></use>
+                                          </svg>
+                                        </template>
+                                        <template x-if="!flagIcon">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="14"
+                                            height="14"
+                                            fill="currentColor"
+                                            viewBox="0 0 512 512"
+                                          >
+                                            <use
+                                              xlink:href="#far-info-circle"
+                                            ></use>
+                                          </svg>
+                                        </template>
                                       </button>
                                     </template>
                                     <span
@@ -329,7 +391,7 @@
                                       style="--bs-bg-opacity: 1"
                                       x-text="field.value"
                                       x-bind:class="{
-                                      'bg-danger-subtle text-danger-emphasis': field.value === 'heigh',
+                                      'bg-danger-subtle text-danger-emphasis': field.value === 'high',
                                       'bg-warning-subtle text-warning-emphasis': field.value === 'medium',
                                       'bg-success-subtle text-success-emphasis': field.value === 'low'
                                     }"
@@ -425,6 +487,75 @@
                           </div>
                         </div>
                       </main>
+                      <template x-if="showForms ">
+                        <footer
+                          class="border-top px-2 py-2 d-flex flex-wrap gap-2 bg-white"
+                        >
+                          <button
+                            class="btn btn-outline-primary d-flex align-items-center gap-3"
+                          >
+                            <div>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                fill="currentColor"
+                                class=""
+                                viewBox="0 0 512 512"
+                              >
+                                <use xlink:href="#fas-fingerprint"></use>
+                              </svg>
+                            </div>
+                            <div
+                              class="d-flex flex-column justify-content-start align-items-start gap-1"
+                            >
+                              KYC
+                              <span
+                                class="badge bg-info-subtle text-info-emphasis"
+                                >Completed</span
+                              >
+                            </div>
+                          </button>
+                          <button
+                            class="btn btn-outline-primary d-flex align-items-center gap-3"
+                          >
+                            <div>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                fill="currentColor"
+                                class=""
+                                viewBox="0 0 512 512"
+                              >
+                                <use xlink:href="#fas-user-secret"></use>
+                              </svg>
+                            </div>
+                            <div
+                              class="d-flex flex-column justify-content-start align-items-start gap-1"
+                            >
+                              AML
+                              <span
+                                class="badge bg-info-subtle text-info-emphasis"
+                                >Waiting for review</span
+                              >
+                            </div>
+                          </button>
+                          <button
+                            class="btn btn-outline-primary d-flex align-items-center gap-3"
+                          >
+                            <div
+                              class="d-flex flex-column justify-content-start align-items-start gap-1"
+                            >
+                              Another form
+                              <span
+                                class="badge bg-info-subtle text-info-emphasis"
+                                >Waiting for review</span
+                              >
+                            </div>
+                          </button>
+                        </footer>
+                      </template>
                     </section>
                   </template>
                 </template>

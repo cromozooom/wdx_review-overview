@@ -9,7 +9,9 @@
       <h3 class="m-0 p-0">Review Form</h3>
       <div class="d-flex align-items-center">
         <p class="mb-0">
-          Risk level: r1 for
+          Risk level:
+          <strong class="text-uppercase"> r1 </strong>
+          for
           <span class="badge text-info-emphasis bg-info-subtle"
             >Meno Sebastiano Argenti
           </span>
@@ -67,7 +69,7 @@
             >
               <div class="h5">
                 <span
-                  x-bind:class="countFields(sectionIndex) === countFilledFields(sectionIndex) ? 'text-success' : ''"
+                  x-bind:class="countFields(sectionIndex) === countFilledFields(sectionIndex) ? 'text-success me-2' : ''"
                 >
                   <svg
                     x-show="countFields(sectionIndex) === countFilledFields(sectionIndex)"
@@ -75,9 +77,9 @@
                     width="16"
                     height="16"
                     fill="currentColor"
-                    viewBox="0 0 16 16"
+                    viewBox="0 0 512 512"
                   >
-                    <use xlink:href="#bi-check"></use>
+                    <use xlink:href="#far-link"></use>
                   </svg>
                 </span>
                 <span x-text="section.title"></span>

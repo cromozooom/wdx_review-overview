@@ -1,6 +1,6 @@
 <template x-if="!gridView">
   <section id="edit" class="col-6 flex-grow-1 h-100 d-flex flex-column">
-    <div class="sticky-top bg-white shadow shadow-sm">
+    <div class="sticky-top bg-white border-bottom">
       <div style="--bs-bg-opacity: 1" class="bg-light text-info">
         <template x-if="selectedEntity !== null">
           <div class="d-flex align-items-center justify-content-between p-2">
@@ -402,6 +402,111 @@
                               x-model="field.value"
                               :required="field.required"
                             ></textarea>
+                          </div>
+                        </div>
+                        {{ partial "history.html" . }}
+                      </div>
+                    </template>
+                    <template x-if="field.type === 'upload'">
+                      <div class="container-fluid px-0 mb-3">
+                        <div class="row g-0">
+                          <div class="col-12 g-0">
+                            <div class="d-flex">
+                              <div class="flex-grow-1 d-flex">
+                                {{ partial "history/history-mark.html" . }}
+                                <label
+                                  class="form-label pt-1"
+                                  x-text="field.label"
+                                ></label>
+                                {{ partial "form/mandatory.html" . }}
+                              </div>
+                              <div>
+                                {{ partial "form/comments.html" (dict "comments"
+                                false) }}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 px-0">
+                            <div class="container-fluid">
+                              <div class="row gap-0 pt-2">
+                                <div class="col-10">
+                                  <div class="d-flex flex-column gap-2">
+                                    <div
+                                      class="d-flex flex-column border border-2 border-dashed-1 rounded p-2"
+                                    >
+                                      <section
+                                        class="d-flex align-items-center gap-2"
+                                      >
+                                        <svg
+                                          class="text-danger"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="14"
+                                          height="14"
+                                          fill="currentColor"
+                                          viewBox="0 0 512 512"
+                                        >
+                                          <use xlink:href="#far-file-alt"></use>
+                                        </svg>
+                                        Identity Verification #1
+                                        <span class="badge text-bg-danger"
+                                          >1/1</span
+                                        >
+                                      </section>
+                                      <section
+                                        class="w-100 p-4 d-flex justify-content-center align-items-center"
+                                      >
+                                        <h4 class="mb-0 text-muted opacity-50">
+                                          Drag files here
+                                        </h4>
+                                      </section>
+                                    </div>
+
+                                    <div
+                                      class="d-flex flex-column border border-2 border-dashed-1 rounded p-2"
+                                    >
+                                      <section
+                                        class="d-flex align-items-center gap-2"
+                                      >
+                                        <svg
+                                          class="text-danger"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="14"
+                                          height="14"
+                                          fill="currentColor"
+                                          viewBox="0 0 512 512"
+                                        >
+                                          <use xlink:href="#far-file-alt"></use>
+                                        </svg>
+                                        Identity Verification #1
+                                        <span class="badge text-bg-danger"
+                                          >1/1</span
+                                        >
+                                      </section>
+                                      <section
+                                        class="w-100 p-4 d-flex justify-content-center align-items-center"
+                                      >
+                                        <h4 class="mb-0 text-muted opacity-50">
+                                          Drag files here
+                                        </h4>
+                                      </section>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-2">
+                                  <div class="d-flex flex-column gap-1">
+                                    <button class="btn btn-outline-primary">
+                                      Select files
+                                    </button>
+                                    <button class="btn btn-outline-primary">
+                                      Take a Photo
+                                    </button>
+                                    <button class="btn btn-outline-primary">
+                                      Link Activities
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         {{ partial "history.html" . }}

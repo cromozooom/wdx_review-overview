@@ -14,6 +14,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Meno",
@@ -48,6 +49,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Sebastiano Argenti",
@@ -70,6 +72,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "tphilippon0@e-recht24.de",
@@ -86,6 +89,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1992-09-12",
@@ -108,6 +112,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1986-06-15",
@@ -124,6 +129,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Last Update",
                 "name": "kylcu",
                 "value": "1986-06-15",
@@ -139,6 +145,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -152,23 +159,24 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
-                "value": "heigh",
+                "value": "high",
                 "required": true,
                 "history": [
                   {
                     "time": "2024-07-11T08:21:57.687Z",
                     "valueAfter": "medium",
-                    "value": "heigh",
+                    "value": "high",
                     "user": "Luna Nicu"
                   }
                 ]
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -217,6 +225,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -245,6 +254,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -254,7 +264,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": "4",
                 "required": true,
@@ -293,6 +304,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -302,6 +314,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -311,6 +324,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -320,6 +334,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -329,6 +344,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -343,6 +359,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -370,6 +387,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -384,6 +402,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -393,6 +412,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -407,6 +427,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -417,6 +438,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -443,6 +491,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Roxine",
@@ -459,6 +508,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Edgehill",
@@ -475,6 +525,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "redgehill1@google.co.jp",
@@ -491,6 +542,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1996-05-13",
@@ -513,6 +565,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1986-06-15",
@@ -529,6 +582,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Last Update",
                 "name": "kyclu",
                 "value": "1986-06-15",
@@ -544,6 +598,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -557,8 +612,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "medium",
@@ -567,6 +622,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -615,6 +671,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -650,6 +707,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -659,7 +717,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": "6",
                 "required": true,
@@ -698,6 +757,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -707,6 +767,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -716,6 +777,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -725,6 +787,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -734,6 +797,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -748,6 +812,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -775,6 +840,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -789,6 +855,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -798,6 +865,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -812,6 +880,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -822,6 +891,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -848,6 +944,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Fidole",
@@ -857,6 +954,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Beamish",
@@ -866,6 +964,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "fbeamish2@blogger.com",
@@ -875,6 +974,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1958-11-08",
@@ -884,6 +984,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1991-06-15",
@@ -893,6 +994,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Last Update",
                 "name": "kyclu",
                 "value": "1991-06-15",
@@ -901,6 +1003,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -914,8 +1017,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "medium",
@@ -924,13 +1027,14 @@
                   {
                     "time": "2024-07-11T08:21:34.602Z",
                     "valueAfter": "medium",
-                    "value": "heigh",
+                    "value": "high",
                     "user": "Luna Nicu"
                   }
                 ]
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -966,6 +1070,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -994,6 +1099,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": "6",
@@ -1003,7 +1109,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": "0",
                 "required": true,
@@ -1017,6 +1124,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -1026,6 +1134,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -1035,6 +1144,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -1044,6 +1154,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -1053,6 +1164,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -1067,6 +1179,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -1094,6 +1207,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -1108,6 +1222,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -1117,6 +1232,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -1131,6 +1247,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -1141,6 +1258,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -1167,6 +1311,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Irv",
@@ -1176,6 +1321,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "O'Flannery",
@@ -1185,6 +1331,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "fbeamish2@blogger.com",
@@ -1194,6 +1341,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1934-09-27",
@@ -1203,6 +1351,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1986-06-15",
@@ -1212,6 +1361,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Last Update",
                 "name": "kyclu",
                 "value": "1986-06-15",
@@ -1220,6 +1370,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -1233,8 +1384,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "low",
@@ -1243,6 +1394,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -1278,6 +1430,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -1306,6 +1459,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -1315,7 +1469,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": "5",
                 "required": true,
@@ -1329,6 +1484,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -1338,6 +1494,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -1347,6 +1504,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -1356,6 +1514,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -1365,6 +1524,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -1379,6 +1539,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -1406,6 +1567,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -1420,6 +1582,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -1429,6 +1592,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -1443,6 +1607,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -1453,6 +1618,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -1479,6 +1671,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Courtney",
@@ -1488,6 +1681,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Bowley",
@@ -1497,6 +1691,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "cbowley4@ft.com",
@@ -1506,6 +1701,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1988-06-15",
@@ -1515,6 +1711,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1986-06-15",
@@ -1524,6 +1721,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Last Update",
                 "name": "kyclu",
                 "value": "1986-06-15",
@@ -1532,6 +1730,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -1545,8 +1744,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "low",
@@ -1555,6 +1754,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -1590,6 +1790,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -1618,6 +1819,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -1627,7 +1829,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
@@ -1641,6 +1844,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -1650,6 +1854,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -1659,6 +1864,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -1668,6 +1874,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -1677,6 +1884,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -1691,6 +1899,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -1718,6 +1927,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -1732,6 +1942,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -1741,6 +1952,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -1755,6 +1967,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -1765,6 +1978,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -1791,6 +2031,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Deeanne",
@@ -1800,6 +2041,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Husk",
@@ -1809,6 +2051,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "dhusk5@booking.com",
@@ -1818,6 +2061,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1951-02-19",
@@ -1827,6 +2071,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1986-06-15",
@@ -1835,6 +2080,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -1848,8 +2094,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "medium",
@@ -1858,13 +2104,14 @@
                   {
                     "time": "2024-07-09T13:45:51.433Z",
                     "valueAfter": "medium",
-                    "value": "heigh",
+                    "value": "high",
                     "user": "Razvan Nicu"
                   }
                 ]
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -1900,6 +2147,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -1928,6 +2176,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -1937,7 +2186,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
@@ -1964,6 +2214,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -1973,6 +2224,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -1982,6 +2234,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -1991,6 +2244,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -2000,6 +2254,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -2014,6 +2269,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -2041,6 +2297,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -2055,6 +2312,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -2064,6 +2322,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -2078,6 +2337,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -2088,6 +2348,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -2114,6 +2401,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Naomi",
@@ -2123,6 +2411,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Dougharty",
@@ -2132,6 +2421,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "ndougharty0@blogs.com",
@@ -2141,6 +2431,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1993-03-18",
@@ -2150,6 +2441,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1992-02-18",
@@ -2158,6 +2450,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -2171,8 +2464,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "medium",
@@ -2181,6 +2474,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -2216,6 +2510,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -2244,6 +2539,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -2253,7 +2549,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
@@ -2267,6 +2564,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -2276,6 +2574,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -2285,6 +2584,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -2294,6 +2594,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -2303,6 +2604,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -2317,6 +2619,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -2344,6 +2647,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -2358,6 +2662,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -2367,6 +2672,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -2381,6 +2687,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -2391,6 +2698,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -2417,6 +2751,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Kelcey",
@@ -2426,6 +2761,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Antoszczyk",
@@ -2435,6 +2771,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "kantoszczyk1@merriam-webster.com",
@@ -2444,6 +2781,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1994-02-19",
@@ -2453,6 +2791,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1980-01-10",
@@ -2461,6 +2800,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -2474,8 +2814,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "low",
@@ -2484,6 +2824,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -2519,6 +2860,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -2547,6 +2889,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -2556,7 +2899,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": "6",
                 "required": true,
@@ -2570,6 +2914,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -2579,6 +2924,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -2588,6 +2934,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -2597,6 +2944,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -2606,6 +2954,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -2620,6 +2969,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -2647,6 +2997,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -2661,6 +3012,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -2670,6 +3022,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -2684,6 +3037,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -2694,6 +3048,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -2720,6 +3101,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Delainey",
@@ -2729,6 +3111,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Bernhart",
@@ -2738,6 +3121,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "dbernhart2@example.com",
@@ -2747,6 +3131,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1959-05-11",
@@ -2756,6 +3141,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "",
@@ -2764,6 +3150,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -2777,8 +3164,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "medium",
@@ -2787,6 +3174,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -2822,6 +3210,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -2850,6 +3239,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -2859,7 +3249,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
@@ -2873,6 +3264,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -2882,6 +3274,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -2891,6 +3284,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -2900,6 +3294,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -2909,6 +3304,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -2923,6 +3319,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -2950,6 +3347,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -2964,6 +3362,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -2973,6 +3372,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -2987,6 +3387,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -2997,6 +3398,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -3023,6 +3451,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Yehudi",
@@ -3032,6 +3461,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "McPhate",
@@ -3041,6 +3471,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "ymcphate3@reference.com",
@@ -3050,6 +3481,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1988-06-15",
@@ -3066,6 +3498,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1986-06-15",
@@ -3081,6 +3514,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -3094,16 +3528,16 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
-                "value": "heigh",
+                "value": "high",
                 "required": true,
                 "history": [
                   {
                     "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
+                    "valueAfter": "high",
                     "value": "low",
                     "user": "Razvan Nicu"
                   }
@@ -3111,6 +3545,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -3153,6 +3588,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -3181,6 +3617,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -3190,7 +3627,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
@@ -3217,6 +3655,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -3226,6 +3665,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -3235,6 +3675,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -3244,6 +3685,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -3253,6 +3695,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -3267,6 +3710,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -3294,6 +3738,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -3308,6 +3753,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -3317,6 +3763,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -3331,6 +3778,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -3341,6 +3789,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -3367,6 +3842,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Delinda",
@@ -3383,6 +3859,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Sweet",
@@ -3399,6 +3876,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "dsweet4@imageshack.us",
@@ -3415,6 +3893,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1953-10-09",
@@ -3437,6 +3916,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1995-10-20",
@@ -3458,6 +3938,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -3471,16 +3952,16 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
-                "value": "heigh",
+                "value": "high",
                 "required": true,
                 "history": [
                   {
                     "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
+                    "valueAfter": "high",
                     "value": "low",
                     "user": "Razvan Nicu"
                   }
@@ -3488,6 +3969,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -3530,6 +4012,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -3558,6 +4041,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -3567,7 +4051,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
@@ -3594,6 +4079,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -3603,6 +4089,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -3612,6 +4099,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -3621,6 +4109,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -3630,6 +4119,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -3644,6 +4134,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -3671,6 +4162,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -3685,6 +4177,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -3694,6 +4187,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -3708,6 +4202,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -3718,6 +4213,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -3744,6 +4266,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Ferdinanda",
@@ -3766,6 +4289,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Andrick",
@@ -3788,6 +4312,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "fandrick5@ca.gov",
@@ -3810,6 +4335,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1995-10-22",
@@ -3838,6 +4364,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1989-10-12",
@@ -3865,6 +4392,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -3878,8 +4406,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "medium",
@@ -3887,20 +4415,21 @@
                 "history": [
                   {
                     "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
+                    "valueAfter": "high",
                     "value": "low",
                     "user": "Razvan Nicu"
                   },
                   {
                     "time": "2024-07-11T08:25:42.413Z",
                     "valueAfter": "medium",
-                    "value": "heigh",
+                    "value": "high",
                     "user": "Luna Nicu"
                   }
                 ]
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -3943,6 +4472,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -3971,6 +4501,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -3980,7 +4511,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
@@ -4007,6 +4539,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -4016,6 +4549,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -4025,6 +4559,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -4034,6 +4569,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -4043,6 +4579,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -4057,6 +4594,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -4084,6 +4622,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -4098,6 +4637,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -4107,6 +4647,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -4121,6 +4662,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -4131,6 +4673,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -4157,6 +4726,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Hew",
@@ -4166,6 +4736,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Minigo",
@@ -4175,6 +4746,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "hminigo6@meetup.com",
@@ -4184,6 +4756,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1930-04-13",
@@ -4193,6 +4766,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1994-10-19",
@@ -4201,6 +4775,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -4214,8 +4789,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "low",
@@ -4224,6 +4799,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -4259,6 +4835,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -4287,6 +4864,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -4296,7 +4874,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
@@ -4310,6 +4889,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -4319,6 +4899,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -4328,6 +4909,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -4337,6 +4919,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -4346,6 +4929,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -4360,6 +4944,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -4387,6 +4972,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -4401,6 +4987,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -4410,6 +4997,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -4424,6 +5012,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -4434,6 +5023,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -4460,6 +5076,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Reynold",
@@ -4469,6 +5086,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Hay",
@@ -4478,6 +5096,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "rhay7@webnode.com",
@@ -4487,6 +5106,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1998-11-13",
@@ -4496,6 +5116,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1994-10-08",
@@ -4504,6 +5125,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -4517,8 +5139,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "low",
@@ -4527,6 +5149,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -4562,6 +5185,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -4590,6 +5214,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -4599,7 +5224,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
@@ -4613,6 +5239,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -4622,6 +5249,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -4631,6 +5259,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -4640,6 +5269,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -4649,6 +5279,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -4663,6 +5294,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -4690,6 +5322,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -4704,6 +5337,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -4713,6 +5347,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -4727,6 +5362,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -4737,6 +5373,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -4763,6 +5426,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Sharline",
@@ -4772,6 +5436,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Rodnight",
@@ -4781,6 +5446,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "srodnight8@taobao.com",
@@ -4790,6 +5456,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1995-11-19",
@@ -4799,6 +5466,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1996-12-18",
@@ -4807,6 +5475,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -4820,8 +5489,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "low",
@@ -4830,6 +5499,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -4865,6 +5535,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -4893,6 +5564,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -4902,7 +5574,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
@@ -4916,6 +5589,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -4925,6 +5599,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -4934,6 +5609,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -4943,6 +5619,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -4952,6 +5629,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -4966,6 +5644,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -4993,6 +5672,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -5007,6 +5687,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -5016,6 +5697,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -5030,6 +5712,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -5040,6 +5723,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -5066,6 +5776,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Flory",
@@ -5075,6 +5786,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Paine",
@@ -5084,6 +5796,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "fpaine9@marketwatch.com",
@@ -5093,6 +5806,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "2014-01-20",
@@ -5102,6 +5816,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1979-10-11",
@@ -5110,6 +5825,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -5123,8 +5839,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "low",
@@ -5133,6 +5849,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -5168,6 +5885,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -5196,6 +5914,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -5205,7 +5924,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": "6",
                 "required": true,
@@ -5219,6 +5939,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -5228,6 +5949,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -5237,6 +5959,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -5246,6 +5969,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -5255,6 +5979,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -5269,6 +5994,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -5296,6 +6022,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -5310,6 +6037,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -5319,6 +6047,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -5333,6 +6062,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -5343,6 +6073,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -5369,6 +6126,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Othelia",
@@ -5378,6 +6136,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Dreini",
@@ -5387,6 +6146,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "john.doe@example.com",
@@ -5396,6 +6156,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1988-06-15",
@@ -5405,6 +6166,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1986-06-15",
@@ -5413,6 +6175,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -5426,16 +6189,16 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
-                "value": "heigh",
+                "value": "high",
                 "required": true,
                 "history": [
                   {
                     "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "heigh",
+                    "valueAfter": "high",
                     "value": "low",
                     "user": "Razvan Nicu"
                   }
@@ -5443,6 +6206,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -5478,6 +6242,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -5506,6 +6271,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -5515,7 +6281,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": 2,
                 "required": true,
@@ -5529,6 +6296,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -5538,6 +6306,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -5547,6 +6316,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -5556,6 +6326,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -5565,6 +6336,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -5579,6 +6351,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -5606,6 +6379,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -5620,6 +6394,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -5629,6 +6404,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -5643,6 +6419,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -5653,6 +6430,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -5679,6 +6483,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Alvera",
@@ -5688,6 +6493,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Paris",
@@ -5697,6 +6503,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "aparisb@cbslocal.com",
@@ -5706,6 +6513,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "1972-02-11",
@@ -5715,6 +6523,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1960-04-08",
@@ -5723,6 +6532,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -5736,8 +6546,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "low",
@@ -5746,6 +6556,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -5781,6 +6592,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -5809,6 +6621,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -5818,7 +6631,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": "6",
                 "required": true,
@@ -5832,6 +6646,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -5841,6 +6656,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -5850,6 +6666,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -5859,6 +6676,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -5868,6 +6686,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -5882,6 +6701,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -5909,6 +6729,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -5923,6 +6744,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -5932,6 +6754,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -5946,6 +6769,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -5956,6 +6780,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",
@@ -5982,6 +6833,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "First Name",
                 "name": "first_name",
                 "value": "Andromache",
@@ -5991,6 +6843,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Last Name",
                 "name": "last_name",
                 "value": "Van der Veldt",
@@ -6000,6 +6853,7 @@
               {
                 "hidden": false,
                 "type": "email",
+                "comments": [],
                 "label": "Email",
                 "name": "email",
                 "value": "avanderveldtc@mac.com",
@@ -6009,6 +6863,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "Date of Birth",
                 "name": "dob",
                 "value": "2013-10-19",
@@ -6018,6 +6873,7 @@
               {
                 "hidden": false,
                 "type": "date",
+                "comments": [],
                 "label": "KYC Update",
                 "name": "kycu",
                 "value": "1993-09-19",
@@ -6026,6 +6882,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
                 "name": "risk_level",
@@ -6039,8 +6896,8 @@
                     "value": "medium"
                   },
                   {
-                    "label": "Heigh",
-                    "value": "heigh"
+                    "label": "High",
+                    "value": "high"
                   }
                 ],
                 "value": "low",
@@ -6049,6 +6906,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Stage",
                 "name": "stage",
@@ -6084,6 +6942,7 @@
               },
               {
                 "type": "dropdown",
+                "comments": [],
                 "hidden": false,
                 "label": "Contact Type",
                 "name": "contact_type",
@@ -6112,6 +6971,7 @@
               {
                 "hidden": true,
                 "type": "number",
+                "comments": [],
                 "label": "Mandatory documents",
                 "name": "mandatory_documents",
                 "value": 6,
@@ -6121,7 +6981,8 @@
               {
                 "hidden": false,
                 "type": "number",
-                "label": "Documents uploaded",
+                "comments": [],
+                "label": "Documents",
                 "name": "documents_uploaded",
                 "value": "6",
                 "required": true,
@@ -6135,6 +6996,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Phone Number",
                 "name": "phone",
                 "value": "123-456-7890",
@@ -6144,6 +7006,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Address",
                 "name": "address",
                 "value": "123 Main St",
@@ -6153,6 +7016,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "City",
                 "name": "city",
                 "value": "Anytown",
@@ -6162,6 +7026,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "State",
                 "name": "state",
                 "value": "CA",
@@ -6171,6 +7036,7 @@
               {
                 "hidden": false,
                 "type": "text",
+                "comments": [],
                 "label": "Zip Code",
                 "name": "zip",
                 "value": "12345",
@@ -6185,6 +7051,7 @@
               {
                 "hidden": false,
                 "type": "dropdown",
+                "comments": [],
                 "label": "Rate your experience",
                 "name": "experience_rating",
                 "options": [
@@ -6212,6 +7079,7 @@
               {
                 "hidden": false,
                 "type": "textarea",
+                "comments": [],
                 "label": "Comments",
                 "name": "comments",
                 "value": "Great service!",
@@ -6226,6 +7094,7 @@
               {
                 "hidden": false,
                 "type": "switch",
+                "comments": [],
                 "label": "Email Notifications",
                 "name": "email_notifications",
                 "value": true,
@@ -6235,6 +7104,7 @@
               {
                 "hidden": false,
                 "type": "checkbox",
+                "comments": [],
                 "label": "SMS Notifications",
                 "name": "sms_notifications",
                 "value": false,
@@ -6249,6 +7119,7 @@
               {
                 "hidden": false,
                 "type": "radio",
+                "comments": [],
                 "label": "Subscribe to Newsletter",
                 "name": "newsletter",
                 "options": [
@@ -6259,6 +7130,33 @@
                   {
                     "label": "No",
                     "value": "no"
+                  }
+                ],
+                "value": "yes",
+                "required": true,
+                "history": []
+              }
+            ]
+          },
+          {
+            "title": "Documents Upload",
+            "fields": [
+              {
+                "hidden": false,
+                "type": "upload",
+                "comments": [],
+                "label": "Documents",
+                "name": "documents_uploaded",
+                "doc": [
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "pdf",
+                    "size": "3562"
+                  },
+                  {
+                    "name": "This is a new document uploaded Name",
+                    "type": "xcel",
+                    "size": "3562"
                   }
                 ],
                 "value": "yes",

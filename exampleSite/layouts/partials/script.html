@@ -2,6 +2,8 @@
   function entityComponent() {
     return {
       entities: [],
+      showForms: false,
+      flagIcon: true,
       switchColumns: false,
       showBannerInfo: true,
       showSideNav: false,
@@ -87,6 +89,13 @@
         });
         this.saveToLocalStorage();
         alert("Form data saved successfully!");
+      },
+      getFullName(entity) {
+        if (entity.type === "person") {
+          return `${entity.name} ${entity.surname}`;
+        } else {
+          return entity.name;
+        }
       },
       selectEntity(entityId, index) {
         const originalIndex = this.entities.findIndex(
