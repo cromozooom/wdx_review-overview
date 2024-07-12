@@ -1,0 +1,10 @@
+<div class="col-9 overflow-hidden h-100">
+  <div class="d-flex w-100 overflow-hidden h-100">
+    <div class="d-flex flex-column w-100 overflow-hidden">
+      {{ partial "review-header.html" . }}
+      <div class="flex-grow-1 d-flex overflow-y-hidden h-100">
+        {{ partial "users.html" . }} {{ partial "edit.html" . }}
+      </div>
+    </div>
+  </div>
+</div>

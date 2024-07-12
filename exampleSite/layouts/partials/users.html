@@ -1,5 +1,5 @@
 <template x-if="gridView">
-  <section id="users" class="col-9 gap-0 border-end h-100 d-flex flex-column">
+  <section id="users" class="col-12 gap-0 border-end h-100 d-flex flex-column">
     <div class="overflow-y-scroll flex-grow-1">
       <div class="table-responsive">
         <table class="table users table-hover">
@@ -199,9 +199,17 @@
   </section>
 </template>
 <template x-if="!gridView">
-  <section id="users" class="col-3 gap-0 border-end h-100 d-flex flex-column">
+  <section
+    id="users"
+    class="col-4 gap-0 border-end d-flex flex-column overflow-y-hidden"
+  >
     <div class="overflow-y-scroll flex-grow-1">
       <div class="d-flex flex-column gap-3 p-2">
+        <template x-if="selectedEntity === null">
+          <div class="d-flex justify-content-center p-4">
+            <span>start from beginning ...</span>
+          </div>
+        </template>
         <template x-for="(entity, index) in filteredEntities" :key="entity.id">
           <div class="w-100 d-flex flex-column position-relative">
             <button
@@ -235,7 +243,7 @@
                                 <div
                                   class="text-primary d-flex gap-2 align-items-center"
                                 >
-                                  <span @click="showForms = !showForms">
+                                  <span>
                                     <svg
                                       xmlns="http://www.w3.org/2000/svg"
                                       width="14"
