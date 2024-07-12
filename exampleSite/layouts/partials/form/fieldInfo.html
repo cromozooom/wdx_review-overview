@@ -1,0 +1,33 @@
+{{ if eq .comments true }}
+<div>
+  <button x-tooltip="View comments" class="btn btn-link">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <use xlink:href="#chat-left-fill"></use>
+    </svg>
+  </button>
+</div>
+{{ else }}
+<div>
+  <span
+    x-tooltip="No comments"
+    class="btn btn-link cursor-default text-muted opacity-25"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <use xlink:href="#chat-left"></use>
+    </svg>
+  </span>
+</div>
+
+{{ end }}

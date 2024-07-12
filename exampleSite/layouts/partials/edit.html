@@ -1,6 +1,6 @@
 <template x-if="!gridView">
   <section id="edit" class="col-6 flex-grow-1 h-100 d-flex flex-column">
-    <div class="sticky-top bg-white shadow shadow-sm">
+    <div class="sticky-top bg-white border-bottom">
       <div style="--bs-bg-opacity: 1" class="bg-light text-info">
         <template x-if="selectedEntity !== null">
           <div class="d-flex align-items-center justify-content-between p-2">
@@ -18,55 +18,6 @@
               </template>
             </template>
             <div class="btn-group">
-              <template x-if="entityHasHistory(selectedEntity)">
-                <button
-                  class="btn rounded-start d-flex align-items-center gap-2"
-                  :class="showHistory ? 'btn-primary' : 'btn-outline-primary'"
-                  @click="showHistory = !showHistory"
-                >
-                  <svg
-                    x-show="showHistory"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-clock-history"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z"
-                    />
-                    <path
-                      d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z"
-                    />
-                    <path
-                      d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5"
-                    />
-                  </svg>
-                  <svg
-                    x-show="!showHistory"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-clock-history"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z"
-                    />
-                    <path
-                      d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z"
-                    />
-                    <path
-                      d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5"
-                    />
-                  </svg>
-                  <span x-text="showHistory ? 'Hide' : 'Show'"></span>
-
-                  History
-                </button>
-              </template>
               <button
                 :class="entityHasHistory(selectedEntity) ? '' : 'rounded-start'"
                 class="btn btn-outline-primary d-flex align-items-center gap-2"
@@ -117,7 +68,15 @@
                 <div class="container-fluid px-0">
                   <div class="row g-0">
                     <div class="col-12 g-0">
-                      <h3 x-text="section.title" class="h6 p-2"></h3>
+                      <div class="d-flex">
+                        <div class="flex-grow-1">
+                          <h3 x-text="section.title" class="h6 p-2"></h3>
+                        </div>
+                        <div>
+                          {{ partial "form/comments.html" (dict "comments"
+                          false) }}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -126,26 +85,43 @@
                   :key="field.name"
                 >
                   <div
+                    x-data="{showFieldHistory: false}"
                     class="w-100 py-2"
                     :class="showHistory ? 'hover-primary-subtile' : ''"
                   >
                     <template x-if="field.type === 'number'">
                       <div class="container-fluid px-0 mb-3">
                         <div class="row g-0">
-                          <div class="col-4 px-2">
-                            <label
-                              class="form-label"
-                              x-text="field.label"
-                            ></label>
+                          <div class="col-4">
+                            <div class="d-flex align-items-startgap-1">
+                              {{ partial "history/history-mark.html" . }}
+                              <label
+                                class="form-label pt-2"
+                                x-text="field.label"
+                              ></label>
+                              {{ partial "form/mandatory.html" . }}
+                            </div>
                           </div>
-                          <div class="col-8 pe-2">
-                            <input
-                              type="number"
-                              class="form-control"
-                              :name="field.name"
-                              x-model="field.value"
-                              :required="field.required"
-                            />
+                          <div class="col-8">
+                            <div class="d-flex w-100 align-items-start">
+                              <div class="flex-grow-1">
+                                <input
+                                  type="number"
+                                  class="form-control is-invalid"
+                                  :name="field.name"
+                                  x-model="field.value"
+                                  :required="field.required"
+                                />
+                                <div
+                                  id="validationServerUsernameFeedback"
+                                  class="invalid-feedback"
+                                >
+                                  Please choose a username.
+                                </div>
+                              </div>
+                              {{ partial "form/comments.html" (dict "comments"
+                              true) }}
+                            </div>
                           </div>
                         </div>
                         {{ partial "history.html" . }}
@@ -154,20 +130,30 @@
                     <template x-if="field.type === 'text'">
                       <div class="container-fluid px-0 mb-3">
                         <div class="row g-0">
-                          <div class="col-4 px-2">
-                            <label
-                              class="form-label"
-                              x-text="field.label"
-                            ></label>
+                          <div class="col-4">
+                            <div class="d-flex gap-1">
+                              {{ partial "history/history-mark.html" . }}
+                              <label
+                                class="form-label pt-2"
+                                x-text="field.label"
+                              ></label>
+                              {{ partial "form/mandatory.html" . }}
+                            </div>
                           </div>
-                          <div class="col-8 pe-2">
-                            <input
-                              type="text"
-                              class="form-control"
-                              :name="field.name"
-                              x-model="field.value"
-                              :required="field.required"
-                            />
+                          <div class="col-8">
+                            <div class="d-flex w-100 align-items-center">
+                              <div class="flex-grow-1">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  :name="field.name"
+                                  x-model="field.value"
+                                  :required="field.required"
+                                />
+                              </div>
+                              {{ partial "form/comments.html" (dict "comments"
+                              false) }}
+                            </div>
                           </div>
                         </div>
                         {{ partial "history.html" . }}
@@ -176,23 +162,30 @@
                     <template x-if="field.type === 'email'">
                       <div class="container-fluid px-0 mb-3">
                         <div class="row g-0">
-                          <div class="col-4 px-2">
-                            <label
-                              class="form-label"
-                              x-text="field.label"
-                            ></label>
-                            <template x-if="field.required">
-                              <span class="text-danger">*</span>
-                            </template>
+                          <div class="col-4">
+                            <div class="d-flex gap-1">
+                              {{ partial "history/history-mark.html" . }}
+                              <label
+                                class="form-label pt-2"
+                                x-text="field.label"
+                              ></label>
+                              {{ partial "form/mandatory.html" . }}
+                            </div>
                           </div>
-                          <div class="col-8 pe-2">
-                            <input
-                              type="email"
-                              class="form-control"
-                              :name="field.name"
-                              x-model="field.value"
-                              :required="field.required"
-                            />
+                          <div class="col-8">
+                            <div class="d-flex">
+                              <div class="flex-grow-1">
+                                <input
+                                  type="email"
+                                  class="form-control"
+                                  :name="field.name"
+                                  x-model="field.value"
+                                  :required="field.required"
+                                />
+                              </div>
+                              {{ partial "form/comments.html" (dict "comments"
+                              false) }}
+                            </div>
                           </div>
                         </div>
                         {{ partial "history.html" . }}
@@ -201,23 +194,30 @@
                     <template x-if="field.type === 'date'">
                       <div class="container-fluid px-0 mb-3">
                         <div class="row g-0">
-                          <div class="col-4 px-2">
-                            <label
-                              class="form-label"
-                              x-text="field.label"
-                            ></label>
-                            <template x-if="field.required">
-                              <span class="text-danger">*</span>
-                            </template>
+                          <div class="col-4">
+                            <div class="d-flex">
+                              {{ partial "history/history-mark.html" . }}
+                              <label
+                                class="form-label pt-2"
+                                x-text="field.label"
+                              ></label>
+                              {{ partial "form/mandatory.html" . }}
+                            </div>
                           </div>
-                          <div class="col-8 pe-2">
-                            <input
-                              type="date"
-                              class="form-control"
-                              :name="field.name"
-                              x-model="field.value"
-                              :required="field.required"
-                            />
+                          <div class="col-8">
+                            <div class="d-flex w-100">
+                              <div class="d-flex flex-grow-1">
+                                <input
+                                  type="date"
+                                  class="form-control"
+                                  :name="field.name"
+                                  x-model="field.value"
+                                  :required="field.required"
+                                />
+                              </div>
+                              {{ partial "form/comments.html" (dict "comments"
+                              false) }}
+                            </div>
                           </div>
                         </div>
                         {{ partial "history.html" . }}
@@ -226,23 +226,30 @@
                     <template x-if="field.type === 'checkbox'">
                       <div class="container-fluid px-0 mb-3">
                         <div class="row g-0">
-                          <div class="col-4 px-2">
-                            <label
-                              class="form-label"
-                              x-text="field.label"
-                            ></label>
-                            <template x-if="field.required">
-                              <span class="text-danger">*</span>
-                            </template>
+                          <div class="col-4">
+                            <div class="d-flex gap-1">
+                              {{ partial "history/history-mark.html" . }}
+                              <label
+                                class="form-label pt-2"
+                                x-text="field.label"
+                              ></label>
+                              {{ partial "form/mandatory.html" . }}
+                            </div>
                           </div>
-                          <div class="col-8 pe-2">
-                            <input
-                              type="checkbox"
-                              class="form-check-input"
-                              :name="field.name"
-                              x-model="field.value"
-                              :required="field.required"
-                            />
+                          <div class="col-8">
+                            <div class="d-flex">
+                              <div class="flex-grow-1 pt-2">
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                  :name="field.name"
+                                  x-model="field.value"
+                                  :required="field.required"
+                                />
+                              </div>
+                              {{ partial "form/comments.html" (dict "comments"
+                              false) }}
+                            </div>
                           </div>
                         </div>
                         {{ partial "history.html" . }}
@@ -251,26 +258,32 @@
                     <template x-if="field.type === 'switch'">
                       <div class="container-fluid px-0 mb-3">
                         <div class="row g-0">
-                          <div class="col-12 g-0 px-2">
-                            <div class="form-check form-switch">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                role="switch"
-                                id="flexSwitchCheckDefault"
-                                :name="field.name"
-                                :value="field.value"
-                                x-model="field.value"
-                                :required="field.required"
-                              />
-                              <label
-                                class="form-check-label"
-                                for="flexSwitchCheckDefault"
-                                x-text="field.label"
-                              ></label>
-                              <template x-if="field.required">
-                                <span class="text-danger">*</span>
-                              </template>
+                          <div class="col-12 g-0">
+                            <div class="d-flex">
+                              <div class="flex-grow-1 d-flex">
+                                {{ partial "history/history-mark.html" . }}
+                                <div class="form-check form-switch pt-2">
+                                  <input
+                                    class="form-check-input mt-1"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="flexSwitchCheckDefault"
+                                    :name="field.name"
+                                    :value="field.value"
+                                    x-model="field.value"
+                                    :required="field.required"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexSwitchCheckDefault"
+                                    x-text="field.label"
+                                  ></label>
+                                  <span class="text-danger">*</span>
+                                  <template x-if="field.required"> </template>
+                                </div>
+                              </div>
+                              {{ partial "form/comments.html" (dict "comments"
+                              false) }}
                             </div>
                           </div>
                         </div>
@@ -280,35 +293,42 @@
                     <template x-if="field.type === 'radio'">
                       <div class="container-fluid px-0 mb-3">
                         <div class="row g-0">
-                          <div class="col-4 px-2">
-                            <label
-                              class="form-label"
-                              x-text="field.label"
-                            ></label>
-                            <template x-if="field.required">
-                              <span class="text-danger">*</span>
-                            </template>
+                          <div class="col-4">
+                            <div class="d-flex">
+                              {{ partial "history/history-mark.html" . }}
+                              <label
+                                class="form-label pt-2"
+                                x-text="field.label"
+                              ></label>
+                              {{ partial "form/mandatory.html" . }}
+                            </div>
                           </div>
-                          <div class="col-8 pe-2">
-                            <template
-                              x-for="option in field.options"
-                              :key="option.value"
-                            >
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  :name="field.name"
-                                  :value="option.value"
-                                  x-model="field.value"
-                                  :required="field.required"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  x-text="option.label"
-                                ></label>
+                          <div class="col-8 pt-1">
+                            <div class="d-flex">
+                              <div class="flex-grow-1">
+                                <template
+                                  x-for="option in field.options"
+                                  :key="option.value"
+                                >
+                                  <div class="form-check">
+                                    <input
+                                      class="form-check-input"
+                                      type="radio"
+                                      :name="field.name"
+                                      :value="option.value"
+                                      x-model="field.value"
+                                      :required="field.required"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      x-text="option.label"
+                                    ></label>
+                                  </div>
+                                </template>
                               </div>
-                            </template>
+                              {{ partial "form/comments.html" (dict "comments"
+                              false) }}
+                            </div>
                           </div>
                         </div>
                         {{ partial "history.html" . }}
@@ -317,33 +337,40 @@
                     <template x-if="field.type === 'dropdown'">
                       <div class="container-fluid px-0 mb-3">
                         <div class="row g-0">
-                          <div class="col-4 px-2">
-                            <label
-                              class="form-label"
-                              x-text="field.label"
-                            ></label>
-                            <template x-if="field.required">
-                              <span class="text-danger">*</span>
-                            </template>
+                          <div class="col-4">
+                            <div class="d-flex gap-1">
+                              {{ partial "history/history-mark.html" . }}
+                              <label
+                                class="form-label pt-2"
+                                x-text="field.label"
+                              ></label>
+                              {{ partial "form/mandatory.html" . }}
+                            </div>
                           </div>
-                          <div class="col-8 pe-2">
-                            <select
-                              class="form-select"
-                              :name="field.name"
-                              x-model="field.value"
-                              :required="field.required"
-                            >
-                              <template
-                                x-for="option in field.options"
-                                :key="option.value"
-                              >
-                                <option
-                                  :value="option.value"
-                                  x-text="option.label"
-                                  :selected="option.value === field.value"
-                                ></option>
-                              </template>
-                            </select>
+                          <div class="col-8">
+                            <div class="d-flex">
+                              <div class="flex-grow-1">
+                                <select
+                                  class="form-select"
+                                  :name="field.name"
+                                  x-model="field.value"
+                                  :required="field.required"
+                                >
+                                  <template
+                                    x-for="option in field.options"
+                                    :key="option.value"
+                                  >
+                                    <option
+                                      :value="option.value"
+                                      x-text="option.label"
+                                      :selected="option.value === field.value"
+                                    ></option>
+                                  </template>
+                                </select>
+                              </div>
+                              {{ partial "form/comments.html" (dict "comments"
+                              false) }}
+                            </div>
                           </div>
                         </div>
                         {{ partial "history.html" . }}
@@ -352,14 +379,21 @@
                     <template x-if="field.type === 'textarea'">
                       <div class="container-fluid px-0 mb-3">
                         <div class="row g-0">
-                          <div class="col-12 g-0 px-2">
-                            <label
-                              class="form-label"
-                              x-text="field.label"
-                            ></label>
-                            <template x-if="field.required">
-                              <span class="text-danger">*</span>
-                            </template>
+                          <div class="col-12 g-0">
+                            <div class="d-flex">
+                              <div class="flex-grow-1 d-flex">
+                                {{ partial "history/history-mark.html" . }}
+                                <label
+                                  class="form-label pt-1"
+                                  x-text="field.label"
+                                ></label>
+                                {{ partial "form/mandatory.html" . }}
+                              </div>
+                              <div>
+                                {{ partial "form/comments.html" (dict "comments"
+                                false) }}
+                              </div>
+                            </div>
                           </div>
                           <div class="col-12 px-2">
                             <textarea
@@ -368,6 +402,111 @@
                               x-model="field.value"
                               :required="field.required"
                             ></textarea>
+                          </div>
+                        </div>
+                        {{ partial "history.html" . }}
+                      </div>
+                    </template>
+                    <template x-if="field.type === 'upload'">
+                      <div class="container-fluid px-0 mb-3">
+                        <div class="row g-0">
+                          <div class="col-12 g-0">
+                            <div class="d-flex">
+                              <div class="flex-grow-1 d-flex">
+                                {{ partial "history/history-mark.html" . }}
+                                <label
+                                  class="form-label pt-1"
+                                  x-text="field.label"
+                                ></label>
+                                {{ partial "form/mandatory.html" . }}
+                              </div>
+                              <div>
+                                {{ partial "form/comments.html" (dict "comments"
+                                false) }}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 px-0">
+                            <div class="container-fluid">
+                              <div class="row gap-0 pt-2">
+                                <div class="col-10">
+                                  <div class="d-flex flex-column gap-2">
+                                    <div
+                                      class="d-flex flex-column border border-2 border-dashed-1 rounded p-2"
+                                    >
+                                      <section
+                                        class="d-flex align-items-center gap-2"
+                                      >
+                                        <svg
+                                          class="text-danger"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="14"
+                                          height="14"
+                                          fill="currentColor"
+                                          viewBox="0 0 512 512"
+                                        >
+                                          <use xlink:href="#far-file-alt"></use>
+                                        </svg>
+                                        Identity Verification #1
+                                        <span class="badge text-bg-danger"
+                                          >1/1</span
+                                        >
+                                      </section>
+                                      <section
+                                        class="w-100 p-4 d-flex justify-content-center align-items-center"
+                                      >
+                                        <h4 class="mb-0 text-muted opacity-50">
+                                          Drag files here
+                                        </h4>
+                                      </section>
+                                    </div>
+
+                                    <div
+                                      class="d-flex flex-column border border-2 border-dashed-1 rounded p-2"
+                                    >
+                                      <section
+                                        class="d-flex align-items-center gap-2"
+                                      >
+                                        <svg
+                                          class="text-danger"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="14"
+                                          height="14"
+                                          fill="currentColor"
+                                          viewBox="0 0 512 512"
+                                        >
+                                          <use xlink:href="#far-file-alt"></use>
+                                        </svg>
+                                        Identity Verification #1
+                                        <span class="badge text-bg-danger"
+                                          >1/1</span
+                                        >
+                                      </section>
+                                      <section
+                                        class="w-100 p-4 d-flex justify-content-center align-items-center"
+                                      >
+                                        <h4 class="mb-0 text-muted opacity-50">
+                                          Drag files here
+                                        </h4>
+                                      </section>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-2">
+                                  <div class="d-flex flex-column gap-1">
+                                    <button class="btn btn-outline-primary">
+                                      Select files
+                                    </button>
+                                    <button class="btn btn-outline-primary">
+                                      Take a Photo
+                                    </button>
+                                    <button class="btn btn-outline-primary">
+                                      Link Activities
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         {{ partial "history.html" . }}

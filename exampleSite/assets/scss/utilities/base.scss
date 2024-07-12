@@ -1,4 +1,5 @@
-x.body {
+xbody,
+.xdev {
   * {
     outline: 1px solid red;
     outline-offset: -1px;
@@ -18,6 +19,9 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
+}
+.cursor-default {
+  cursor: default;
 }
 
 .wysiwyg p:last-child {

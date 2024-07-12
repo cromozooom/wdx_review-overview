@@ -36,6 +36,7 @@
     x-init="loadData()"
     class="w-100 h-100 d-flex"
   >
+    {{ partial "svg.html" . }}
     <template x-if="!widgetOnly">
       <template x-if="showSideNav">
         <nav class="h-100 p-2 border-end bg-light d-flex flex-column">
@@ -132,7 +133,7 @@
                 </button>
                 <h1 class="m-0">WDX1 - Review Overview</h1>
               </nav>
-              <div>
+              <div class="d-flex align-items-center gap-1">
                 <select
                   class="form-select"
                   aria-label="Default select example"
@@ -539,10 +540,18 @@
           </div>
 
           <div class="flex-grow-1 p-0 overflow-hidden">
-            <main class="h-100 d-flex">
-              {{ partial "summary.html" . }} {{ partial "users.html" . }} {{
-              partial "edit.html" . }}
-            </main>
+            <template x-if="!switchColumns">
+              <main class="h-100 d-flex">
+                {{ partial "summary.html" . }} {{ partial "users.html" . }} {{
+                partial "edit.html" . }}
+              </main>
+            </template>
+            <template x-if="switchColumns">
+              <main class="h-100 d-flex">
+                {{ partial "users.html" . }} {{ partial "edit.html" . }} {{
+                partial "summary.html" . }}
+              </main>
+            </template>
           </div>
         </div>
       </main>
