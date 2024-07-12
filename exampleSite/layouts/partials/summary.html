@@ -1,9 +1,10 @@
 <section
   id="formSummary"
-  class="col-3 gap-0 border-end h-100 d-flex flex-column"
+  class="col-3 gap-0 h-100 d-flex flex-column"
+  :class="switchColumns ? 'border-start' : 'border-end'"
 >
   <div
-    class="ps-2 py-1 border-bottom border-start bg-light d-flex justify-content-between hover-opacity"
+    class="ps-2 py-1 border-bottom bg-light d-flex justify-content-between hover-opacity"
   >
     <div class="d-flex flex-column">
       <h3 class="m-0 p-0">Review Form</h3>
@@ -49,6 +50,11 @@
     </div>
   </div>
   <div class="overflow-y-scroll flex-grow-1 z-1" id="editContainer">
+    <template x-if="selectedEntity === null">
+      <div class="d-flex justify-content-center p-4">
+        <span>start from beginning ...</span>
+      </div>
+    </template>
     <template x-if="selectedEntityIndex !== null">
       <div
         data-bs-spy="scroll"

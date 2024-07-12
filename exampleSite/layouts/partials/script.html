@@ -23,6 +23,7 @@
         { name: "Calina Nicu", role: "operator" },
       ],
       activeUser: "Luna Nicu",
+      // activeUser: "Razvan Nicu",
       originalValues: {},
       async loadData() {
         const storedEntities = localStorage.getItem("entities");
@@ -42,6 +43,21 @@
         this.filterEntities();
         this.selectFirstEntity();
       },
+
+      validateSelectedEntity() {
+        if (
+          this.selectedEntityIndex === null ||
+          this.selectedEntityIndex < 0 ||
+          this.selectedEntityIndex >= this.entities.length ||
+          !this.entities[this.selectedEntityIndex]
+        ) {
+          this.selectedEntity = null;
+          this.selectedEntityIndex = null;
+        } else {
+          this.selectedEntity = this.entities[this.selectedEntityIndex];
+        }
+      },
+
       saveToLocalStorage() {
         localStorage.setItem("entities", JSON.stringify(this.entities));
       },
@@ -101,8 +117,8 @@
         const originalIndex = this.entities.findIndex(
           (entity) => entity.id === entityId
         );
-        this.selectedEntity = this.entities[originalIndex];
         this.selectedEntityIndex = index;
+        this.validateSelectedEntity();
         this.currentSection = 0;
         this.cacheOriginalValues();
         this.$nextTick(() => {
