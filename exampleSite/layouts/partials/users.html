@@ -6,7 +6,7 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col"></th>
+              <th scope="col">Mod.</th>
               <th scope="col">Name</th>
               <th scope="col">Role</th>
               <th scope="col">Documents</th>
@@ -43,29 +43,24 @@
                         <svg
                           x-show="!entityHasHistory(entity)"
                           xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
+                          width="14"
+                          height="14"
                           fill="currentColor"
-                          class="bi bi-lightning-charge text-muted opacity-25"
                           viewBox="0 0 16 16"
+                          class="text-muted opacity-25"
                         >
-                          <path
-                            d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41z"
-                          />
+                          <use xlink:href="#far-arrow-flag"></use>
                         </svg>
-
                         <svg
                           x-show="entityHasHistory(entity)"
                           xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
+                          width="14"
+                          height="14"
                           fill="currentColor"
-                          class="bi bi-lightning-charge-fill text-primary"
                           viewBox="0 0 16 16"
+                          class="text-primary"
                         >
-                          <path
-                            d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
-                          />
+                          <use xlink:href="#fas-arrow-flag"></use>
                         </svg>
                       </div>
                     </td>
@@ -89,43 +84,25 @@
                       </template>
                     </td>
                     <td>
-                      <span class="me-2">
+                      <div class="d-flex">
                         <template
                           x-for="(field, fieldIndex) in section.fields"
                           :key="field.name"
                         >
                           <template x-if="field.name === 'documents_uploaded'">
                             <span
-                              class="d-flex align-items-center gap-1"
+                              class="d-flex align-items-center gap-1 badge"
                               x-bind:class="{
-                                      'text-danger': field.value * 1 === 0,
-                                      'text-black': field.value * 1 > 0 && field.value * 1 < 6,
-                                      'text-success': field.value * 1 === 6
+                                      'bg-danger-subtle text-danger-emphasis': field.value * 1 === 0,
+                                      'bg-info-subtle text-info-emphasis': field.value * 1 > 0 && field.value * 1 < 6,
+                                      'bg-success-subtle text-success-emphasis': field.value * 1 === 6
                                     }"
                             >
-                              <template x-if="field.value * 1 === 6">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="16"
-                                  height="16"
-                                  fill="currentColor"
-                                  class="bi bi-check2-square"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path
-                                    d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5z"
-                                  />
-                                  <path
-                                    d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0"
-                                  />
-                                </svg>
-                              </template>
-                              <span x-text="field.value"></span> /
-                              <span>6</span>
+                              <span x-text="field.value + ' / 6'"></span>
                             </span>
                           </template>
                         </template>
-                      </span>
+                      </div>
                     </td>
                     <td>
                       <template
@@ -144,15 +121,9 @@
                                   width="14"
                                   height="14"
                                   fill="currentColor"
-                                  class="bi bi-exclamation-circle"
                                   viewBox="0 0 16 16"
                                 >
-                                  <path
-                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
-                                  />
-                                  <path
-                                    d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
-                                  />
+                                  <use xlink:href="#fas-arrow-flag"></use>
                                 </svg>
                               </button>
                             </template>
@@ -162,9 +133,9 @@
                               style="--bs-bg-opacity: 1"
                               x-text="field.value"
                               x-bind:class="{
-                                    'bg-danger-subtle text-danger': field.value === 'high',
-                                    'text-bg-light': field.value === 'medium',
-                                    'bg-success-subtle text-success': field.value === 'low'
+                                    'bg-danger-subtle text-danger-emphasis': field.value === 'high',
+                                    'bg-info-subtle text-info-emphasis': field.value === 'medium',
+                                    'bg-success-subtle text-success-emphasis': field.value === 'low'
                                   }"
                             >
                             </span>
@@ -419,9 +390,7 @@
                             >
                               <template x-if="field.name === 'dob'">
                                 <span>
-                                  <small class="text-muted">
-                                    KYC Update:
-                                  </small>
+                                  <small class="text-muted"> KYC Update </small>
                                   <br />
                                   <span x-text="field.value"></span>
                                 </span>
@@ -436,7 +405,7 @@
                               <template x-if="field.name === 'kycu'">
                                 <span>
                                   <small class="text-muted">
-                                    KYC Last Update:
+                                    KYC Last Update
                                   </small>
                                   <br />
                                   <span x-text="field.value"></span>
@@ -484,7 +453,7 @@
                             >
                               <template x-if="field.name === 'stage'">
                                 <div class="d-flex flex-column">
-                                  <small class="text-muted"> Stage: </small>
+                                  <small class="text-muted"> Stage </small>
                                   <span
                                     class="text-capitalize"
                                     x-text="field.value"

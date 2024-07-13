@@ -7,19 +7,10 @@
       <div style="--bs-bg-opacity: 1" class="bg-light text-info">
         <template x-if="selectedEntity !== null">
           <div class="d-flex align-items-center justify-content-between p-2">
-            <template
-              x-for="(section, sectionIndex) in selectedEntity.form.sections"
-              :key="section.title"
-            >
-              <template
-                x-for="(field, fieldIndex) in section.fields"
-                :key="field.name"
-              >
-                <template x-if="field.name === 'first_name'">
-                  <h1 class="h4 mb-0 text-primary" x-text="field.value"></h1>
-                </template>
-              </template>
-            </template>
+            <h1 class="h4 mb-0 text-primary">
+              <span x-text="getFullName(selectedEntity)"> </span>
+              <span x-text="' - ' + selectedEntity.form.title"></span>
+            </h1>
             <div class="btn-group">
               <button
                 :class="entityHasHistory(selectedEntity) ? '' : 'rounded-start'"
