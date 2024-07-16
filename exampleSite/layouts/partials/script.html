@@ -4,7 +4,7 @@
       entities: [],
       showForms: false,
       flagIcon: true,
-      switchColumns: false,
+      switchColumns: true,
       showBannerInfo: true,
       showSideNav: false,
       gridView: false,
@@ -48,19 +48,20 @@
         if (
           this.selectedEntityIndex === null ||
           this.selectedEntityIndex < 0 ||
-          this.selectedEntityIndex >= this.entities.length ||
-          !this.entities[this.selectedEntityIndex]
+          this.selectedEntityIndex >= this.filteredEntities.length ||
+          !this.filteredEntities[this.selectedEntityIndex]
         ) {
           this.selectedEntity = null;
           this.selectedEntityIndex = null;
         } else {
-          this.selectedEntity = this.entities[this.selectedEntityIndex];
+          this.selectedEntity = this.filteredEntities[this.selectedEntityIndex];
         }
       },
 
       saveToLocalStorage() {
         localStorage.setItem("entities", JSON.stringify(this.entities));
       },
+
       initializeEntityData() {
         this.entities.forEach((entity) => {
           entity.form.sections.forEach((section) => {
@@ -85,12 +86,15 @@
                   field.value
                 )
               ) {
-                this.trackChange(
-                  field,
+                // Save the previous value in the history before updating
+                const oldValue =
                   this.originalValues[
                     `${entityIndex}-${sectionIndex}-${fieldIndex}`
-                  ]
+                  ];
+                console.log(
+                  `Tracking change for field ${field.name}: ${oldValue} -> ${field.value}`
                 );
+                this.trackChange(field, oldValue);
 
                 // Check if the field is for name or surname and update accordingly
                 if (field.name === "first_name") {
@@ -99,6 +103,11 @@
                 if (field.name === "last_name") {
                   this.entities[entityIndex].surname = field.value;
                 }
+
+                // Update the originalValues with the new value
+                this.originalValues[
+                  `${entityIndex}-${sectionIndex}-${fieldIndex}`
+                ] = field.value;
               }
             });
           });
@@ -106,6 +115,7 @@
         this.saveToLocalStorage();
         alert("Form data saved successfully!");
       },
+
       getFullName(entity) {
         if (entity.type === "person") {
           return `${entity.name} ${entity.surname}`;
@@ -113,6 +123,7 @@
           return entity.name;
         }
       },
+
       selectEntity(entityId, index) {
         const originalIndex = this.entities.findIndex(
           (entity) => entity.id === entityId
@@ -125,6 +136,7 @@
           this.scrollToSelectedEntity();
         });
       },
+
       scrollToSelectedEntity() {
         let selectedElement = document.querySelector(
           '[x-ref="entity-' + this.selectedEntityIndex + '"]'
@@ -136,6 +148,7 @@
           });
         }
       },
+
       scrollFormToSection(index, type) {
         let selectedElement = document.querySelector(
           '[x-ref="' + type + index + '"]'
@@ -154,6 +167,7 @@
           }, 3000); // 3000 milliseconds = 3 seconds
         }
       },
+
       scrollToSection(index) {
         const sectionId = `section${index}`;
         const sectionElement = document.getElementById(sectionId);
@@ -165,6 +179,7 @@
           });
         }
       },
+
       filterEntities() {
         const query = this.searchQuery.toLowerCase();
         const contactTypeFilter = this.contactTypeFilter.toLowerCase();
@@ -204,16 +219,9 @@
         this.filteredEntities.sort((a, b) => a.id - b.id);
 
         // Select the first entity in the filtered list
-        if (this.filteredEntities.length > 0) {
-          this.selectedEntity = this.filteredEntities[0];
-          this.selectedEntityIndex = this.entities.findIndex(
-            (entity) => entity.id === this.selectedEntity.id
-          );
-        } else {
-          this.selectedEntity = null;
-          this.selectedEntityIndex = null;
-        }
+        this.selectFirstEntity();
       },
+
       selectFirstEntity() {
         if (this.filteredEntities.length > 0) {
           this.selectedEntity = this.filteredEntities[0];
@@ -225,6 +233,7 @@
           this.selectedEntityIndex = null;
         }
       },
+
       setRiskLevelFilter(riskLevel) {
         this.selectedRiskLevel = riskLevel;
         this.filterEntities();
@@ -245,6 +254,7 @@
           this.selectEntity(selectedEntityId, this.selectedEntityIndex);
         }
       },
+
       previousEntity() {
         if (this.selectedEntityIndex > 0) {
           this.selectedEntityIndex--;
@@ -253,6 +263,7 @@
           this.selectEntity(selectedEntityId, this.selectedEntityIndex);
         }
       },
+
       duplicateEntity() {
         if (this.selectedEntity !== null) {
           const newEntity = JSON.parse(JSON.stringify(this.selectedEntity));
@@ -265,6 +276,7 @@
           this.saveToLocalStorage();
         }
       },
+
       updateFilteredEntities() {
         const query = this.searchQuery.toLowerCase();
         this.filteredEntities = this.entities.filter((entity) => {
@@ -275,6 +287,7 @@
           return fullName.toLowerCase().includes(query);
         });
       },
+
       downloadData() {
         const dataStr = JSON.stringify(this.entities, null, 2);
         const dataUri =
@@ -285,6 +298,7 @@
         linkElement.setAttribute("download", exportFileDefaultName);
         linkElement.click();
       },
+
       uploadData(event) {
         const file = event.target.files[0];
         if (file) {
@@ -299,6 +313,7 @@
           reader.readAsText(file);
         }
       },
+
       cacheOriginalValues() {
         this.originalValues = {};
         this.entities.forEach((entity, entityIndex) => {
@@ -311,6 +326,7 @@
           });
         });
       },
+
       isFieldChanged(entityIndex, sectionIndex, fieldIndex, newValue) {
         return (
           this.originalValues[
@@ -330,7 +346,24 @@
           field.history = [];
         }
         field.history.push(changeEntry);
+        console.log(`Change tracked for ${field.name}:`, field.history);
       },
+
+      xx_trackChange(field, oldValue) {
+        const currentTime = new Date().toISOString(); // Save time in ISO format
+        const changeEntry = {
+          time: currentTime,
+          valueAfter: field.value,
+          value: oldValue,
+          user: this.activeUser,
+        };
+        if (!field.history) {
+          field.history = [];
+        }
+        field.history.push(changeEntry);
+        console.log(`Change tracked for ${field.name}:`, field.history);
+      },
+
       countFields(sectionIndex) {
         if (
           !this.selectedEntity ||
@@ -388,11 +421,51 @@
       entityHasHistory(entity) {
         return entity.form.sections.some((section) =>
           section.fields.some(
-            (field) => field.history && field.history.length > 0
+            (field) =>
+              field.name !== "risk_level" &&
+              field.history &&
+              field.history.length > 0
           )
         );
       },
 
+      riskLevelChange(field) {
+        const riskValues = {
+          low: 0,
+          medium: 1,
+          high: 2,
+        };
+
+        if (
+          !field ||
+          field.name !== "risk_level" ||
+          !field.history ||
+          field.history.length === 0
+        ) {
+          return "stable";
+        } else {
+          let currentRiskValue = field.value ? field.value.toLowerCase() : "";
+          let previousRiskEntry = field.history[field.history.length - 1];
+          let previousRiskValue = previousRiskEntry.value
+            ? previousRiskEntry.value.toLowerCase()
+            : "";
+
+          let currentRiskNumber = riskValues[currentRiskValue];
+          let previousRiskNumber = riskValues[previousRiskValue];
+
+          console.log(
+            `Risk level change: ${previousRiskValue} (${previousRiskNumber}) -> ${currentRiskValue} (${currentRiskNumber})`
+          );
+
+          if (currentRiskNumber > previousRiskNumber) {
+            return "increased";
+          } else if (currentRiskNumber < previousRiskNumber) {
+            return "decreased";
+          } else {
+            return "stable";
+          }
+        }
+      },
       removeHistoryItem(sectionIndex, fieldIndex, historyIndex) {
         const field =
           this.selectedEntity.form.sections[sectionIndex].fields[fieldIndex];

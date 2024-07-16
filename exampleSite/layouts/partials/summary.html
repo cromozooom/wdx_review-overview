@@ -14,12 +14,24 @@
           <strong class="text-uppercase"> r1 </strong>
           for
           <span class="badge text-info-emphasis bg-info-subtle"
-            >Meno Sebastiano Argenti
+            >123456789
           </span>
         </p>
       </div>
     </div>
     <div>
+      <button class="btn btn-link btn-sm hover-opacity_el">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-floppy"
+          viewBox="0 0 512 512"
+        >
+          <use xlink:href="#far-print"></use>
+        </svg>
+      </button>
       <button
         class="btn btn-sm btn-link hover-opacity_el"
         @click="switchColumns = !switchColumns"
@@ -28,22 +40,22 @@
           <svg
             width="16"
             height="16"
-            viewBox="0 0 16 16"
+            viewBox="0 0 448 512"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <use xlink:href="#switchColumns"></use>
+            <use xlink:href="#far-arrow-right-to-line"></use>
           </svg>
         </template>
         <template x-if="switchColumns">
           <svg
             width="16"
             height="16"
-            viewBox="0 0 16 16"
-            fill="none"
+            viewBox="0 0 448 512"
+            fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <use xlink:href="#switchColumnsReverse"></use>
+            <use xlink:href="#far-arrow-left-to-line"></use>
           </svg>
         </template>
       </button>

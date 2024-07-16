@@ -111,7 +111,30 @@
                       >
                         <template x-if="field.name === 'risk_level'">
                           <div class="d-flex align-items-center gap-1">
-                            <template x-if="field.history.length > 0">
+                            <template
+                              x-if="riskLevelChange(field) === 'increased'"
+                            >
+                              <button
+                              class="plain-button d-flex align-items-center text-warning-emphasis"
+                              x-tooltip="Updated"
+                                >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="14"
+                                  height="14"
+                                  fill="currentColor"
+                                  class="me-1 text-danger"
+                                  viewBox="0 0 512 512"
+                                >
+                                  <use
+                                    xlink:href="#far-circle-arrow-up"
+                                  ></use>
+                                </svg>
+                              </button>
+                            </template>
+                            <template
+                              x-if="riskLevelChange(field) === 'decreased'"
+                            >
                               <button
                                 class="plain-button d-flex align-items-center text-warning-emphasis"
                                 x-tooltip="Updated"
@@ -121,13 +144,15 @@
                                   width="14"
                                   height="14"
                                   fill="currentColor"
-                                  viewBox="0 0 16 16"
+                                  class="me-1 text-success"
+                                  viewBox="0 0 512 512"
                                 >
-                                  <use xlink:href="#fas-arrow-flag"></use>
+                                  <use
+                                    xlink:href="#far-circle-arrow-down"
+                                  ></use>
                                 </svg>
                               </button>
                             </template>
-
                             <span
                               class="text-uppercase badge"
                               style="--bs-bg-opacity: 1"
@@ -305,7 +330,9 @@
                         <div class="row py-1">
                           <div class="col-6">
                             <div class="d-flex flex-column gap-1">
-                              <small class="text-muted"> Contact type </small>
+                              <small class="text-muted">
+                                Connection Role Type
+                              </small>
                               <template
                                 x-for="(field, fieldIndex) in section.fields"
                                 :key="field.name"
@@ -332,39 +359,39 @@
                                     </small>
                                   </div>
                                   <div class="d-flex align-items-center">
-                                    <template x-if="field.history.length > 0">
-                                      <button
-                                        class="plain-button d-flex align-items-center text-info-emphasis"
-                                        x-tooltip="Updated"
+                                    <template
+                                      x-if="riskLevelChange(field) === 'increased'"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="14"
+                                        height="14"
+                                        fill="currentColor"
+                                        class="me-1 text-danger"
+                                        viewBox="0 0 512 512"
                                       >
-                                        <template x-if="flagIcon">
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="14"
-                                            height="14"
-                                            fill="currentColor"
-                                            viewBox="0 0 16 16"
-                                          >
-                                            <use
-                                              xlink:href="#fas-arrow-flag"
-                                            ></use>
-                                          </svg>
-                                        </template>
-                                        <template x-if="!flagIcon">
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="14"
-                                            height="14"
-                                            fill="currentColor"
-                                            viewBox="0 0 512 512"
-                                          >
-                                            <use
-                                              xlink:href="#far-info-circle"
-                                            ></use>
-                                          </svg>
-                                        </template>
-                                      </button>
+                                        <use
+                                          xlink:href="#far-circle-arrow-up"
+                                        ></use>
+                                      </svg>
                                     </template>
+                                    <template
+                                      x-if="riskLevelChange(field) === 'decreased'"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="14"
+                                        height="14"
+                                        fill="currentColor"
+                                        class="me-1 text-success"
+                                        viewBox="0 0 512 512"
+                                      >
+                                        <use
+                                          xlink:href="#far-circle-arrow-down"
+                                        ></use>
+                                      </svg>
+                                    </template>
+
                                     <span
                                       class="text-uppercase badge"
                                       style="--bs-bg-opacity: 1"
@@ -390,7 +417,7 @@
                             >
                               <template x-if="field.name === 'dob'">
                                 <span>
-                                  <small class="text-muted"> KYC Update </small>
+                                  <small class="text-muted"> Review Update </small>
                                   <br />
                                   <span x-text="field.value"></span>
                                 </span>
@@ -446,7 +473,7 @@
                               </template>
                             </template>
                           </div>
-                          <div class="col-6">
+                          <!-- <div class="col-6">
                             <template
                               x-for="(field, fieldIndex) in section.fields"
                               :key="field.name"
@@ -462,7 +489,7 @@
                               </template>
                             </template>
                           </div>
-                        </div>
+                        </div> -->
                       </main>
                       <template x-if="showForms ">
                         <footer

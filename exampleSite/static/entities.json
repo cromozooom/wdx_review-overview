@@ -163,14 +163,20 @@
                     "value": "high"
                   }
                 ],
-                "value": "high",
+                "value": "medium",
                 "required": true,
                 "history": [
                   {
-                    "time": "2024-07-11T08:21:57.687Z",
-                    "valueAfter": "medium",
+                    "time": "2024-07-16T14:08:04.431Z",
+                    "valueAfter": "low",
                     "value": "high",
-                    "user": "Luna Nicu"
+                    "user": "Razvan Nicu"
+                  },
+                  {
+                    "time": "2024-07-16T14:13:37.099Z",
+                    "valueAfter": "medium",
+                    "value": "low",
+                    "user": "Razvan Nicu"
                   }
                 ]
               },
@@ -726,9 +732,16 @@
                     "value": "high"
                   }
                 ],
-                "value": "medium",
+                "value": "high",
                 "required": true,
-                "history": []
+                "history": [
+                  {
+                    "time": "2024-07-16T14:07:46.648Z",
+                    "valueAfter": "high",
+                    "value": "medium",
+                    "user": "Razvan Nicu"
+                  }
+                ]
               },
               {
                 "type": "dropdown",
@@ -1243,14 +1256,7 @@
                 ],
                 "value": "medium",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-11T08:21:34.602Z",
-                    "valueAfter": "medium",
-                    "value": "high",
-                    "user": "Luna Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -2188,9 +2194,16 @@
                     "value": "high"
                   }
                 ],
-                "value": "low",
+                "value": "medium",
                 "required": true,
-                "history": []
+                "history": [
+                  {
+                    "time": "2024-07-16T14:08:29.982Z",
+                    "valueAfter": "medium",
+                    "value": "low",
+                    "user": "Razvan Nicu"
+                  }
+                ]
               },
               {
                 "type": "dropdown",
@@ -2648,13 +2661,13 @@
                     "value": "high"
                   }
                 ],
-                "value": "medium",
+                "value": "low",
                 "required": true,
                 "history": [
                   {
-                    "time": "2024-07-09T13:45:51.433Z",
-                    "valueAfter": "medium",
-                    "value": "high",
+                    "time": "2024-07-16T14:13:51.058Z",
+                    "valueAfter": "low",
+                    "value": "medium",
                     "user": "Razvan Nicu"
                   }
                 ]
@@ -4524,14 +4537,7 @@
                 ],
                 "value": "high",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "high",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -5058,14 +5064,7 @@
                 ],
                 "value": "high",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "high",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -5622,20 +5621,7 @@
                 ],
                 "value": "medium",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "high",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  },
-                  {
-                    "time": "2024-07-11T08:25:42.413Z",
-                    "valueAfter": "medium",
-                    "value": "high",
-                    "user": "Luna Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
@@ -7955,14 +7941,7 @@
                 ],
                 "value": "high",
                 "required": true,
-                "history": [
-                  {
-                    "time": "2024-07-09T12:55:48.506Z",
-                    "valueAfter": "high",
-                    "value": "low",
-                    "user": "Razvan Nicu"
-                  }
-                ]
+                "history": []
               },
               {
                 "type": "dropdown",
