@@ -199,3 +199,41 @@
 body.dragging {
   user-select: none; /* Prevent text selection while dragging */
 }
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.min-width {
+  min-width: fit-content;
+}
+.min-width-10erm {
+  min-width: 10rem;
+}
+
+.topStart {
+  .pannel {
+    left: 0;
+    top: initial;
+    bottom: initial;
+  }
+}
+.topEnd {
+  .pannel {
+    right: 0;
+    top: initial;
+    bottom: initial;
+  }
+}
+.bottomStart {
+  .pannel {
+    left: 0;
+    bottom: 100%;
+  }
+}
+.bottomEnd {
+  .pannel {
+    bottom: 100%;
+    right: 0;
+  }
+}
