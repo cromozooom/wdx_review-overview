@@ -33,6 +33,21 @@
       offsetX: 0,
       offsetY: 0,
 
+      loadPositionFromLocalStorage() {
+        const storedX = localStorage.getItem("draggableElementX");
+        const storedY = localStorage.getItem("draggableElementY");
+
+        if (storedX !== null && storedY !== null) {
+          this.x = parseInt(storedX, 10);
+          this.y = parseInt(storedY, 10);
+        }
+      },
+
+      savePositionToLocalStorage() {
+        localStorage.setItem("draggableElementX", this.x);
+        localStorage.setItem("draggableElementY", this.y);
+      },
+
       startDrag(event) {
         this.isDragging = true;
         this.offsetX = event.clientX - this.x;
@@ -40,9 +55,28 @@
 
         const moveHandler = (event) => {
           if (this.isDragging) {
-            this.x = event.clientX - this.offsetX;
-            this.y = event.clientY - this.offsetY;
+            // Calculate new positions
+            let newX = event.clientX - this.offsetX;
+            let newY = event.clientY - this.offsetY;
+
+            // Get the element dimensions
+            const element = this.$refs.draggableElement;
+            const elementWidth = element.offsetWidth;
+            const elementHeight = element.offsetHeight;
+
+            // Get the window dimensions
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            // Ensure the element stays within the viewport
+            newX = Math.max(0, Math.min(newX, windowWidth - elementWidth));
+            newY = Math.max(0, Math.min(newY, windowHeight - elementHeight));
+
+            // Update the position
+            this.x = newX;
+            this.y = newY;
             this.updatePosition();
+            this.savePositionToLocalStorage();
           }
         };
 
@@ -103,14 +137,24 @@
         this.$nextTick(() => {
           const element = this.$refs.draggableElement;
           if (element) {
-            const elementWidth = element.offsetWidth;
-            const elementHeight = element.offsetHeight;
-            const rem = parseInt(
-              getComputedStyle(document.documentElement).fontSize
-            );
+            const storedX = localStorage.getItem("draggableElementX");
+            const storedY = localStorage.getItem("draggableElementY");
 
-            this.x = window.innerWidth - elementWidth - rem;
-            this.y = window.innerHeight - elementHeight - rem;
+            if (storedX !== null && storedY !== null) {
+              this.x = parseInt(storedX, 10);
+              this.y = parseInt(storedY, 10);
+            } else {
+              // Calculate the position if not in local storage
+              const elementWidth = element.offsetWidth;
+              const elementHeight = element.offsetHeight;
+              const rem = parseInt(
+                getComputedStyle(document.documentElement).fontSize
+              );
+
+              this.x = window.innerWidth - elementWidth - rem;
+              this.y = window.innerHeight - elementHeight - rem;
+            }
+
             this.updatePosition();
           }
         });
@@ -157,6 +201,10 @@
         this.filterEntities();
         this.selectFirstEntity();
         this.applyTheme();
+        this.loadPositionFromLocalStorage();
+        this.$nextTick(() => {
+          this.updatePosition();
+        });
       },
 
       validateSelectedEntity() {
@@ -175,6 +223,8 @@
 
       saveActiveUser() {
         localStorage.setItem("activeUser", this.activeUser);
+        this.calculateDragDropPosition();
+        this.updatePosition();
       },
 
       saveToLocalStorage() {
