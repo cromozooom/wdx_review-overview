@@ -215,3 +215,14 @@
 .border-2 {
   border-width: 2px !important;
 }
+
+.draggable {
+  position: absolute;
+  cursor: move;
+  z-index: 10;
+  // user-select: none; /* Prevent text selection */
+}
+
+body.dragging {
+  user-select: none; /* Prevent text selection while dragging */
+}
