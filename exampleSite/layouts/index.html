@@ -33,9 +33,19 @@
   </head>
   <body
     x-data="entityComponent()"
-    x-init="loadData()"
+    x-init="loadData(); calculateDragDropPosition()"
     class="w-100 h-100 d-flex"
   >
+    <template x-if="showForms">
+      <div
+        x-ref="draggableElement"
+        class="draggable rounded shadow-md p-2 text-bg-brand"
+        @mousedown="startDrag"
+      >
+        Drag me!
+      </div>
+    </template>
+
     {{ partial "svg.html" . }}
     <template x-if="!widgetOnly">
       <template x-if="showSideNav">

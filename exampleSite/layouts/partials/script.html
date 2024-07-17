@@ -25,6 +25,7 @@
       activeUser: "Luna Nicu",
       // activeUser: "Razvan Nicu",
       originalValues: {},
+
       async loadData() {
         const storedEntities = localStorage.getItem("entities");
         if (storedEntities) {
@@ -42,6 +43,73 @@
         this.initializeEntityData();
         this.filterEntities();
         this.selectFirstEntity();
+      },
+
+      x: 0,
+      y: 0,
+      isDragging: false,
+      offsetX: 0,
+      offsetY: 0,
+
+      startDrag(event) {
+        console.log("startDrag called");
+        this.isDragging = true;
+        this.offsetX = event.clientX - this.x;
+        this.offsetY = event.clientY - this.y;
+        console.log("Offset X:", this.offsetX, "Offset Y:", this.offsetY);
+
+        const moveHandler = (event) => {
+          if (this.isDragging) {
+            console.log("handleMouseMove called");
+            this.x = event.clientX - this.offsetX;
+            this.y = event.clientY - this.offsetY;
+            console.log("New X:", this.x, "New Y:", this.y);
+            this.updatePosition();
+          }
+        };
+
+        const upHandler = () => {
+          console.log("stopDrag called");
+          this.isDragging = false;
+          document.body.classList.remove("dragging");
+          window.removeEventListener("mousemove", moveHandler);
+          window.removeEventListener("mouseup", upHandler);
+        };
+
+        document.body.classList.add("dragging");
+        window.addEventListener("mousemove", moveHandler);
+        window.addEventListener("mouseup", upHandler);
+      },
+
+      updatePosition() {
+        console.log("updatePosition called");
+        const element = this.$refs.draggableElement;
+        if (element) {
+          element.style.transform = `translate3d(${this.x}px, ${this.y}px, 0)`;
+          console.log("Element position updated:", this.x, this.y);
+        } else {
+          console.log("Element not found for updating position.");
+        }
+      },
+
+      calculateDragDropPosition() {
+        console.log("calculateDragDropPosition called");
+        this.$nextTick(() => {
+          const element = this.$refs.draggableElement;
+          console.log("Element:", element);
+          if (element) {
+            const elementWidth = element.offsetWidth;
+            const elementHeight = element.offsetHeight;
+            const rem = parseInt(
+              getComputedStyle(document.documentElement).fontSize
+            );
+
+            this.x = window.innerWidth - elementWidth - rem;
+            this.y = window.innerHeight - elementHeight - rem;
+            console.log("Initial Position calculated:", this.x, this.y);
+            this.updatePosition();
+          }
+        });
       },
 
       validateSelectedEntity() {
@@ -525,6 +593,7 @@
 
 <script>
   document.addEventListener("alpine:init", () => {
+    Alpine.data("entityComponent", entityComponent);
     // Magic: $tooltip
     Alpine.magic("tooltip", (el) => (message) => {
       let instance = tippy(el, { content: message, trigger: "manual" });
