@@ -344,9 +344,10 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary: $teal;
-$primarySubtle: $subtleTeal;
-$brand: $tealDark;
+$primary: $teal !default;
+// $primarySubtle:  $subtleTeal !default;
+$primarySubtle: shade-color($teal, 60%) !default;
+$brand: $tealDark !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
 $info: $cyan !default;

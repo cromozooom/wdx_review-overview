@@ -6,6 +6,8 @@
 // Global colors
 //
 
+$body-color-dark: $gray-400 !default;
+
 // scss-docs-start sass-dark-mode-vars
 // scss-docs-start theme-text-dark-variables
 $primary-text-emphasis-dark: tint-color($primary, 40%) !default;
