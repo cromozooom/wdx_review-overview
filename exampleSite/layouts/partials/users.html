@@ -1,5 +1,8 @@
 <template x-if="gridView">
-  <section id="users" class="col-12 gap-0 border-end h-100 d-flex flex-column">
+  <section
+    id="users"
+    class="col-12 gap-0 border-end h-100 d-flex flex-column bg-body"
+  >
     <div class="overflow-y-scroll flex-grow-1">
       <div class="table-responsive">
         <table class="table users table-hover">
@@ -195,7 +198,7 @@
 <template x-if="!gridView">
   <section
     id="users"
-    class="col-4 gap-0 border-end d-flex flex-column overflow-y-hidden"
+    class="col-4 gap-0 border-end d-flex flex-column overflow-y-hidden bg-body"
   >
     <div class="overflow-y-scroll flex-grow-1">
       <div class="d-flex flex-column gap-3 p-2">
@@ -209,7 +212,7 @@
             <button
               class="cursor-pointer rounded shadow shadow-sm d-block user px-0"
               style="--bs-bg-opacity: 0.08"
-              x-bind:class="index === selectedEntityIndex ? 'bg-primary active' : ''"
+              x-bind:class="index === selectedEntityIndex ? 'bg-primary active' : 'bg-body'"
               @click="selectEntity(entity.id, index)"
               :x-ref="`entity-${index}`"
               x-ref="`entity-${index}`"
@@ -493,7 +496,7 @@
                       </main>
                       <template x-if="showForms ">
                         <footer
-                          class="border-top px-2 py-2 d-flex flex-wrap gap-2 bg-white"
+                          class="border-top px-2 py-2 d-flex flex-wrap gap-2 bg-body"
                         >
                           <button
                             class="btn btn-primarySubtle d-flex align-items-center gap-3"

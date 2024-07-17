@@ -2,6 +2,7 @@
   function entityComponent() {
     return {
       entities: [],
+      lightMode: true,
       showForms: true,
       flagIcon: true,
       switchColumns: true,
@@ -83,6 +84,21 @@
         });
       },
 
+      toggleLightMode() {
+        this.lightMode = !this.lightMode;
+        this.applyTheme();
+        this.saveToLocalStorage();
+      },
+
+      applyTheme() {
+        const htmlTag = document.documentElement;
+        if (this.lightMode) {
+          htmlTag.removeAttribute("data-bs-theme");
+        } else {
+          htmlTag.setAttribute("data-bs-theme", "dark");
+        }
+      },
+
       async loadData() {
         const storedEntities = localStorage.getItem("entities");
         const storedBooleans = localStorage.getItem("booleans");
@@ -108,6 +124,7 @@
         this.initializeEntityData();
         this.filterEntities();
         this.selectFirstEntity();
+        this.applyTheme();
       },
 
       validateSelectedEntity() {
@@ -131,6 +148,7 @@
       saveToLocalStorage() {
         localStorage.setItem("entities", JSON.stringify(this.entities));
         const booleans = {
+          lightMode: this.lightMode,
           showForms: this.showForms,
           flagIcon: this.flagIcon,
           switchColumns: this.switchColumns,
