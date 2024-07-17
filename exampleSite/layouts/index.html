@@ -148,6 +148,7 @@
                   class="form-select"
                   aria-label="Default select example"
                   x-model="activeUser"
+                  @change="saveActiveUser"
                 >
                   <template x-for="user in users" :key="user.name">
                     <option

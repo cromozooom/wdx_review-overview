@@ -2,7 +2,7 @@
   function entityComponent() {
     return {
       entities: [],
-      showForms: false,
+      showForms: true,
       flagIcon: true,
       switchColumns: true,
       showBannerInfo: true,
@@ -26,25 +26,6 @@
       // activeUser: "Razvan Nicu",
       originalValues: {},
 
-      async loadData() {
-        const storedEntities = localStorage.getItem("entities");
-        if (storedEntities) {
-          this.entities = JSON.parse(storedEntities);
-        } else {
-          const response = await fetch("entities.json");
-          const data = await response.json();
-          this.entities = data.persons_companies.map((entity, index) => ({
-            ...entity,
-            id: index + 1,
-          }));
-          this.saveToLocalStorage();
-        }
-
-        this.initializeEntityData();
-        this.filterEntities();
-        this.selectFirstEntity();
-      },
-
       x: 0,
       y: 0,
       isDragging: false,
@@ -52,24 +33,19 @@
       offsetY: 0,
 
       startDrag(event) {
-        console.log("startDrag called");
         this.isDragging = true;
         this.offsetX = event.clientX - this.x;
         this.offsetY = event.clientY - this.y;
-        console.log("Offset X:", this.offsetX, "Offset Y:", this.offsetY);
 
         const moveHandler = (event) => {
           if (this.isDragging) {
-            console.log("handleMouseMove called");
             this.x = event.clientX - this.offsetX;
             this.y = event.clientY - this.offsetY;
-            console.log("New X:", this.x, "New Y:", this.y);
             this.updatePosition();
           }
         };
 
         const upHandler = () => {
-          console.log("stopDrag called");
           this.isDragging = false;
           document.body.classList.remove("dragging");
           window.removeEventListener("mousemove", moveHandler);
@@ -82,21 +58,17 @@
       },
 
       updatePosition() {
-        console.log("updatePosition called");
         const element = this.$refs.draggableElement;
         if (element) {
           element.style.transform = `translate3d(${this.x}px, ${this.y}px, 0)`;
-          console.log("Element position updated:", this.x, this.y);
         } else {
           console.log("Element not found for updating position.");
         }
       },
 
       calculateDragDropPosition() {
-        console.log("calculateDragDropPosition called");
         this.$nextTick(() => {
           const element = this.$refs.draggableElement;
-          console.log("Element:", element);
           if (element) {
             const elementWidth = element.offsetWidth;
             const elementHeight = element.offsetHeight;
@@ -106,10 +78,36 @@
 
             this.x = window.innerWidth - elementWidth - rem;
             this.y = window.innerHeight - elementHeight - rem;
-            console.log("Initial Position calculated:", this.x, this.y);
             this.updatePosition();
           }
         });
+      },
+
+      async loadData() {
+        const storedEntities = localStorage.getItem("entities");
+        const storedBooleans = localStorage.getItem("booleans");
+        const storedUser = localStorage.getItem("activeUser");
+        if (storedEntities) {
+          this.entities = JSON.parse(storedEntities);
+        } else {
+          const response = await fetch("entities.json");
+          const data = await response.json();
+          this.entities = data.persons_companies.map((entity, index) => ({
+            ...entity,
+            id: index + 1,
+          }));
+          this.saveToLocalStorage();
+        }
+        if (storedBooleans) {
+          const booleans = JSON.parse(storedBooleans);
+          Object.assign(this, booleans);
+        }
+        if (storedUser) {
+          this.activeUser = storedUser;
+        }
+        this.initializeEntityData();
+        this.filterEntities();
+        this.selectFirstEntity();
       },
 
       validateSelectedEntity() {
@@ -126,8 +124,29 @@
         }
       },
 
+      saveActiveUser() {
+        localStorage.setItem("activeUser", this.activeUser);
+      },
+
       saveToLocalStorage() {
         localStorage.setItem("entities", JSON.stringify(this.entities));
+        const booleans = {
+          showForms: this.showForms,
+          flagIcon: this.flagIcon,
+          switchColumns: this.switchColumns,
+          showBannerInfo: this.showBannerInfo,
+          showSideNav: this.showSideNav,
+          gridView: this.gridView,
+          widgetOnly: this.widgetOnly,
+          showHistory: this.showHistory,
+        };
+        localStorage.setItem("booleans", JSON.stringify(booleans));
+        localStorage.setItem("activeUser", this.activeUser);
+      },
+
+      toggleBoolean(variableName) {
+        this[variableName] = !this[variableName];
+        this.saveToLocalStorage();
       },
 
       initializeEntityData() {
@@ -159,9 +178,7 @@
                   this.originalValues[
                     `${entityIndex}-${sectionIndex}-${fieldIndex}`
                   ];
-                console.log(
-                  `Tracking change for field ${field.name}: ${oldValue} -> ${field.value}`
-                );
+
                 this.trackChange(field, oldValue);
 
                 // Check if the field is for name or surname and update accordingly
@@ -414,22 +431,6 @@
           field.history = [];
         }
         field.history.push(changeEntry);
-        console.log(`Change tracked for ${field.name}:`, field.history);
-      },
-
-      xx_trackChange(field, oldValue) {
-        const currentTime = new Date().toISOString(); // Save time in ISO format
-        const changeEntry = {
-          time: currentTime,
-          valueAfter: field.value,
-          value: oldValue,
-          user: this.activeUser,
-        };
-        if (!field.history) {
-          field.history = [];
-        }
-        field.history.push(changeEntry);
-        console.log(`Change tracked for ${field.name}:`, field.history);
       },
 
       countFields(sectionIndex) {
@@ -521,10 +522,6 @@
           let currentRiskNumber = riskValues[currentRiskValue];
           let previousRiskNumber = riskValues[previousRiskValue];
 
-          console.log(
-            `Risk level change: ${previousRiskValue} (${previousRiskNumber}) -> ${currentRiskValue} (${currentRiskNumber})`
-          );
-
           if (currentRiskNumber > previousRiskNumber) {
             return "increased";
           } else if (currentRiskNumber < previousRiskNumber) {
@@ -593,7 +590,6 @@
 
 <script>
   document.addEventListener("alpine:init", () => {
-    Alpine.data("entityComponent", entityComponent);
     // Magic: $tooltip
     Alpine.magic("tooltip", (el) => (message) => {
       let instance = tippy(el, { content: message, trigger: "manual" });
