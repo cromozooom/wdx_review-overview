@@ -115,9 +115,9 @@
                               x-if="riskLevelChange(field) === 'increased'"
                             >
                               <button
-                              class="plain-button d-flex align-items-center text-warning-emphasis"
-                              x-tooltip="Updated"
-                                >
+                                class="plain-button d-flex align-items-center text-warning-emphasis"
+                                x-tooltip="Updated"
+                              >
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   width="14"
@@ -126,9 +126,7 @@
                                   class="me-1 text-danger"
                                   viewBox="0 0 512 512"
                                 >
-                                  <use
-                                    xlink:href="#far-circle-arrow-up"
-                                  ></use>
+                                  <use xlink:href="#far-circle-arrow-up"></use>
                                 </svg>
                               </button>
                             </template>
@@ -417,7 +415,9 @@
                             >
                               <template x-if="field.name === 'dob'">
                                 <span>
-                                  <small class="text-muted"> Review Update </small>
+                                  <small class="text-muted">
+                                    Review Update
+                                  </small>
                                   <br />
                                   <span x-text="field.value"></span>
                                 </span>
@@ -488,8 +488,8 @@
                                 </div>
                               </template>
                             </template>
-                          </div>
-                        </div> -->
+                          </div> -->
+                        </div>
                       </main>
                       <template x-if="showForms ">
                         <footer
