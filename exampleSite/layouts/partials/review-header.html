@@ -1,6 +1,6 @@
 <div class="z-2">
   <div
-    class="border-bottom p-2 d-flex justify-content-between hover-opacity bg-light"
+    class="border-bottom p-2 d-flex justify-content-between hover-opacity bg-light-subtle"
   >
     <div class="d-flex gap-2 align-items-center h-100">
       <div>
@@ -187,11 +187,12 @@
       <template x-if="activeUser === 'Razvan Nicu'">
         <div class="btn-group hover-opacity_el">
           <button
-            x-tooltip="Reset data from all entities"
+            x-tooltip="Show multi forms"
             class="btn btn-outline-primary d-flex align-items-center gap-2"
-            @click="showForms = !showForms; calculateDragDropPosition()"
-            x-text="showForms ? 'Hide Multi Forms' : 'Show Multi Forms'"
+            @click="toggleBoolean('showForms'); calculateDragDropPosition()"
+            x-text="showForms ? 'Hide Forms' : 'Show Forms'"
           ></button>
+
           <button
             x-tooltip="Reset data from all entities"
             class="btn btn-outline-primary d-flex align-items-center gap-2"
@@ -217,7 +218,7 @@
           <button
             x-tooltip="Full screen widget"
             class="btn btn-outline-primary d-flex align-items-center gap-2"
-            @click="widgetOnly = !widgetOnly"
+            @click="toggleBoolean('widgetOnly')"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
