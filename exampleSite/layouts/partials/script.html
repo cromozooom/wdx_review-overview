@@ -62,6 +62,38 @@
         const element = this.$refs.draggableElement;
         if (element) {
           element.style.transform = `translate3d(${this.x}px, ${this.y}px, 0)`;
+
+          // Calculate the window width and height
+          const windowWidth = window.innerWidth;
+          const windowHeight = window.innerHeight;
+
+          // Determine the position class
+          let positionClass = "";
+
+          if (this.y < windowHeight / 2) {
+            if (this.x < windowWidth / 2) {
+              positionClass = "topStart";
+            } else {
+              positionClass = "topEnd";
+            }
+          } else {
+            if (this.x < windowWidth / 2) {
+              positionClass = "bottomStart";
+            } else {
+              positionClass = "bottomEnd";
+            }
+          }
+
+          // Remove any existing position classes
+          element.classList.remove(
+            "topStart",
+            "topEnd",
+            "bottomStart",
+            "bottomEnd"
+          );
+
+          // Add the new position class
+          element.classList.add(positionClass);
         } else {
           console.log("Element not found for updating position.");
         }
