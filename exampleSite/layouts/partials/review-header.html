@@ -189,7 +189,7 @@
           <button
             x-tooltip="Reset data from all entities"
             class="btn btn-outline-primary d-flex align-items-center gap-2"
-            @click="showForms = !showForms"
+            @click="showForms = !showForms; calculateDragDropPosition()"
             x-text="showForms ? 'Hide Multi Forms' : 'Show Multi Forms'"
           ></button>
           <button
