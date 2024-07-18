@@ -345,8 +345,10 @@ $cyans: (
 
 // scss-docs-start theme-color-variables
 $primary: $teal !default;
+$primary-dark: tint-color($teal, 10%) !default;
 // $primarySubtle:  $subtleTeal !default;
-$primarySubtle: shade-color($teal, 60%) !default;
+$primarySubtle: tint-color($teal, 60%) !default;
+$primarySubtle-dark: shade-color($teal, 60%) !default;
 $brand: $tealDark !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
@@ -361,6 +363,7 @@ $dark: $gray-900 !default;
 $theme-colors: (
   "primary": $primary,
   "primarySubtle": $primarySubtle,
+  "primarySubtle-dark": $primarySubtle-dark,
   "brand": $brand,
   "secondary": $secondary,
   "success": $success,
