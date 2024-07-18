@@ -1,0 +1,217 @@
+<div class="flex justify-center">
+  <div
+    x-data="{
+            open: false,
+            toggle() {
+                if (this.open) {
+                    return this.close()
+                }
+
+                this.$refs.button.focus()
+
+                this.open = true
+            },
+            close(focusAfter) {
+                if (! this.open) return
+
+                this.open = false
+
+                focusAfter &amp;&amp; focusAfter.focus()
+            }
+        }"
+    x-on:keydown.escape.prevent.stop="close($refs.button)"
+    x-on:focusin.window="! $refs.panel.contains($event.target) &amp;&amp; close()"
+    x-id="['dropdown-button']"
+    class="relative"
+  >
+    <!-- Button -->
+    <button
+      x-ref="button"
+      x-on:click="toggle()"
+      :aria-expanded="open"
+      :aria-controls="$id('dropdown-button')"
+      type="button"
+      class="d-flex btn btn-lik link-nav align-items-center gap-1 px-2 py-2 text-bg-brand"
+      aria-expanded="false"
+      aria-controls="dropdown-button-1"
+    >
+      Tools
+
+      <!-- Heroicon: chevron-down -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 text-gray-400"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Panel -->
+    <div
+      x-ref="panel"
+      x-show="open"
+      x-transition.origin.top.left=""
+      x-on:click.outside="close($refs.button)"
+      :id="$id('dropdown-button')"
+      style="display: none"
+      class="position-absolute rounded shadow p-1 text-bg-brand pannel"
+      id="dropdown-button-1"
+    >
+      <button
+        x-tooltip="Show multi forms"
+        class="d-flex btn btn-link nav-link flex-nowrap min-width-10erm align-items-center gap-3 w-100 px-2 py-2 text-left text-sm"
+        @click="toggleBoolean('showForms'); calculateDragDropPosition()"
+      >
+        <svg
+          x-show="!showForms"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-bootstrap-reboot"
+          viewBox="0 0 576 512"
+        >
+          <use xlink:href="#far-eye-show"></use>
+        </svg>
+        <svg
+          x-show="showForms"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-bootstrap-reboot"
+          viewBox="0 0 640 512"
+        >
+          <use xlink:href="#fas-eye-slash-hide"></use>
+        </svg>
+        <span x-text="showForms ? 'Hide Forms' : 'Show Forms'"> </span>
+      </button>
+
+      <button
+        x-tooltip="Reset data from all entities"
+        class="d-flex btn btn-link nav-link flex-nowrap min-width-10erm align-items-center gap-3 w-100 px-2 py-2 text-left text-sm"
+        @click="purgeData"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-bootstrap-reboot"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M1.161 8a6.84 6.84 0 1 0 6.842-6.84.58.58 0 1 1 0-1.16 8 8 0 1 1-6.556 3.412l-.663-.577a.58.58 0 0 1 .227-.997l2.52-.69a.58.58 0 0 1 .728.633l-.332 2.592a.58.58 0 0 1-.956.364l-.643-.56A6.8 6.8 0 0 0 1.16 8z"
+          />
+          <path
+            d="M6.641 11.671V8.843h1.57l1.498 2.828h1.314L9.377 8.665c.897-.3 1.427-1.106 1.427-2.1 0-1.37-.943-2.246-2.456-2.246H5.5v7.352zm0-3.75V5.277h1.57c.881 0 1.416.499 1.416 1.32 0 .84-.504 1.324-1.386 1.324z"
+          />
+        </svg>
+        Purge
+      </button>
+
+      <button
+        x-tooltip="Full screen widget"
+        class="d-flex btn btn-link nav-link flex-nowrap min-width-10erm align-items-center gap-3 w-100 px-2 py-2 text-left text-sm"
+        @click="toggleBoolean('widgetOnly')"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-arrows-fullscreen"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707m0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707m-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707"
+          />
+        </svg>
+        WidgetOnly
+      </button>
+
+      <button
+        x-tooltip="Duplicate current entity"
+        class="d-flex btn btn-link nav-link flex-nowrap min-width-10erm align-items-center gap-3 w-100 px-2 py-2 text-left text-sm"
+        @click="duplicateEntity"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-copy"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+          />
+        </svg>
+        Duplicate
+      </button>
+
+      <button
+        x-tooltip="Upload your data"
+        class="d-flex btn btn-link nav-link flex-nowrap min-width-10erm align-items-center gap-3 w-100 px-2 py-2 text-left text-sm"
+        @click="downloadData"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-cloud-arrow-down"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.646 10.854a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 9.293V5.5a.5.5 0 0 0-1 0v3.793L6.354 8.146a.5.5 0 1 0-.708.708z"
+          />
+          <path
+            d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"
+          />
+        </svg>
+        JSON
+      </button>
+      <label
+        x-tooltip="Download your data"
+        class="d-flex btn btn-link nav-link flex-nowrap min-width-10erm align-items-center gap-3 w-100 px-2 py-2 text-left text-sm"
+        for="uploadInput"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-cloud-arrow-up"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708z"
+          />
+          <path
+            d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"
+          />
+        </svg>
+        JSON</label
+      >
+      <input
+        type="file"
+        id="uploadInput"
+        @change="uploadData"
+        class="form-control-file d-none"
+      />
+    </div>
+  </div>
+</div>
