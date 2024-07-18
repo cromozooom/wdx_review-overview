@@ -1,17 +1,23 @@
 $bs-border-color-dark: shade-color($gray-800, 10%);
+$form_bs-border-color-dark: $gray-700;
 @media (prefers-color-scheme: dark) {
-  //   :root {
-  //     --bs-border-color: #{$bs-border-color-dark} !important;
-  //   }
   [data-bs-theme="dark"] {
     --bs-border-color: #{$bs-border-color-dark} !important;
   }
+  [data-bs-theme="dark"] {
+    .form-control,
+    .form-select {
+      --bs-border-color: #{$form_bs-border-color-dark} !important;
+    }
+  }
 }
+
+$btn-primary-subtile_bs-btn-bg: shade-color($teal, 50%);
 
 [data-bs-theme="dark"] {
   .btn-primary-subtile {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #1b3332;
+    --bs-btn-bg: #{$btn-primary-subtile_bs-btn-bg};
     --bs-btn-border-color: #1b3332;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #172b2b;
