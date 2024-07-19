@@ -591,7 +591,7 @@
         return entity.form.sections.some((section) =>
           section.fields.some(
             (field) =>
-              field.name !== "risk_level" &&
+              field.name !== "risk level" &&
               field.history &&
               field.history.length > 0
           )
@@ -607,7 +607,7 @@
 
         if (
           !field ||
-          field.name !== "risk_level" ||
+          field.name !== "risk level" ||
           !field.history ||
           field.history.length === 0
         ) {

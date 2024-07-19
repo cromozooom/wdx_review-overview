@@ -11,9 +11,9 @@
               <th scope="col">#</th>
               <th scope="col">Mod.</th>
               <th scope="col">Name</th>
-              <th scope="col">Role</th>
+              <th scope="col">Connection Role Type</th>
               <th scope="col">Documents</th>
-              <th scope="col">Risk</th>
+              <th scope="col">Risk Level</th>
               <th scope="col">KYC Update</th>
               <th scope="col">Something else</th>
               <th scope="col">...</th>
@@ -78,7 +78,7 @@
                         x-for="(field, fieldIndex) in section.fields"
                         :key="field.name"
                       >
-                        <template x-if="field.name === 'contact type'">
+                        <template x-if="field.name === 'connection role type'">
                           <span
                             class="text-capitalize"
                             x-text="field.value"
@@ -112,7 +112,7 @@
                         x-for="(field, fieldIndex) in section.fields"
                         :key="field.name"
                       >
-                        <template x-if="field.name === 'risk_level'">
+                        <template x-if="field.name === 'risk level'">
                           <div class="d-flex align-items-center gap-1">
                             <template
                               x-if="riskLevelChange(field) === 'increased'"
