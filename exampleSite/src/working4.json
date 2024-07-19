@@ -147,7 +147,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -162,14 +162,20 @@
                   "value": "high"
                 }
               ],
-              "value": "high",
+              "value": "medium",
               "required": true,
               "history": [
                 {
-                  "time": "2024-07-11T08:21:57.687Z",
-                  "valueAfter": "medium",
+                  "time": "2024-07-16T14:08:04.431Z",
+                  "valueAfter": "low",
                   "value": "high",
-                  "user": "Luna Nicu"
+                  "user": "Razvan Nicu"
+                },
+                {
+                  "time": "2024-07-16T14:13:37.099Z",
+                  "valueAfter": "medium",
+                  "value": "low",
+                  "user": "Razvan Nicu"
                 }
               ]
             },
@@ -226,12 +232,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -239,14 +245,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "account_owner",
+              "value": "account owner",
               "required": true,
               "history": []
             },
@@ -300,7 +306,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -377,7 +383,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -442,7 +448,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -489,7 +495,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -536,7 +542,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -563,7 +569,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -710,7 +716,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -725,9 +731,16 @@
                   "value": "high"
                 }
               ],
-              "value": "medium",
+              "value": "high",
               "required": true,
-              "history": []
+              "history": [
+                {
+                  "time": "2024-07-16T14:07:46.648Z",
+                  "valueAfter": "high",
+                  "value": "medium",
+                  "user": "Razvan Nicu"
+                }
+              ]
             },
             {
               "type": "dropdown",
@@ -782,12 +795,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -795,19 +808,19 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "account_owner",
+              "value": "account owner",
               "required": true,
               "history": [
                 {
                   "time": "2024-07-09T13:23:06.816Z",
-                  "valueAfter": "account_owner",
+                  "valueAfter": "account owner",
                   "value": "family",
                   "user": "Razvan Nicu"
                 }
@@ -863,7 +876,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -940,7 +953,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1005,7 +1018,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1052,7 +1065,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1099,7 +1112,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1126,7 +1139,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1225,7 +1238,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -1242,14 +1255,7 @@
               ],
               "value": "medium",
               "required": true,
-              "history": [
-                {
-                  "time": "2024-07-11T08:21:34.602Z",
-                  "valueAfter": "medium",
-                  "value": "high",
-                  "user": "Luna Nicu"
-                }
-              ]
+              "history": []
             },
             {
               "type": "dropdown",
@@ -1291,12 +1297,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -1304,14 +1310,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -1340,7 +1346,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916519",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1417,7 +1423,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1482,7 +1488,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1529,7 +1535,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1576,7 +1582,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1603,7 +1609,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1702,7 +1708,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -1761,12 +1767,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -1774,14 +1780,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "account_owner",
+              "value": "family",
               "required": true,
               "history": []
             },
@@ -1810,7 +1816,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1887,7 +1893,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1952,7 +1958,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -1999,7 +2005,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2046,7 +2052,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2073,7 +2079,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2172,7 +2178,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -2187,9 +2193,16 @@
                   "value": "high"
                 }
               ],
-              "value": "low",
+              "value": "medium",
               "required": true,
-              "history": []
+              "history": [
+                {
+                  "time": "2024-07-16T14:08:29.982Z",
+                  "valueAfter": "medium",
+                  "value": "low",
+                  "user": "Razvan Nicu"
+                }
+              ]
             },
             {
               "type": "dropdown",
@@ -2231,12 +2244,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -2244,14 +2257,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -2280,7 +2293,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2357,7 +2370,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2422,7 +2435,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2469,7 +2482,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2516,7 +2529,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2543,7 +2556,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2632,7 +2645,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -2647,13 +2660,13 @@
                   "value": "high"
                 }
               ],
-              "value": "medium",
+              "value": "low",
               "required": true,
               "history": [
                 {
-                  "time": "2024-07-09T13:45:51.433Z",
-                  "valueAfter": "medium",
-                  "value": "high",
+                  "time": "2024-07-16T14:13:51.058Z",
+                  "valueAfter": "low",
+                  "value": "medium",
                   "user": "Razvan Nicu"
                 }
               ]
@@ -2698,12 +2711,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -2711,14 +2724,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -2760,7 +2773,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2837,7 +2850,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2902,7 +2915,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2949,7 +2962,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -2996,7 +3009,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3023,7 +3036,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3112,7 +3125,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -3171,12 +3184,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -3184,14 +3197,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -3220,7 +3233,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3297,7 +3310,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3362,7 +3375,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3409,7 +3422,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3456,7 +3469,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3483,7 +3496,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3572,7 +3585,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -3631,12 +3644,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -3644,14 +3657,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "account_owner",
+              "value": "organization",
               "required": true,
               "history": []
             },
@@ -3680,7 +3693,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3757,7 +3770,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3822,7 +3835,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3869,7 +3882,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3916,7 +3929,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -3943,7 +3956,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4032,7 +4045,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -4091,12 +4104,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -4104,14 +4117,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -4140,7 +4153,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4217,7 +4230,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4282,7 +4295,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4329,7 +4342,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4376,7 +4389,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4403,7 +4416,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4506,7 +4519,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -4523,14 +4536,7 @@
               ],
               "value": "high",
               "required": true,
-              "history": [
-                {
-                  "time": "2024-07-09T12:55:48.506Z",
-                  "valueAfter": "high",
-                  "value": "low",
-                  "user": "Razvan Nicu"
-                }
-              ]
+              "history": []
             },
             {
               "type": "dropdown",
@@ -4579,12 +4585,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -4592,14 +4598,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -4641,7 +4647,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4718,7 +4724,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4783,7 +4789,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4830,7 +4836,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4877,7 +4883,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -4904,7 +4910,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -5040,7 +5046,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -5057,14 +5063,7 @@
               ],
               "value": "high",
               "required": true,
-              "history": [
-                {
-                  "time": "2024-07-09T12:55:48.506Z",
-                  "valueAfter": "high",
-                  "value": "low",
-                  "user": "Razvan Nicu"
-                }
-              ]
+              "history": []
             },
             {
               "type": "dropdown",
@@ -5113,12 +5112,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -5126,14 +5125,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -5175,7 +5174,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -5252,7 +5251,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -5317,7 +5316,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -5364,7 +5363,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -5411,7 +5410,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -5438,7 +5437,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -5604,7 +5603,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -5621,20 +5620,7 @@
               ],
               "value": "medium",
               "required": true,
-              "history": [
-                {
-                  "time": "2024-07-09T12:55:48.506Z",
-                  "valueAfter": "high",
-                  "value": "low",
-                  "user": "Razvan Nicu"
-                },
-                {
-                  "time": "2024-07-11T08:25:42.413Z",
-                  "valueAfter": "medium",
-                  "value": "high",
-                  "user": "Luna Nicu"
-                }
-              ]
+              "history": []
             },
             {
               "type": "dropdown",
@@ -5683,12 +5669,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -5696,14 +5682,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -5745,7 +5731,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -5822,7 +5808,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -5887,7 +5873,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -5934,7 +5920,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -5981,7 +5967,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6008,7 +5994,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6097,7 +6083,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -6156,12 +6142,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -6169,14 +6155,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -6205,7 +6191,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6282,7 +6268,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6347,7 +6333,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6394,7 +6380,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6441,7 +6427,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6468,7 +6454,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6557,7 +6543,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -6616,12 +6602,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -6629,14 +6615,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "account_owner",
+              "value": "account owner",
               "required": true,
               "history": []
             },
@@ -6665,7 +6651,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6742,7 +6728,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6807,7 +6793,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6854,7 +6840,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6901,7 +6887,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -6928,7 +6914,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7017,7 +7003,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -7076,12 +7062,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -7089,14 +7075,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -7125,7 +7111,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7202,7 +7188,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7267,7 +7253,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7314,7 +7300,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7361,7 +7347,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7388,7 +7374,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7477,7 +7463,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -7536,12 +7522,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -7549,14 +7535,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -7585,7 +7571,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7662,7 +7648,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7727,7 +7713,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7774,7 +7760,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7821,7 +7807,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7848,7 +7834,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -7937,7 +7923,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -7954,14 +7940,7 @@
               ],
               "value": "high",
               "required": true,
-              "history": [
-                {
-                  "time": "2024-07-09T12:55:48.506Z",
-                  "valueAfter": "high",
-                  "value": "low",
-                  "user": "Razvan Nicu"
-                }
-              ]
+              "history": []
             },
             {
               "type": "dropdown",
@@ -8003,12 +7982,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -8016,14 +7995,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -8052,7 +8031,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8129,7 +8108,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8194,7 +8173,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8241,7 +8220,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916520",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8288,7 +8267,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8315,7 +8294,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8404,7 +8383,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -8463,12 +8442,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -8476,14 +8455,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "account_owner",
+              "value": "account owner",
               "required": true,
               "history": []
             },
@@ -8512,7 +8491,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8589,7 +8568,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8654,7 +8633,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8701,7 +8680,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8748,7 +8727,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8775,7 +8754,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -8864,7 +8843,7 @@
               "comments": [],
               "hidden": false,
               "label": "Risk Level",
-              "name": "risk_level",
+              "name": "risk level",
               "options": [
                 {
                   "label": "Low",
@@ -8923,12 +8902,12 @@
               "type": "dropdown",
               "comments": [],
               "hidden": false,
-              "label": "Contact Type",
-              "name": "contact_type",
+              "label": "Connection role type",
+              "name": "connection role type",
               "options": [
                 {
                   "label": "Account Owner",
-                  "value": "account_owner"
+                  "value": "account owner"
                 },
                 {
                   "label": "Family",
@@ -8936,14 +8915,14 @@
                 },
                 {
                   "label": "Power of Attorney",
-                  "value": "power_of_attorney"
+                  "value": "power of attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "power_of_attorney",
+              "value": "power of attorney",
               "required": true,
               "history": []
             },
@@ -8972,7 +8951,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -9049,7 +9028,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -9114,7 +9093,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -9161,7 +9140,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -9208,7 +9187,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",
@@ -9235,7 +9214,7 @@
               "type": "upload",
               "comments": [],
               "label": "Documents",
-              "name": "documents_uploaded",
+              "name": "documents_uploaded_1720800916521",
               "doc": [
                 {
                   "name": "This is a new document uploaded Name",

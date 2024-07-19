@@ -372,7 +372,7 @@
 
         this.filteredEntities = this.entities.filter((entity) => {
           const fullName =
-            entity.type === "person"
+            entity.type === "account owner"
               ? `${entity.name} ${entity.surname}`
               : entity.name;
           const matchesQuery = fullName.toLowerCase().includes(query);
@@ -382,7 +382,7 @@
             entity.form.sections.some((section) =>
               section.fields.some(
                 (field) =>
-                  field.name === "contact_type" &&
+                  field.name === "connection role type" &&
                   field.value.toLowerCase().includes(contactTypeFilter)
               )
             );
@@ -392,7 +392,7 @@
             entity.form.sections.some((section) =>
               section.fields.some(
                 (field) =>
-                  field.name === "risk_level" &&
+                  field.name === "risk level" &&
                   field.value.toLowerCase() === riskLevelFilter
               )
             );

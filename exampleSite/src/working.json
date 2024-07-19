@@ -230,23 +230,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "individual",
+              "value": "account_owner",
               "required": true,
               "history": []
             },
@@ -786,28 +786,28 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "individual",
+              "value": "account_owner",
               "required": true,
               "history": [
                 {
                   "time": "2024-07-09T13:23:06.816Z",
-                  "valueAfter": "individual",
+                  "valueAfter": "account_owner",
                   "value": "family",
                   "user": "Razvan Nicu"
                 }
@@ -1295,23 +1295,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -1765,23 +1765,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "individual",
+              "value": "account_owner",
               "required": true,
               "history": []
             },
@@ -2235,23 +2235,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -2702,23 +2702,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -3175,23 +3175,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -3635,23 +3635,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "individual",
+              "value": "account_owner",
               "required": true,
               "history": []
             },
@@ -4095,23 +4095,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -4583,23 +4583,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -5117,23 +5117,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -5687,23 +5687,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -6160,23 +6160,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -6620,23 +6620,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "individual",
+              "value": "account_owner",
               "required": true,
               "history": []
             },
@@ -7080,23 +7080,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -7540,23 +7540,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -8007,23 +8007,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
@@ -8467,23 +8467,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "individual",
+              "value": "account_owner",
               "required": true,
               "history": []
             },
@@ -8927,23 +8927,23 @@
               "name": "contact_type",
               "options": [
                 {
-                  "label": "Individual",
-                  "value": "individual"
+                  "label": "Account Owner",
+                  "value": "account_owner"
                 },
                 {
                   "label": "Family",
                   "value": "family"
                 },
                 {
-                  "label": "Company",
-                  "value": "company"
+                  "label": "Power of Attorney",
+                  "value": "power_of_attorney"
                 },
                 {
                   "label": "Organization",
                   "value": "organization"
                 }
               ],
-              "value": "company",
+              "value": "power_of_attorney",
               "required": true,
               "history": []
             },
