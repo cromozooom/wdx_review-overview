@@ -140,7 +140,7 @@
         <template x-if="!widgetOnly">
           <div>
             <section
-              class="text-bg-primary p-2 d-flex justify-content-between align-items-center border-bottom"
+              class="text-bg-primary d-flex justify-content-between align-items-center border-bottom"
             >
               <nav class="d-flex gap-2 align-items-center">
                 <button
@@ -152,7 +152,25 @@
                 </button>
                 <h1 class="m-0">WDX1 - Review Overview</h1>
               </nav>
-              <div class="d-flex align-items-center gap-1">
+              <div
+                style="--bs-border-opacity: 0.1"
+                class="d-flex align-items-center gap-2 border-start"
+              >
+                <button
+                  style="--bs-border-opacity: 0.1"
+                  class="nav-link px-3 border-end d-flex py-3 align-items-center gap-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-floppy"
+                    viewBox="0 0 512 512"
+                  >
+                    <use xlink:href="#far-print"></use>
+                  </svg>
+                </button>
                 <select
                   class="form-select"
                   aria-label="Default select example"
