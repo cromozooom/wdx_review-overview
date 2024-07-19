@@ -148,7 +148,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -233,27 +233,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "individual",
+                "value": "account owner",
                 "required": true,
                 "history": []
               },
@@ -717,7 +717,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -796,32 +796,32 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "individual",
+                "value": "account owner",
                 "required": true,
                 "history": [
                   {
                     "time": "2024-07-09T13:23:06.816Z",
-                    "valueAfter": "individual",
+                    "valueAfter": "account owner",
                     "value": "family",
                     "user": "Razvan Nicu"
                   }
@@ -1239,7 +1239,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -1298,27 +1298,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -1709,7 +1709,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -1768,27 +1768,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "individual",
+                "value": "family",
                 "required": true,
                 "history": []
               },
@@ -2179,7 +2179,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -2245,27 +2245,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -2646,7 +2646,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -2712,27 +2712,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -3126,7 +3126,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -3185,27 +3185,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -3586,7 +3586,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -3645,27 +3645,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "individual",
+                "value": "organization",
                 "required": true,
                 "history": []
               },
@@ -4046,7 +4046,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -4105,27 +4105,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -4520,7 +4520,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -4586,27 +4586,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -5047,7 +5047,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -5113,27 +5113,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -5604,7 +5604,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -5670,27 +5670,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -6084,7 +6084,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -6143,27 +6143,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -6544,7 +6544,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -6603,27 +6603,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "individual",
+                "value": "account owner",
                 "required": true,
                 "history": []
               },
@@ -7004,7 +7004,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -7063,27 +7063,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -7464,7 +7464,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -7523,27 +7523,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -7924,7 +7924,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -7983,27 +7983,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },
@@ -8384,7 +8384,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -8443,27 +8443,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "individual",
+                "value": "account owner",
                 "required": true,
                 "history": []
               },
@@ -8844,7 +8844,7 @@
                 "comments": [],
                 "hidden": false,
                 "label": "Risk Level",
-                "name": "risk_level",
+                "name": "risk level",
                 "options": [
                   {
                     "label": "Low",
@@ -8903,27 +8903,27 @@
                 "type": "dropdown",
                 "comments": [],
                 "hidden": false,
-                "label": "Contact Type",
-                "name": "contact_type",
+                "label": "Connection role type",
+                "name": "connection role type",
                 "options": [
                   {
-                    "label": "Individual",
-                    "value": "individual"
+                    "label": "Account Owner",
+                    "value": "account owner"
                   },
                   {
                     "label": "Family",
                     "value": "family"
                   },
                   {
-                    "label": "Company",
-                    "value": "company"
+                    "label": "Power of Attorney",
+                    "value": "power of attorney"
                   },
                   {
                     "label": "Organization",
                     "value": "organization"
                   }
                 ],
-                "value": "company",
+                "value": "power of attorney",
                 "required": true,
                 "history": []
               },

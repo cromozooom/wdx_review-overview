@@ -78,7 +78,7 @@
                         x-for="(field, fieldIndex) in section.fields"
                         :key="field.name"
                       >
-                        <template x-if="field.name === 'contact_type'">
+                        <template x-if="field.name === 'contact type'">
                           <span
                             class="text-capitalize"
                             x-text="field.value"
@@ -330,29 +330,33 @@
                       <main class="px-2 py-2">
                         <div class="row py-1">
                           <div class="col-6">
-                            <div class="d-flex flex-column gap-1">
-                              <small class="text-muted">
-                                Connection Role Type
-                              </small>
+                            <template
+                              x-for="(field, fieldIndex) in section.fields"
+                              :key="field.name"
+                            >
                               <template
-                                x-for="(field, fieldIndex) in section.fields"
-                                :key="field.name"
+                                x-if="field.name === 'connection role type'"
                               >
-                                <template x-if="field.name === 'contact_type'">
+                                <div class="d-flex flex-column gap-1">
+                                  <small
+                                    class="text-muted text-capitalize"
+                                    x-text="field.label"
+                                  >
+                                  </small>
                                   <span
                                     class="text-capitalize"
                                     x-text="field.value"
                                   ></span>
-                                </template>
+                                </div>
                               </template>
-                            </div>
+                            </template>
                           </div>
                           <div class="col-6">
                             <template
                               x-for="(field, fieldIndex) in section.fields"
                               :key="field.name"
                             >
-                              <template x-if="field.name === 'risk_level'">
+                              <template x-if="field.name === 'risk level'">
                                 <div class="d-flex flex-column gap-1">
                                   <div class="d-flex">
                                     <small class="text-muted">
