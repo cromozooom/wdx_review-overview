@@ -79,18 +79,22 @@
           x-for="(section, sectionIndex) in entities[selectedEntityIndex].form.sections"
           :key="section.title"
         >
-          <div class="hover-primary-subtile pt-4">
+          <div
+            class="hover-primary-subtile"
+            :class="sectionIndex ? 'pt-4' : 'pt-3'"
+          >
             <button
               class="w-100 d-flex w-100 justify-content-between text-start mb-2 fw-bold border-0 bg-transparent d-flex align-items-center gap-1"
               x-bind:class="countFields(sectionIndex) === countFilledFields(sectionIndex) ? 'text-success' : 'xtext-warning'"
               @click="scrollFormToSection(sectionIndex, 'scroll-form-section')"
             >
-              <div class="h5">
-                <span
-                  x-bind:class="countFields(sectionIndex) === countFilledFields(sectionIndex) ? 'text-success me-2' : ''"
-                >
+              <div
+                class="h5 text-primary d-flex justify-content-start align-items-start gap-2"
+              >
+                <!-- x-bind:class="countFields(sectionIndex) === countFilledFields(sectionIndex) ? 'text-success me-2' : ''" -->
+                <span>
+                  <!-- x-show="countFields(sectionIndex) === countFilledFields(sectionIndex)" -->
                   <svg
-                    x-show="countFields(sectionIndex) === countFilledFields(sectionIndex)"
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"

@@ -30,7 +30,7 @@
                 x-for="(section, sectionIndex) in entity.form.sections"
                 :key="section.title"
               >
-                <template x-if="section.title === 'Basic Info'">
+                <template x-if="section.title === 'Screening'">
                   <tr
                     tabindex="0"
                     @click="selectEntity(entity.id, index); gridView = false"
@@ -225,7 +225,7 @@
                   x-for="(section, sectionIndex) in entity.form.sections"
                   :key="section.title"
                 >
-                  <template x-if="section.title === 'Basic Info'">
+                  <template x-if="section.title === 'Screening'">
                     <section>
                       <header class="px-2 py-2">
                         <template
