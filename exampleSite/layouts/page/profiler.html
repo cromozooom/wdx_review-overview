@@ -1,0 +1,105 @@
+{{ define "main" }}
+<div
+  x-data="profilerComponent()"
+  x-init="loadData()"
+  class="tw-min-h-screen tw-w-full"
+>
+  <template x-for="(section, index) in profiler" :key="index">
+    <section class="tw-min-h-screen tw-flex tw-w-full tw-h-full">
+      <div
+        class="tw-flex tw-justify-self-stretch tw-flex-col tw-w-full tw-h-full tw-min-h-screen"
+      >
+        <header>
+          <h2 class="tw-text-lg tw-font-semibold" x-text="section.section"></h2>
+        </header>
+        <div class="tw-grow tw-flex tw-items-center tw-w-full">
+          <template x-if="section.type === 'dropdownLanguage'">
+            <div
+              class="tw-max-w-[90rem] tw-w-full tw-mx-auto tw-grid tw-grid-cols-[30px_repeat(2,_1fr)]"
+            >
+              <div class="tw-flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 560 480"
+                  class="tw-mt-1"
+                >
+                  <use xlink:href="#far-circle-check"></use>
+                </svg>
+              </div>
+              <label class="tw-text-lg" x-text="section.label"> </label>
+              <div>
+                <select class="border rounded p-2 w-full">
+                  <option>Select Language</option>
+                  <template x-for="option in section.options" :key="option">
+                    <option x-text="option"></option>
+                  </template>
+                </select>
+              </div>
+            </div>
+          </template>
+          <template x-if="section.type === 'dropdown'">
+            <div class="">
+              <select class="border rounded p-2 w-full">
+                <template x-for="option in section.options" :key="option">
+                  <option x-text="option"></option>
+                </template>
+              </select>
+            </div>
+          </template>
+
+          <template x-if="section.type === 'group_inputs'">
+            <div class="mt-2">
+              <template x-for="question in section.questions" :key="question">
+                <div class="mb-2">
+                  <label class="block text-gray-700" x-text="question"></label>
+                  <input type="text" class="border rounded p-2 w-full" />
+                </div>
+              </template>
+            </div>
+          </template>
+
+          <template x-if="section.type === 'slider'">
+            <div class="mt-2">
+              <input type="range" class="w-full" />
+            </div>
+          </template>
+
+          <template x-if="section.type === 'multiple_choice'">
+            <div class="mt-2">
+              <template x-for="(option, index) in section.options" :key="index">
+                <div>
+                  <label>
+                    <input type="checkbox" />
+                    <span x-text="option"></span>
+                  </label>
+                </div>
+              </template>
+            </div>
+          </template>
+
+          <template x-if="section.type === 'input'">
+            <div class="mt-2">
+              <input type="text" class="border rounded p-2 w-full" />
+            </div>
+          </template>
+
+          <template x-if="section.content">
+            <p class="mt-2" x-html="section.content"></p>
+          </template>
+        </div>
+        <footer class="tw-flex tw-justify-between tw-w-full tw-p-2">
+          <div>
+            <button class="">Back</button>
+          </div>
+          <div>
+            <button class="" x-text="section.cta"></button>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </template>
+</div>
+
+{{ end }}

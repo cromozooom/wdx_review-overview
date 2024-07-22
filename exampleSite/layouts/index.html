@@ -1,279 +1,241 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{{ .Title }}</title>
-    {{/* styles */}} {{/* Load Bootstrap SCSS. */}} {{ $options := dict
-    "enableSourceMap" true }} {{ if hugo.IsProduction}} {{ $options := dict
-    "enableSourceMap" false "outputStyle" "compressed" }} {{ end }} {{ $styles
-    := resources.Get "scss/styles.scss" }} {{ $styles = $styles |
-    resources.ToCSS $options }} {{ if hugo.IsProduction }} {{ $styles = $styles
-    | fingerprint }} {{ end }}
-    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
-
-    {{/* Load Bootstrap JS. */}} {{ $js := resources.Get "js/index.js" }} {{
-    $params := dict }} {{ $sourceMap := cond hugo.IsProduction "" "inline" }} {{
-    $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target"
-    "es2018" "params" $params }} {{ $js = $js | js.Build $opts }}
-    <script
-      src="{{ $js.RelPermalink }}"
-      {{
-      if
-      hugo.IsProduction
-      }}integrity="{{ $js.Data.Integrity }}"
-      {{
-      end
-      }}
-      defer
-    ></script>
-
-    <script defer src="/js/cdn.min.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-  </head>
-  <body
-    x-data="entityComponent()"
-    x-init="loadData(); "
-    class="w-100 h-100 d-flex"
-  >
-    <template x-if="activeUser === 'Razvan Nicu'">
-      <div
-        x-ref="draggableElement"
-        class="draggable d-flex align-items-center rounded shadow p-1 ps-2 text-bg-brand overflow-visible text-center"
-        @mousedown="startDrag"
+{{ define "main" }}
+<section
+  class="w-100 h-100 d-flex"
+  x-data="entityComponent()"
+  x-init="loadData(); "
+>
+  <template x-if="activeUser === 'Razvan Nicu'">
+    <div
+      x-ref="draggableElement"
+      class="draggable d-flex align-items-center rounded shadow p-1 ps-2 text-bg-brand overflow-visible text-center"
+      @mousedown="startDrag"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 128 512"
+        fill="currentColor"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 128 512"
-          fill="currentColor"
-        >
-          <use xlink:href="#fas-ellipsis-vertical"></use>
-        </svg>
-        {{ partial "admin-tool.html" . }}
-      </div>
-    </template>
-
-    {{ partial "svg.html" . }}
-    <template x-if="!widgetOnly">
-      <template x-if="showSideNav">
-        <nav class="h-100 p-2 border-end bg-light d-flex flex-column">
-          <ul class="list-unstyled">
-            <li>
-              <button class="border-0 btn btn-link btn-lg bg-transparent">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-house"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
-                  />
-                </svg>
-              </button>
-            </li>
-            <li>
-              <button class="border-0 btn btn-link btn-lg bg-transparent">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-speedometer"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.39.39 0 0 0-.029-.518z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.95 11.95 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0"
-                  />
-                </svg>
-              </button>
-            </li>
-            <li>
-              <button class="border-0 btn btn-link btn-lg bg-transparent">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-backspace-reverse"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M9.854 5.146a.5.5 0 0 1 0 .708L7.707 8l2.147 2.146a.5.5 0 0 1-.708.708L7 8.707l-2.146 2.147a.5.5 0 0 1-.708-.708L6.293 8 4.146 5.854a.5.5 0 1 1 .708-.708L7 7.293l2.146-2.147a.5.5 0 0 1 .708 0"
-                  />
-                  <path
-                    d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7.08a2 2 0 0 0 1.519-.698l4.843-5.651a1 1 0 0 0 0-1.302L10.6 1.7A2 2 0 0 0 9.08 1zm7.08 1a1 1 0 0 1 .76.35L14.682 8l-4.844 5.65a1 1 0 0 1-.759.35H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"
-                  />
-                </svg>
-              </button>
-            </li>
-            <li>
-              <button class="border-0 btn btn-link btn-lg bg-transparent">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-bag"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"
-                  />
-                </svg>
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </template>
-    </template>
-    <div class="d-flex flex-column w-100">
-      <header class="d-flex flex-column">
-        <template x-if="!widgetOnly">
-          <div>
-            <section
-              class="text-bg-primary d-flex justify-content-between align-items-center border-bottom"
-            >
-              <nav class="d-flex gap-2 align-items-center">
-                <button
-                  x-show="!showBannerInfo"
-                  class="btn btn-brand"
-                  @click="showBannerInfo = !showBannerInfo"
-                >
-                  Show info
-                </button>
-                <h1 class="m-0">WDX1 - Review Overview</h1>
-              </nav>
-              <div
-                style="--bs-border-opacity: 0.1"
-                class="d-flex align-items-center gap-2 border-start"
+        <use xlink:href="#fas-ellipsis-vertical"></use>
+      </svg>
+      {{ partial "admin-tool.html" . }}
+    </div>
+  </template>
+  <template x-if="!widgetOnly">
+    <template x-if="showSideNav">
+      <nav class="h-100 p-2 border-end bg-light d-flex flex-column">
+        <ul class="list-unstyled">
+          <li>
+            <button class="border-0 btn btn-link btn-lg bg-transparent">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-house"
+                viewBox="0 0 16 16"
               >
-                <button
-                  style="--bs-border-opacity: 0.1"
-                  class="nav-link px-3 border-end d-flex py-3 align-items-center gap-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-floppy"
-                    viewBox="0 0 512 512"
-                  >
-                    <use xlink:href="#far-print"></use>
-                  </svg>
-                </button>
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  x-model="activeUser"
-                  @change="saveActiveUser"
-                >
-                  <template x-for="user in users" :key="user.name">
-                    <option
-                      :value="user.name"
-                      x-text="user.name"
-                      :selected="user.name === activeUser"
-                    ></option>
-                  </template>
-                </select>
-                <button
-                  @click="toggleLightMode()"
-                  class="btn btn-link nav-link px-2 d-flex align-items-center"
-                >
-                  <svg
-                    x-show="lightMode"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-arrow-right-short"
-                    viewBox="0 0 512 512"
-                  >
-                    <use xlink:href="#fas-sun-bright"></use>
-                  </svg>
-                  <svg
-                    x-show="!lightMode"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-arrow-right-short"
-                    viewBox="0 0 512 512"
-                  >
-                    <use xlink:href="#fas-moon-stars"></use>
-                  </svg>
-                </button>
-              </div>
-            </section>
-            <div class="bannerInfo" style="--bs-bg-opacity: 0.8">
+                <path
+                  d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+                />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="border-0 btn btn-link btn-lg bg-transparent">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-speedometer"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.39.39 0 0 0-.029-.518z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.95 11.95 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0"
+                />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="border-0 btn btn-link btn-lg bg-transparent">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-backspace-reverse"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.854 5.146a.5.5 0 0 1 0 .708L7.707 8l2.147 2.146a.5.5 0 0 1-.708.708L7 8.707l-2.146 2.147a.5.5 0 0 1-.708-.708L6.293 8 4.146 5.854a.5.5 0 1 1 .708-.708L7 7.293l2.146-2.147a.5.5 0 0 1 .708 0"
+                />
+                <path
+                  d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7.08a2 2 0 0 0 1.519-.698l4.843-5.651a1 1 0 0 0 0-1.302L10.6 1.7A2 2 0 0 0 9.08 1zm7.08 1a1 1 0 0 1 .76.35L14.682 8l-4.844 5.65a1 1 0 0 1-.759.35H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"
+                />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="border-0 btn btn-link btn-lg bg-transparent">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-bag"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </template>
+  </template>
+  <div class="d-flex flex-column w-100">
+    <header class="d-flex flex-column">
+      <template x-if="!widgetOnly">
+        <div>
+          <section
+            class="text-bg-primary d-flex justify-content-between align-items-center border-bottom"
+          >
+            <nav class="d-flex gap-2 align-items-center">
               <button
-                class="bannerInfo--button btn btn-brand"
+                x-show="!showBannerInfo"
+                class="btn btn-brand"
                 @click="showBannerInfo = !showBannerInfo"
               >
-                Hide info
+                Show info
               </button>
-              <template x-if="showBannerInfo">
-                <div
-                  class="p-2 text-bg-primary overflow-hidden banner-height d-flex justify-content-center align-items-center"
+              <h1 class="m-0">WDX1 - Review Overview</h1>
+            </nav>
+            <div
+              style="--bs-border-opacity: 0.1"
+              class="d-flex align-items-center gap-2 border-start"
+            >
+              <button
+                style="--bs-border-opacity: 0.1"
+                class="nav-link px-3 border-end d-flex py-3 align-items-center gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-floppy"
+                  viewBox="0 0 512 512"
                 >
-                  <div
-                    class="d-flex justify-content-center flex-column align-items-center"
-                  >
-                    <strong> Banner Info </strong>
-                    <small> hover me please ... </small>
-                  </div>
+                  <use xlink:href="#far-print"></use>
+                </svg>
+              </button>
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                x-model="activeUser"
+                @change="saveActiveUser"
+              >
+                <template x-for="user in users" :key="user.name">
+                  <option
+                    :value="user.name"
+                    x-text="user.name"
+                    :selected="user.name === activeUser"
+                  ></option>
+                </template>
+              </select>
+              <button
+                @click="toggleLightMode()"
+                class="btn btn-link nav-link px-2 d-flex align-items-center"
+              >
+                <svg
+                  x-show="lightMode"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right-short"
+                  viewBox="0 0 512 512"
+                >
+                  <use xlink:href="#fas-sun-bright"></use>
+                </svg>
+                <svg
+                  x-show="!lightMode"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right-short"
+                  viewBox="0 0 512 512"
+                >
+                  <use xlink:href="#fas-moon-stars"></use>
+                </svg>
+              </button>
+            </div>
+          </section>
+          <div class="bannerInfo" style="--bs-bg-opacity: 0.8">
+            <button
+              class="bannerInfo--button btn btn-brand"
+              @click="showBannerInfo = !showBannerInfo"
+            >
+              Hide info
+            </button>
+            <template x-if="showBannerInfo">
+              <div
+                class="p-2 text-bg-primary overflow-hidden banner-height d-flex justify-content-center align-items-center"
+              >
+                <div
+                  class="d-flex justify-content-center flex-column align-items-center"
+                >
+                  <strong> Banner Info </strong>
+                  <small> hover me please ... </small>
                 </div>
-              </template>
-            </div>
-            <div class="border-bottom bg-body">
-              <nav class="d-flex tab-nav">
-                <strong class="px-3 py-3 border-end"> Overview </strong>
-                <strong class="px-3 py-3 border-end"> Chat Box </strong>
-                <strong class="px-3 py-3 active border-end text-bg-brand">
-                  Review
-                </strong>
-                <strong class="px-3 py-3 border-end">
-                  Individual Details
-                </strong>
-                <strong class="px-3 py-3 border-end">
-                  Commercial context details
-                </strong>
-                <strong class="px-3 py-3 border-end"> Account details </strong>
-              </nav>
-            </div>
+              </div>
+            </template>
           </div>
-        </template>
-      </header>
-      <main
-        class="flex-grow-1 overflow-hidden d-flex p-2 bg-dark"
-        style="--bs-bg-opacity: 0.05"
-      >
-        <div
-          class="d-flex flex-column border rounded bg-white overflow-hidden w-100"
-        >
-          <template x-if="switchColumns">
-            <main class="d-flex flex-grow-1 overflow-hidden w-100">
-              {{ partial "review.html" . }} {{ partial "summary.html" . }}
-            </main>
-          </template>
-          <template x-if="!switchColumns">
-            <main class="d-flex flex-grow-1 overflow-hidden w-100">
-              {{ partial "summary.html" . }} {{ partial "review.html" . }}
-            </main>
-          </template>
+          <div class="border-bottom bg-body">
+            <nav class="d-flex tab-nav">
+              <strong class="px-3 py-3 border-end"> Overview </strong>
+              <strong class="px-3 py-3 border-end"> Chat Box </strong>
+              <strong class="px-3 py-3 active border-end text-bg-brand">
+                Review
+              </strong>
+              <strong class="px-3 py-3 border-end"> Individual Details </strong>
+              <strong class="px-3 py-3 border-end">
+                Commercial context details
+              </strong>
+              <strong class="px-3 py-3 border-end"> Account details </strong>
+            </nav>
+          </div>
         </div>
-      </main>
-    </div>
-
-    {{ partial "script.html" . }}
-  </body>
-</html>
+      </template>
+    </header>
+    <main
+      class="flex-grow-1 overflow-hidden d-flex p-2 bg-dark"
+      style="--bs-bg-opacity: 0.05"
+    >
+      <div
+        class="d-flex flex-column border rounded bg-white overflow-hidden w-100"
+      >
+        <template x-if="switchColumns">
+          <main class="d-flex flex-grow-1 overflow-hidden w-100">
+            {{ partial "review.html" . }} {{ partial "summary.html" . }}
+          </main>
+        </template>
+        <template x-if="!switchColumns">
+          <main class="d-flex flex-grow-1 overflow-hidden w-100">
+            {{ partial "summary.html" . }} {{ partial "review.html" . }}
+          </main>
+        </template>
+      </div>
+    </main>
+  </div>
+</section>
+{{ end }}

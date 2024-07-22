@@ -1,9 +1,12 @@
 
 baseURL = "https://example.com"
-disableKinds = ["page", "section", "taxonomy", "term"]
 
 [outputs]
 home = ["HTML"]
+section = ["HTML"]
+page = ["HTML"]
+taxonomy = ["HTML"]
+term = ["HTML"]
 
 [module]
 [module.hugoVersion]
@@ -11,4 +14,26 @@ home = ["HTML"]
 min = "0.92.0"
 
 [[module.imports]]
-path="github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+
+[[module.mounts]]
+source = "assets"
+target = "assets"
+[[module.mounts]]
+source = "hugo_stats.json"
+target = "assets/watching/hugo_stats.json"
+
+[build]
+writeStats = true
+[[build.cachebusters]]
+source = "assets/watching/hugo_stats\\.json"
+target = "styles\\.css"
+[[build.cachebusters]]
+source = "(postcss|tailwind)\\.config\\.js"
+target = "css"
+[[build.cachebusters]]
+source = "assets/.*\\.(js|ts|jsx|tsx)"
+target = "js"
+[[build.cachebusters]]
+source = "assets/.*\\.(.*)$"
+target = "$1"

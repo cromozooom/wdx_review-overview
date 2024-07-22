@@ -1,0 +1,361 @@
+{
+  "form": [
+    {
+      "section": "Language",
+      "label": "Please select your language",
+      "type": "dropdownLanguage",
+      "validation": [
+        {
+          "required": true
+        },
+        {
+          "validMessage": "Slected language"
+        },
+        {
+          "nonValidMessage": "You need to select one language"
+        }
+      ],
+      "cta": "Continue",
+      "options": [
+        "English",
+        "French",
+        "Nederland",
+        "Italian",
+        "Spanish"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/b67b6839-30fe-451f-9ee6-588bc23870c9/Untitled.png"
+    },
+    {
+      "section": "Summary / Thank you in advance",
+      "cta": "Continue",
+      "content": "Thank you for your trust and your confidence.\n\nTo define the Investor Profile that is best suited to you, it is important for us to understand your personal and financial situation, your knowledge and experience of financial instruments, your investment objectives, and your risk tolerance.\n\nKnowing you better means that we can advise you better. We therefore recommend that you respond to this questionnaire, which also meets the requirements of the applicable regulation. One of the objectives of which is to increase protection for savers and investors. The national authorities have also reinforced this mechanism by emphasizing that customer insight information (portfolio composition, cash, availability and indicative value of their assets, financial expenses) should be collected with the customer’s interests in mind, in order to provide them with a suitable, appropriate investment service.\n\nPlease keep us informed of any changes to your situation, knowledge and experience of financial instruments and your investment objectives, which may change your financial approach (risk/return).\n\nWe thank you in advance for taking the time to complete this document."
+    },
+    {
+      "section": "T&C Consent",
+      "cta": "I consent",
+      "content": "Be vigilant: updating the page will result in the return to the first page of the questionnaire. Your data will be lost and you will have to start the questionnaire again from the beginning.\n\nPersonal Data\n\nCA Indosuez designs and provides investment solutions adapted to its clients’ profile. In order to be able to provide you with adapted or appropriate investment services, we would like to know more about your personal and wealth situation, knowledge and experience of financial instruments, your expectations, your appetite for risk and your investment objectives. This information will be used to define an appropriate investment strategy and support you in this regard.\n\nYour consent may be changed or withdrawn at any time by updating your profile.\n\nYour personal data is strictly confidential, and may not, without exemption or written agreement on your part, be exchanged or transferred outside the Indosuez entity to you are attached. As a client, your personal data will be retained for a duration of ten years from the end of your relationship with CA Indosuez. As a potential client, your personal data will be retained for a duration of three years from your last activity.\n\nIn accordance with the regulations on personal data protection, you may exercise your rights (access, correction, restriction, deletion and portability) and define the fate of your personal data by e-mail (dpo@ca-indosuez.fr) or by letter (CA Indosuez, DPO 17 rue du Docteur Lancereaux 75008 PARIS).\n\nFor more information, you can consult the section dedicated to personal data on our website.",
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/538d3b10-dba5-4981-a7b8-951944022e33/Untitled.png"
+    },
+    {
+      "section": "How old are you?",
+      "type": "dropdown",
+      "cta": "Continue",
+      "options": [
+        "less than 25",
+        "25/45",
+        "46/75",
+        "more than 75"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/5ac52a83-db86-4a67-9a78-2e8a14d08c7a/Untitled.png"
+    },
+    {
+      "section": "Breakdown total assets",
+      "title": "What is the current breakdown of your total assets?",
+      "type": "group_inputs",
+      "questions": [
+        "Real estate for residential / private use € 0",
+        "Real estate for letting / producing income € 0",
+        "Long-term financial assets (including life insurance policy / accumulation assets) and professional assets: Equities – Bonds - Alternative investments - Private Equity - Precious metals - Commodities € 0",
+        "Short and medium-term financial assets (precautionary savings): Cash, short-term savings € 0",
+        "Non-financial tangible assets: works of art, vehicles, aircrafts, yachts, collections, etc. € 0"
+      ],
+      "total": "Total Assets € 0",
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/abbb7986-f5a6-4e99-b43c-faa4f6a43064/Untitled.png"
+    },
+    {
+      "section": "Total assets",
+      "title": "What is the estimated value of your total assets?",
+      "type": "dropdown",
+      "options": [
+        "< 1 million €",
+        "1 - 5 million €",
+        "5 - 10 million €",
+        "10 million €"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/1506fcbc-1acf-4fcd-bfe1-c1675ea20887/Untitled.png"
+    },
+    {
+      "section": "Financial assets",
+      "title": "What percentage of your total assets is held as financial assets (excluding professional assets from listed or non-listed companies)?",
+      "type": "dropdown",
+      "options": [
+        "< 10%",
+        "10 - 50%",
+        "50 - 80%",
+        "80%"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/b0322873-8cd0-4b8b-9fec-07eeb3df6e1f/Untitled.png"
+    },
+    {
+      "section": "Deposited with our establishment",
+      "questions": [
+        {
+          "question": "What percentage of these financial assets (excluding professional assets from listed or unlisted company) is deposited with our establishment? - or that you plan to deposit",
+          "type": "dropdown",
+          "options": [
+            "< 10%",
+            "10 - 50%",
+            "50 - 80%",
+            "80%"
+          ]
+        },
+        {
+          "question": "What is the approximate amount you would like to entrust to us or have already entrusted to us?",
+          "type": "input"
+        }
+      ],
+      "cta": "Continue",
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/60373c3f-a87a-4b52-9be1-c4ea632dd5be/Untitled.png"
+    },
+    {
+      "section": "What is your current ratio of debt to total assets?",
+      "type": "slider",
+      "options": "1 to 100%",
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/82938061-299d-4671-815e-7ca1bd21e062/Untitled.png"
+    },
+    {
+      "section": "What is your estimate of your annual income?",
+      "type": "dropdown",
+      "options": [
+        "< € 50,000",
+        "€ 50,000 - € 100,000",
+        "€ 100,000 - € 250,000",
+        "€ 250,000 - € 500,000",
+        "€ 500,000 - 1 million €",
+        "1 million €"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/de02bb92-0a4b-4c60-a4ea-39ac1ea0b4cd/Untitled.png"
+    },
+    {
+      "section": "What is your estimate of your annual expenditure?",
+      "type": "dropdown",
+      "options": [
+        "< € 50,000",
+        "€ 50,000 - € 100,000",
+        "€ 100,000 - € 250,000",
+        "€ 250,000 - € 500,000",
+        "€ 500,000 - 1 million €",
+        "1 million €"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/6e6ed92a-7178-457b-8765-858865fc28d2/Untitled.png"
+    },
+    {
+      "section": "Your financial knowledge",
+      "type": "dropdown",
+      "options": [
+        "None",
+        "Limited",
+        "Average",
+        "Advanced"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/5642686f-1498-463e-a6eb-ce03e975c8f8/Untitled.png"
+    },
+    {
+      "section": "Your level of financial experience",
+      "type": "dropdown",
+      "options": [
+        "None",
+        "Short (<1 year)",
+        "Average (1 – 5 years)",
+        "Advanced (>5 years)"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/1085aeba-a9c4-465e-8bbc-3fce81cab824/Untitled.png"
+    },
+    {
+      "section": "How often do you keep updated on developments in the financial markets?",
+      "type": "dropdown",
+      "options": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "As required"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/1a3d36c2-4848-4419-9d2d-9f68d54455c6/Untitled.png"
+    },
+    {
+      "section": "Have you ever used an institution (banking or not) offering investment advisory services?",
+      "type": "dropdown",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/788b53a8-f4af-432a-b1f5-1285142c7b5f/Untitled.png"
+    },
+    {
+      "section": "Have you ever entrusted the management of your financial assets to a financial institution under a discretionary management mandate?",
+      "type": "dropdown",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/788b53a8-f4af-432a-b1f5-1285142c7b5f/Untitled.png"
+    },
+    {
+      "section": "For each financial instrument listed below, please confirm your previous holdings.",
+      "type": "multiple_choice",
+      "options": [
+        "Money market investments",
+        "Insurance products",
+        "Ordinary bonds",
+        "Equities",
+        "Simple investment funds",
+        "Alternative and complex investment funds",
+        "Structured products with 100% capital guarantee/protection",
+        "Structured products without 100% capital guarantee/protection and complex bonds",
+        "Derivative products",
+        "Commodities (non-agricultural) and metals",
+        "Private Equity products",
+        "Accumulator/Decumulator",
+        "Real Estate Funds"
+      ],
+      "help_texts": [
+        "Money market investments - including money market funds",
+        "unstructured UCITS, collective investment schemes, mutual funds and similar",
+        "formula funds, commodity funds, AIFs excluding real estate funds, hedge funds and similar",
+        "including convertible bonds, perpetual bonds, etc.",
+        "options, futures, warrants, etc.",
+        "directly or indirectly holding",
+        "Structure composed of a series of barrier options",
+        "OPCI, SCPI, other real estate AIF"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/ba02dddd-41bb-44b4-94c7-cb69373da58c/Untitled.png"
+    },
+    {
+      "section": "Accumulator, Decumulator",
+      "questions": [
+        {
+          "question": "Have you made this type of financial investment in the last 5 years?",
+          "type": "dropdown",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "question": "Have you ever incurred losses on this type of financial investment?",
+          "type": "dropdown",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        }
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/b749bf5e-8e2a-4ca5-b9f7-ce7763e91176/Untitled.png"
+    },
+    {
+      "section": "Alternative and complex investment funds (formula funds, commodity funds, AIFs excluding real estate funds, hedge funds and similar)",
+      "questions": [
+        {
+          "question": "Have you made this type of financial investment in the last 5 years?",
+          "type": "dropdown",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "question": "Have you ever incurred losses on this type of financial investment?",
+          "type": "dropdown",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        }
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/fcfd3661-f527-4339-b587-acfe311927e4/Untitled.png"
+    },
+    {
+      "section": "Money market investments (including money market funds)",
+      "questions": [
+        {
+          "question": "Have you made this type of financial investment in the last 5 years?",
+          "type": "dropdown",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "question": "Have you ever incurred losses on this type of financial investment?",
+          "type": "dropdown",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        }
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/e5a57cf0-4e0c-42e3-b2e8-b42526b7f504/Untitled.png"
+    },
+    {
+      "section": "Money market investments (including money market funds)",
+      "questions": [
+        {
+          "question": "They offer limited performance with a generally low risk",
+          "type": "dropdown",
+          "options": [
+            "Do not know",
+            "False",
+            "True"
+          ]
+        },
+        {
+          "question": "In some years, the return on money market funds can be zero or negative",
+          "type": "dropdown",
+          "options": [
+            "True",
+            "False",
+            "Do not know"
+          ]
+        }
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/bc7c8003-e6dd-4f02-88e7-70cfbfbec601/Untitled.png"
+    },
+    {
+      "section": "Your investment objectives and your risk tolerance",
+      "content": "Please indicate here the investment objectives you hope to achieve by entrusting us with the management of your assets through our investment advisory and/or portfolio management services. In a second time, these objectives will help determine the investment strategy used for each of these services. This excludes assets for which our role is limited to carrying out your instructions (Receiving/Sending orders (RTO)).",
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/d6dfc390-ef90-4767-9915-fa611b844421/Untitled.png"
+    },
+    {
+      "section": "What is the main financial objective in entrusting your capital to us?",
+      "type": "dropdown",
+      "options": [
+        "Preserving and passing on assets",
+        "Pension",
+        "Increasing the value of assets",
+        "Pursuit of return"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/33ea0951-d6a5-490c-8917-89c9037b5e26/Untitled.png"
+    },
+    {
+      "section": "What is your investment horizon?",
+      "type": "dropdown",
+      "options": [
+        "< 1 year",
+        "1-3 years",
+        "3-5 years",
+        "5 years"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/3f086fdf-0629-4be7-8bd3-96013af5cf3e/Untitled.png"
+    },
+    {
+      "section": "How would you react in the event of a significant decline in your portfolio?",
+      "type": "dropdown",
+      "options": [
+        "I would immediately sell my at-risk investments",
+        "I would rapidly reallocate my portfolio",
+        "I would monitor changes in my portfolio closely without making any hasty decisions",
+        "I would maintain my investments, seeing this decline as a source of opportunity"
+      ],
+      "sample_image": "https://prod-files-secure.s3.us-west-2.amazonaws.com/d0093e19-470f-4b7e-b113-6d56b32d2aa6/3c97ab6b-79be-41aa-8d03-ec1ebd4a42b4/Untitled.png"
+    },
+    {
+      "section": "Do you wish to take Sustainable Finance criteria into consideration in your investment choices and express your preferences on the way non-financial criteria: environmental (E), social (S) and governance (G) should be taken into account in the management of your assets?",
+      "content": "The Crédit Agricole Indosuez Wealth Management Group wishes to contribute, through its investment solutions, to the transition to a more sustainable and resilient economy, by supporting its clients in their choices with regard to the management of their assets or their energy transition.",
+      "type": "dropdown",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    }
+  ]
+}
