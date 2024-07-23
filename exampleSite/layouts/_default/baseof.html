@@ -18,11 +18,14 @@
 
     <link href="{{ $stylesTw.RelPermalink }}" rel="stylesheet" />
 
-    {{/* Load Bootstrap JS and review-comp.js */}} {{ $jsIndex := resources.Get
-    "js/index.js" }} {{ $params := dict }} {{ $sourceMap := cond
-    hugo.IsProduction "" "inline" }} {{ $opts := dict "sourceMap" $sourceMap
-    "minify" hugo.IsProduction "target" "es2018" "params" $params }} {{ $jsIndex
-    = $jsIndex | js.Build $opts }}
+    
+
+    {{/* Load Bootstrap JS and review-comp.js */}}
+    {{ $jsIndex := resources.Get "js/index.js" }}
+    {{ $params := dict }}
+    {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+    {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
+    {{ $jsIndex = $jsIndex | js.Build $opts }}
 
     <script src="{{ $jsIndex.Permalink }}"></script>
 
