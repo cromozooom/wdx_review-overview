@@ -1,0 +1,20 @@
+{{ $height := .height }}
+{{ $title := .title }}
+<div
+  x-data="{table : false}"
+  class="d-flex border rounded bg-white w-100  h-test{{ $height }}"
+>
+  <div class="d-flex flex-column w-100">
+    <header class="d-flex justify-content-between p-2 ">
+      <div>{{ $title }} {{ $height }}</div>
+      <div>
+        <button @click="table = !table">table</button>
+      </div>
+    </header>
+    <div class="flex-grow-1 ">
+      <template x-if="table">
+        {{ partial "grid/table_grid.html" . }}
+      </template>
+    </div>
+  </div>
+</div>

@@ -59,7 +59,39 @@
 @import "utilities/overflow.scss";
 @import "utilities/z-index.scss";
 @import "utilities/focus.scss";
+@import "utilities/height.scss";
 @import "comp/user.scss";
+
+// .dev * {
+//   outline: 1px solid red;
+//   outline-offset: -2px;
+// }
+
+.sideToggle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 100%;
+  transform: translate(0, -50%);
+
+  &.sideHidden {
+    background: rgba($primary, 0.15);
+    .hover-opacity_element {
+      opacity: 1;
+    }
+  }
+  &.sideVisible {
+    background: rgba($primary, 0);
+  }
+  &:hover {
+    background: rgba($primary, 0.15);
+  }
+}
+.sideVisible {
+  svg {
+    transform: rotate(180deg);
+  }
+}
 
 .hover-opacity {
   .hover-opacity_el {
@@ -235,5 +267,16 @@ body.dragging {
   .pannel {
     bottom: 100%;
     right: 0;
+  }
+}
+
+.hover-opacity {
+  &_element {
+    opacity: 0;
+  }
+  &:hover {
+    .hover-opacity_element {
+      opacity: 1;
+    }
   }
 }
