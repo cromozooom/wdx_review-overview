@@ -1,0 +1,79 @@
+<div class="row g-0 h-100 dev">
+  <template x-if="columnVisible">
+    <div
+      x-show="columnVisible"
+      x-transition
+      class="col-12 col-md-3 overflow-hidden h-100"
+    >
+      <div class="d-flex w-100 px-1 overflow-y-scroll h-100">
+        <div class="w-100 py-2 d-flex flex-column gap-2">
+          Dashboard Summary
+          <div>
+            {{ $partialParams := dict "height" 1 "title" "Title" }}
+            {{ partial "grid/widget.html" $partialParams }}
+          </div>
+          <div>
+            {{ $partialParams := dict "height" 2 "title" "Title" }}
+            {{ partial "grid/widget.html" $partialParams }}
+          </div>
+          <div>
+            {{ $partialParams := dict "height" 4 "title" "Title" }}
+            {{ partial "grid/widget.html" $partialParams }}
+          </div>
+          <div class="pb-2">
+            {{ $partialParams := dict "height" 4 "title" "Title" }}
+            {{ partial "grid/widget.html" $partialParams }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <div
+    class="col-12 overflow-hidden h-100 position-relative border-start"
+    :class="columnVisible ? 'col-md-9 ps-3' :'ps-4'"
+  >
+    {{ partial "grid/toggle-button.html" . }}
+    <div class="d-flex w-100 overflow-y-scroll h-100 py-2 ">
+      <div class="w-100">
+        <div class="row g-0">
+          <div class="col-12 col-md-3">
+            <div class="d-flex flex-column gap-2 px-1">
+              {{ $partialParams := dict "height" 3 "title" "Title" }}
+              {{ partial "grid/widget.html" $partialParams }}
+              {{ $partialParams := dict "height" 1 "title" "Title" }}
+              {{ partial "grid/widget.html" $partialParams }}
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="d-flex flex-column gap-2 px-1">
+              {{ $partialParams := dict "height" 2 "title" "Title" }}
+              {{ partial "grid/widget.html" $partialParams }}
+              {{ $partialParams := dict "height" 3 "title" "Title" }}
+              {{ partial "grid/widget.html" $partialParams }}
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="d-flex flex-column gap-2 px-1">
+              {{ $partialParams := dict "height" 2 "title" "Title" }}
+              {{ partial "grid/widget.html" $partialParams }}
+              {{ $partialParams := dict "height" 3 "title" "Title" }}
+              {{ partial "grid/widget.html" $partialParams }}
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="d-flex flex-column gap-2 px-1">
+              {{ $partialParams := dict "height" 4 "title" "Title" }}
+              {{ partial "grid/widget.html" $partialParams }}
+              {{ $partialParams := dict "height" 1 "title" "Title" }}
+              {{ partial "grid/widget.html" $partialParams }}
+              {{ $partialParams := dict "height" 4 "title" "Title" }}
+              {{ partial "grid/widget.html" $partialParams }}
+              {{ $partialParams := dict "height" 4 "title" "Title" }}
+              {{ partial "grid/widget.html" $partialParams }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

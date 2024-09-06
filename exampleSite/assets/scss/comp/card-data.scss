@@ -1,0 +1,26 @@
+// .card-data * {
+//   outline: 1px solid red;
+// }
+
+.card-data {
+  container-type: inline-size;
+  container-name: cardData;
+  width: 100%;
+}
+
+.card-dataItem {
+  flex-direction: column;
+  justify-content: space-between;
+  .card-dataLabel {
+    font-size: 80%;
+  }
+}
+@container cardData (min-width: 22rem) {
+  .card-dataItem {
+    flex-direction: row;
+    justify-content: space-between;
+    .card-dataLabel {
+      font-size: 100%;
+    }
+  }
+}

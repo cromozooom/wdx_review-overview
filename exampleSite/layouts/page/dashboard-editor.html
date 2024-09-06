@@ -1,0 +1,1356 @@
+{{ define "main" }}
+  <div
+    class="container-fluid px-0 bg-light d-flex flex-column position-relative"
+    x-data="gridEditorApp()"
+    x-init="init()"
+  >
+    <template x-if="viewConfig">
+      <section
+        class="editor position-fixed py-2 bottom-0"
+        :class="{
+            'start-0 ps-2': configStart, 
+            'end-0 pe-4': !configStart,
+            'h-0': configMinimized, 
+            'h-100': !configMinimized,
+        }"
+      >
+        <div
+          class="border rounded rounded-sm h-100 w-100 bg-white shadow overflow-hidden"
+        >
+          <header class="d-flex align-items-center w-100 text-bg-primary">
+            <div class="h-100 d-flex flex-grow-1 align-items-center ps-2 py-2">
+              <span> Editor </span>
+            </div>
+            <div class="d-flex">
+              <div class="btn-group me-1 rounded-0 ">
+                <button
+                  class="btn btn-primary rounded-0 text-decoration-none"
+                  @click="toggleConfigStart()"
+                >
+                  <template x-if="configStart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-layout-sidebar-inset-reverse"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M2 2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z"
+                      />
+                      <path
+                        d="M13 4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1z"
+                      />
+                    </svg>
+                  </template>
+                  <template x-if="!configStart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-layout-sidebar-inset"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z"
+                      />
+                      <path
+                        d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+                  </template>
+                </button>
+                <button
+                  class="btn btn-primary rounded-0 text-decoration-none"
+                  @click="toggleConfigMinimized()"
+                >
+                  <template x-if="configMinimized">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-square"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                      />
+                    </svg>
+                  </template>
+                  <template x-if="!configMinimized">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-dash-lg"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"
+                      />
+                    </svg>
+                  </template>
+                </button>
+              </div>
+            </div>
+          </header>
+          <template x-if="!configMinimized">
+            <div class="d-flex flex-column overflow-y-scroll h-100">
+              <section class="p-2 border-bottom">
+                <button class="btn btn-sm btn-primary" @click="addRow">
+                  + Add Row
+                </button>
+                <button
+                  class="btn btn-sm btn-primary"
+                  @click="sidebar = !sidebar"
+                >
+                  <span x-show="!sidebar"> Show </span>
+                  <span x-show="sidebar"> Hide </span>
+
+                  Side
+                </button>
+              </section>
+              <div>
+                <template x-for="(row, rowIndex) in rows" :key="rowIndex">
+                  <template x-if="rowIndex === selectedRowIndex">
+                    <section>
+                      <header
+                        class="p-2 text-bg-light d-flex border-bottom justify-content-between align-items-center"
+                      >
+                        <div class="flex-grow-1">
+                          <strong
+                            x-text="'R ' + rowIndex + ', C ' + selectedColIndex"
+                          ></strong>
+                        </div>
+
+                        <div class="btn-group">
+                          <button
+                            class="btn btn-sm btn-outline-secondary"
+                            @click="moveRowUp(rowIndex)"
+                            :disabled="rowIndex === 0"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="14"
+                              height="14"
+                              fill="currentColor"
+                              class="bi bi-chevron-up"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"
+                              />
+                            </svg>
+                          </button>
+                          <button
+                            class="btn btn-sm btn-outline-secondary"
+                            @click="moveRowDown(rowIndex)"
+                            :disabled="rowIndex === rows.length - 1"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="14"
+                              height="14"
+                              fill="currentColor"
+                              class="bi bi-chevron-down"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                              />
+                            </svg>
+                          </button>
+                          <button
+                            class="btn btn-danger btn-sm"
+                            @click="removeRow(rowIndex)"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="14"
+                              height="14"
+                              fill="currentColor"
+                              class="bi bi-trash"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                              />
+                              <path
+                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </header>
+                      <div class="p-2"></div>
+
+                      <div class="mb-3 px-2">
+                        <label for="rowInputTitle" class="form-label"
+                          >Title</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="rowInputTitle"
+                          aria-describedby="emailHelp"
+                          x-model="row.title"
+                        />
+                      </div>
+                      <div class="p-2">
+                        <div class="form-check form-switch ">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                            :id="'fullHeight' + rowIndex"
+                            :checked="row.fullHeight"
+                            @change="changeSingleWidget(rowIndex)"
+                          />
+                          <label
+                            class="form-check-label"
+                            :for="'fullHeight' + rowIndex"
+                            >Full height</label
+                          >
+                        </div>
+                      </div>
+                      <template x-if="!row.fullHeight">
+                        <div>
+                          <div class="d-flex flex-column p-2">
+                            <label>Columns No.</label>
+                            <div class="btn-group">
+                              <button
+                                class="btn btn-outline-primary"
+                                @click="decreaseColumns(row)"
+                              >
+                                -
+                              </button>
+                              <div
+                                class="px-3 w-100 d-flex justify-content-center align-items-center bg-light border-top border-bottom"
+                              >
+                                <span x-text="row.columns"></span>
+                              </div>
+                              <button
+                                class="btn btn-outline-primary"
+                                @click="increaseColumns(row)"
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+                          <div class="p-2">
+                            <template x-if="row.columns == 2">
+                              <div class="d-flex flex-column">
+                                <label>Column Widths</label>
+                                <div class="d-flex gap-1">
+                                  <div
+                                    class="btn-group"
+                                    role="group"
+                                    aria-label="Column Width Options"
+                                  >
+                                    <input
+                                      type="radio"
+                                      class="btn-check"
+                                      :name="'widthOptions' + rowIndex"
+                                      :id="'equal' + rowIndex"
+                                      value="equal"
+                                      x-model="row.widthType"
+                                    />
+                                    <label
+                                      class="btn btn-secondary d-flex align-items-center"
+                                      :for="'equal' + rowIndex"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-layout-split"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5-1v12H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-1 0H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h5.5z"
+                                        />
+                                      </svg>
+                                    </label>
+
+                                    <input
+                                      type="radio"
+                                      class="btn-check"
+                                      :name="'widthOptions' + rowIndex"
+                                      :id="'66-33' + rowIndex"
+                                      value="66-33"
+                                      x-model="row.widthType"
+                                    />
+                                    <label
+                                      class="btn btn-secondary d-flex align-items-center"
+                                      :for="'66-33' + rowIndex"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-layout-sidebar-reverse"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          d="M16 3a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5-1v12H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm1 0h2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-2z"
+                                        />
+                                      </svg>
+                                    </label>
+
+                                    <input
+                                      type="radio"
+                                      class="btn-check"
+                                      :name="'widthOptions' + rowIndex"
+                                      :id="'33-66' + rowIndex"
+                                      value="33-66"
+                                      x-model="row.widthType"
+                                    />
+                                    <label
+                                      class="btn btn-secondary d-flex align-items-center"
+                                      :for="'33-66' + rowIndex"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-layout-sidebar"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5-1v12h9a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM4 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h2z"
+                                        />
+                                      </svg>
+                                    </label>
+
+                                    <input
+                                      type="radio"
+                                      class="btn-check"
+                                      :name="'widthOptions' + rowIndex"
+                                      :id="'custom' + rowIndex"
+                                      value="custom"
+                                      x-model="row.widthType"
+                                    />
+                                    <label
+                                      class="btn btn-secondary d-flex align-items-center"
+                                      :for="'custom' + rowIndex"
+                                      >Custom</label
+                                    >
+                                  </div>
+                                </div>
+                                <div class="d-flex pt-2">
+                                  <template x-if="row.widthType == 'custom'">
+                                    <div class="input-group">
+                                      <input
+                                        type="number"
+                                        class="form-control"
+                                        placeholder="Column 1 (%)"
+                                        x-model="row.customWidth1"
+                                        @input="updateCustomWidth(row)"
+                                      />
+                                      <input
+                                        type="number"
+                                        class="form-control"
+                                        :value="100 - row.customWidth1"
+                                        readonly
+                                      />
+                                    </div>
+                                  </template>
+                                </div>
+                              </div>
+                            </template>
+                          </div>
+                          <template
+                            x-for="(col, colIndexHeight) in Array.from({ length: row.columns })"
+                            :key="colIndexHeight"
+                          >
+                            <template
+                              x-if="colIndexHeight === selectedColIndex"
+                            >
+                              <div class="p-2">
+                                <!-- Auto Height Toggle -->
+                                <div class="form-check form-switch">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    :id="'changeAutoHeight' + rowIndex + '-' + colIndexHeight"
+                                    :checked="row.autoHeight"
+                                    @change="changeAutoHeight(rowIndex)"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    :for="'changeAutoHeight' + rowIndex + '-' + colIndexHeight"
+                                  >
+                                    Height Auto
+                                  </label>
+                                </div>
+                              </div>
+                              <!-- <span x-text="row.autoHeight"></span> -->
+                            </template>
+                          </template>
+                          <template x-if="!row.autoHeight">
+                            <div class="p-2">
+                              <label>Row Height</label>
+                              <div class="input-group">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  placeholder="Height"
+                                  x-model="row.heightValue"
+                                />
+                                <select
+                                  class="form-select"
+                                  x-model="row.heightUnit"
+                                >
+                                  <option value="px">px</option>
+                                  <option value="rem">rem</option>
+                                  <option value="vh">vh</option>
+                                </select>
+                              </div>
+                            </div>
+                          </template>
+                        </div>
+                      </template>
+                      <div>
+                        <template
+                          x-for="(col, colIndex) in Array.from({ length: row.columns })"
+                          :key="colIndex"
+                        >
+                          <template x-if="colIndex === selectedColIndex">
+                            <section>
+                              <div class="p-2 d-flex justify-content-between">
+                                <template x-if="!row.fullHeight">
+                                  <!-- check controls -->
+                                  <div class="form-check form-switch ">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      role="switch"
+                                      :id="'displayGridSwitch' + rowIndex + '-' + colIndex"
+                                      :checked="row.columnsData[colIndex].displayGrid"
+                                      @change="changeDisplay(rowIndex, colIndex)"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      :for="'displayGridSwitch' + rowIndex + '-' + colIndex"
+                                      >Grid</label
+                                    >
+                                  </div>
+                                </template>
+                                <template
+                                  x-if="!row.columnsData[colIndex].displayGrid && !row.fullHeight"
+                                >
+                                  <div class="form-check form-switch">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      role="switch"
+                                      :id="'flexWrapSwitch' + rowIndex + '-' + colIndex"
+                                      :checked="row.columnsData[colIndex].flexWrap"
+                                      @change="toggleFlexWrap(rowIndex, colIndex)"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      :for="'flexWrapSwitch' + rowIndex + '-' + colIndex"
+                                      >Wrap</label
+                                    >
+                                  </div>
+                                </template>
+                              </div>
+
+                              <template
+                                x-if="row.columnsData[colIndex].displayGrid && !row.fullHeight"
+                              >
+                                <div class="d-flex flex-column p-2">
+                                  <label>Grid Columns</label>
+                                  <div class="btn-group">
+                                    <button
+                                      class="btn btn-outline-primary"
+                                      @click="decreaseCols(rowIndex, colIndex)"
+                                    >
+                                      -
+                                    </button>
+                                    <div
+                                      class="px-3 w-100 d-flex justify-content-center align-items-center bg-light border-top border-bottom"
+                                    >
+                                      <span
+                                        x-text="row.columnsData[colIndex].gridCols"
+                                      ></span>
+                                    </div>
+                                    <button
+                                      class="btn btn-outline-primary"
+                                      @click="increaseCols(rowIndex, colIndex)"
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+                              </template>
+                              <template
+                                x-for="(widget, widgetIndex) in row.columnsData[colIndex].widgets"
+                                :key="widgetIndex"
+                              >
+                                <template
+                                  x-if="widgetIndex === selectedWidgetIndex"
+                                >
+                                  <section class="">
+                                    <header
+                                      class="d-flex justify-content-between bg-light border-top border-bottom p-2"
+                                    >
+                                      <strong
+                                        x-text="'widget: ' + selectedWidgetIndex"
+                                      ></strong>
+
+                                      <div class="btn-group">
+                                        <button
+                                          class="btn btn-sm btn-outline-secondary"
+                                          @click="moveWidgetUp(rowIndex, colIndex, widgetIndex)"
+                                        >
+                                          <!-- :disabled="!rows[rowIndex] || !rows[rowIndex].columnsData || !rows[rowIndex].columnsData[colIndex] || widgetIndex === 0" -->
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="14"
+                                            height="14"
+                                            fill="currentColor"
+                                            class="bi bi-chevron-left"
+                                            viewBox="0 0 16 16"
+                                          >
+                                            <path
+                                              fill-rule="evenodd"
+                                              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                                            />
+                                          </svg>
+                                        </button>
+                                        <button
+                                          class="btn btn-sm btn-outline-secondary"
+                                          @click="moveWidgetDown(rowIndex, colIndex, widgetIndex)"
+                                        >
+                                          <!-- :disabled="!rows[rowIndex] || !rows[rowIndex].columnsData || !rows[rowIndex].columnsData[colIndex] || widgetIndex === rows[rowIndex].columnsData[colIndex].widgets.length - 1" -->
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="14"
+                                            height="14"
+                                            fill="currentColor"
+                                            class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16"
+                                          >
+                                            <path
+                                              fill-rule="evenodd"
+                                              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                                            />
+                                          </svg>
+                                        </button>
+
+                                        <button
+                                          class="btn btn-danger btn-sm"
+                                          @click="removeWidget(rowIndex, colIndex, widgetIndex)"
+                                        >
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="14"
+                                            height="14"
+                                            fill="currentColor"
+                                            class="bi bi-trash"
+                                            viewBox="0 0 16 16"
+                                          >
+                                            <path
+                                              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                                            />
+                                            <path
+                                              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                                            />
+                                          </svg>
+                                        </button>
+                                      </div>
+                                    </header>
+                                    <div class="mb-3 p-2">
+                                      <label
+                                        for="widgetInputTitle"
+                                        class="form-label"
+                                        >Title</label
+                                      >
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        id="widgetInputTitle"
+                                        aria-describedby="emailHelp"
+                                        x-model="widget.title"
+                                      />
+                                    </div>
+                                    <div class="p-2">
+                                      <div class="flex-grow-1">
+                                        <select
+                                          x-model="widget.type"
+                                          class="form-select mb-2"
+                                          aria-label="Select widget type"
+                                        >
+                                          <option value="widget1">
+                                            Widget 1 (timeline)
+                                          </option>
+                                          <option value="widget2">
+                                            Widget 2 (empty)
+                                          </option>
+                                          <option value="widget3">
+                                            Widget 3 (grid)
+                                          </option>
+                                          <option value="widget4">
+                                            Widget 4 (tiles)
+                                          </option>
+                                          <option value="widget5">
+                                            Widget 5 (kpi)
+                                          </option>
+                                          <option value="widget6">
+                                            Widget 6 (iFrame)
+                                          </option>
+                                          <option value="widget7">
+                                            Widget 7 (details)
+                                          </option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </section>
+                                  <span x-text="widgetIndex"></span>
+                                </template>
+                              </template>
+
+                              <div class="border-top">
+                                <button
+                                  @click="addWidgetToColumn(rowIndex, colIndex)"
+                                  class="btn btn-link text-decoration-none"
+                                >
+                                  + Widget
+                                </button>
+                              </div>
+                            </section>
+                          </template>
+                        </template>
+                      </div>
+                    </section>
+                  </template>
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
+      </section>
+    </template>
+
+    <div
+      class="position-fixed m-2 controller rounded py-2 border-bottom d-flex justify-content-between px-2 bg-white border shadow-sm"
+    >
+      <div class=" d-flex justify-content-between w-100 gap-2">
+        <div class=" flex-grow-1 h-100">
+          <div class="btn-group h-100">
+            <button class="btn btn-outline-primary" @click="saveConfig">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                class="bi bi-floppy"
+                viewBox="0 0 16 16"
+              >
+                <path d="M11 2H9v3h2z" />
+                <path
+                  d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z"
+                />
+              </svg>
+            </button>
+            <button
+              :class="viewConfig ? 'btn-success' : 'btn-outline-secondary'"
+              class="btn "
+              @click="toggleViewConfig()"
+            >
+              <svg
+                x-show="viewConfig"
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                class="bi bi-eye-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                <path
+                  d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"
+                />
+              </svg>
+              <svg
+                x-show="!viewConfig"
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                class="bi bi-eye"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"
+                />
+                <path
+                  d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="d-flex gap-2">
+          <div class="input-group">
+            <input
+              type="file"
+              class="form-control"
+              id="inputGroupFile04"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+              @change="loadConfigFromFile"
+            />
+          </div>
+
+          <button
+            class="btn btn-outline-secondary d-flex align-items-center gap-2"
+            @click="exportConfig"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-cloud-arrow-up-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0z"
+              />
+            </svg>
+            Export
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex w-100 h-100">
+      <side
+        class="d-flex overflow-hidden h-100 bg-primary"
+        :class="sidebarVisible ? 'flex-column' : ''"
+        style="max-width: 26rem;"
+      >
+        <div
+          class="w-100 d-flex flex-column text-bg-light border-end"
+          :class="!sidebarVisible ? 'h-100' : ''"
+        >
+          <div
+            class=""
+            :class="sidebarVisible ? 'border-bottom shadow-sm' : ''"
+          >
+            <button
+              class="p-2 text-primary"
+              @click="sidebarVisible = !sidebarVisible"
+            >
+              <svg
+                x-show="!sidebarVisible"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
+                />
+              </svg>
+              <svg
+                x-show="sidebarVisible"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <template x-if="sidebarVisible">
+          <div class="overflow-y-scroll scroll-thin w-100">
+            <div class="d-flex flex-column gap-2 p-2">
+              {{ partial "widgets/entity-card.html" . }}
+              {{ partial "widgets/details.html" . }}
+              {{ partial "widgets/timeline.html" . }}
+              {{ partial "widgets/kpi.html" . }}
+              {{ partial "widgets/tiles.html" . }}
+              {{ partial "widgets/iframe.html" . }}
+              <div class="border border-danger d-flex flex-column gap-2">
+                {{ partial "widgets/grid.html" . }}
+                {{ partial "widgets/empty.html" . }}
+              </div>
+            </div>
+          </div>
+        </template>
+      </side>
+      <div class="d-flex flex-column flex-grow-1 overflow-y-scroll ">
+        <template x-for="(row, rowIndex) in rows" :key="rowIndex">
+          <div
+            :class="
+              row.fullHeight ? 'flex-grow-1 h-100 overflow-y-hidden fullHeight732' : 'my-4 xpy-2'
+            "
+          >
+            <template x-if="row.title && !row.fullHeight">
+              <div class="px-2">
+                <p class="h1" x-text="row.title"></p>
+              </div>
+            </template>
+            <div
+              :class="row.fullHeight ? 'd-flex flex-grow-1 w-100 h-100 overflow-y-hidden fullHeight741' : 'd-flex'
+            "
+            >
+              <template x-if="viewConfig">
+                <div
+                  class="d-flex m-0 p-0"
+                  :class="rowIndex === selectedRowIndex ? 'text-bg-success' : 'text-bg-light'"
+                >
+                  <button
+                    @click="selectRow(rowIndex)"
+                    class="selectorRow w-100 text-center"
+                    x-text="'R ' + rowIndex"
+                  ></button>
+                </div>
+              </template>
+
+              <!-- Preview -->
+              <div
+                :class="row.fullHeight ? 'h-100 w-100 overflow-y-hidden fullHeight759' : 'flex-grow-1'"
+              >
+                <div
+                  class=""
+                  :class="row.fullHeight ? 'h-100 overflow-y-hidden row g-0 fullHeight763' : 'row g-0'"
+                  :style="row.autoHeight && !row.fullHeight ? 'height: auto;' : `height: ${row.heightValue}${row.heightUnit};`"
+                >
+                  <template
+                    x-for="(col, colIndex) in Array.from({ length: row.columns })"
+                    :key="colIndex"
+                  >
+                    <div
+                      :class="getColumnClasses(row, colIndex)"
+                      class="h-100 px-1 position-relative"
+                    >
+                      <template x-if="viewConfig">
+                        <button
+                          @click="selectColumn(rowIndex, colIndex)"
+                          class="selectorCol px-2 py-1 rounded-top"
+                          :class="row.columnsData[colIndex].selected ? 'text-bg-success' : 'text-bg-light'"
+                          x-text="'C ' + (colIndex)"
+                        ></button>
+                      </template>
+                      <div
+                        class="overflow-hidden d-flex"
+                        data-atr="col"
+                        :class="{
+                          'col-selected': row.columnsData[colIndex].selected && viewConfig,
+                          'h-100 py-2' : row.fullHeight
+                        }"
+                        :style="row.autoHeight && !row.fullHeight ? 'height: auto;' : `height: ${row.heightValue}${row.heightUnit};`"
+                      >
+                        <div
+                          class="overflow-hidden w-100"
+                          :class="{
+                            'd-grid gap-2': row.columnsData[colIndex].displayGrid,
+                            ['d-template-' + row.columnsData[colIndex].gridCols] : row.columnsData[colIndex].gridCols && row.columnsData[colIndex].displayGrid,
+                            'd-flex flex-grow-1 gap-2': !row.columnsData[colIndex].displayGrid 
+      
+                          }"
+                        >
+                          <template
+                            x-for="(widget, widgetIndex) in row.columnsData[colIndex].widgets"
+                            :key="widgetIndex"
+                          >
+                            <div
+                              data-atr="widget"
+                              class=" flex-grow-1 w-100 "
+                              :class="{
+                                'widget-selected': widget.selected && viewConfig,
+                                'widget-notSelected': !(widget.selected && viewConfig),
+                                'h-100 overflow-y-hidden fullHeight763': row.fullHeight
+                              }"
+                              @click="selectWidget(rowIndex, colIndex, widgetIndex)"
+                            >
+                              <!-- Display the selected widget -->
+                              <template x-if="widget.type === 'widget1'">
+                                {{ partial "widgets/timeline.html" . }}
+                              </template>
+                              <template x-if="widget.type === 'widget2'">
+                                {{ partial "widgets/empty.html" . }}
+                              </template>
+                              <template x-if="widget.type === 'widget3'">
+                                {{ partial "widgets/grid.html" . }}
+                              </template>
+                              <template x-if="widget.type === 'widget4'">
+                                {{ partial "widgets/tiles.html" . }}
+                              </template>
+                              <template x-if="widget.type === 'widget5'">
+                                {{ partial "widgets/kpi.html" . }}
+                              </template>
+                              <template x-if="widget.type === 'widget6'">
+                                {{ partial "widgets/iframe.html" . }}
+                              </template>
+                              <template x-if="widget.type === 'widget6'">
+                                {{ partial "widgets/iframe.html" . }}
+                              </template>
+                              <template x-if="widget.type === 'widget7'">
+                                {{ partial "widgets/details.html" . }}
+                              </template>
+                            </div>
+                          </template>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function gridEditorApp() {
+      return {
+        configStart: true,
+        configMinimized: false,
+        viewConfig: false,
+        rows: [],
+        sidebar: [],
+        sidebarVisible: true,
+        selectedRowIndex: null,
+        selectedColIndex: null,
+        selectedWidgetIndex: null,
+
+        init() {
+          this.loadConfig();
+          this.loadEditorState();
+        },
+
+        addRow() {
+          // Unselect all rows, columns, and widgets
+          this.rows.forEach((row) => {
+            row.selected = false;
+            row.columnsData.forEach((col) => {
+              col.selected = false;
+              col.widgets.forEach((widget) => {
+                widget.selected = false;
+              });
+            });
+          });
+
+          // Add the new row
+          const newRow = {
+            columns: 1,
+            autoHeight: false,
+            fullHeight: false,
+            title: "",
+            heightValue: 10,
+            heightUnit: "rem",
+            widthType: "equal",
+            customWidth1: 50,
+            customWidth2: 50,
+            selected: true, // Automatically select the new row
+            columnsData: [
+              {
+                widgets: [],
+                selected: true,
+                displayGrid: false,
+                gridCols: 2,
+                flexWrap: false,
+              },
+            ], // Automatically select the first column
+          };
+
+          this.rows.push(newRow);
+
+          // Set the selection indices to the new row and its first column
+          this.selectedRowIndex = this.rows.length - 1;
+          this.selectedColIndex = 0;
+          this.selectedWidgetIndex = null; // No widget selected initially
+        },
+
+        selectRow(rowIndex) {
+          console.log(rowIndex);
+          this.selectedRowIndex = rowIndex;
+          this.selectedWidgetIndex = null;
+
+          // Mark the selected row and unselect all columns
+          this.rows.forEach((row, index) => {
+            row.selected = index === rowIndex;
+            row.columnsData.forEach((col) => {
+              col.selected = false; // Unselect all columns initially
+            });
+          });
+
+          // Automatically select the first column of the selected row
+          this.selectedColIndex = 0;
+          this.rows[rowIndex].columnsData[0].selected = true;
+        },
+
+        selectColumn(rowIndex, colIndex) {
+          this.selectedRowIndex = rowIndex;
+          this.selectedColIndex = colIndex;
+          this.selectedWidgetIndex = null;
+
+          // Unselect all columns and widgets in all rows
+          this.rows.forEach((row, rIndex) => {
+            row.columnsData.forEach((col, cIndex) => {
+              col.selected = rIndex === rowIndex && cIndex === colIndex;
+              col.widgets.forEach((widget) => {
+                widget.selected = false;
+              });
+            });
+          });
+
+          // Select the first widget in the selected column, if it exists
+          if (this.rows[rowIndex].columnsData[colIndex].widgets.length > 0) {
+            this.selectedWidgetIndex = 0;
+            this.rows[rowIndex].columnsData[colIndex].widgets[0].selected =
+              true;
+          }
+        },
+
+        moveRowUp(rowIndex) {
+          if (rowIndex > 0) {
+            // Swap the current row with the previous one
+            const temp = this.rows[rowIndex];
+            this.rows[rowIndex] = this.rows[rowIndex - 1];
+            this.rows[rowIndex - 1] = temp;
+
+            // Update the selected row index
+            this.selectedRowIndex = rowIndex - 1;
+          }
+        },
+
+        moveRowDown(rowIndex) {
+          if (rowIndex < this.rows.length - 1) {
+            // Swap the current row with the next one
+            const temp = this.rows[rowIndex];
+            this.rows[rowIndex] = this.rows[rowIndex + 1];
+            this.rows[rowIndex + 1] = temp;
+
+            // Update the selected row index
+            this.selectedRowIndex = rowIndex + 1;
+          }
+        },
+
+        removeRow(index) {
+          this.rows.splice(index, 1);
+          this.selectedRowIndex = null;
+          this.selectedColIndex = null;
+          this.selectedWidgetIndex = null;
+        },
+
+        selectWidget(rowIndex, colIndex, widgetIndex) {
+          this.selectedRowIndex = rowIndex;
+          this.selectedColIndex = colIndex;
+          this.selectedWidgetIndex = widgetIndex;
+
+          // Unselect all rows and columns
+          this.rows.forEach((row, rIndex) => {
+            row.selected = rIndex === rowIndex; // Select the current row
+            row.columnsData.forEach((col, cIndex) => {
+              col.selected = rIndex === rowIndex && cIndex === colIndex; // Select the current column
+              // Unselect all widgets in other columns
+              col.widgets.forEach((widget) => {
+                widget.selected = false;
+              });
+            });
+          });
+
+          // Mark the selected widget
+          this.rows[rowIndex].columnsData[colIndex].widgets.forEach(
+            (widget, index) => {
+              widget.selected = index === widgetIndex;
+            },
+          );
+        },
+
+        addWidgetToSidebar() {
+          this.sidebar.widgets.push({
+            type: "widget1",
+            title: "",
+            selected: false,
+          });
+        },
+        addWidgetToColumn(rowIndex, colIndex) {
+          this.rows[rowIndex].columnsData[colIndex].widgets.push({
+            type: "widget1",
+            title: "",
+            selected: false,
+          });
+        },
+
+        removeWidget(rowIndex, colIndex, widgetIndex) {
+          this.rows[rowIndex].columnsData[colIndex].widgets.splice(
+            widgetIndex,
+            1,
+          );
+          this.selectedWidgetIndex = null;
+        },
+
+        moveWidgetUp(rowIndex, colIndex, widgetIndex) {
+          if (widgetIndex > 0) {
+            // Swap the current widget with the previous one in the same column
+            const widgets = this.rows[rowIndex].columnsData[colIndex].widgets;
+            const temp = widgets[widgetIndex];
+            widgets[widgetIndex] = widgets[widgetIndex - 1];
+            widgets[widgetIndex - 1] = temp;
+
+            this.selectedWidgetIndex = widgetIndex - 1;
+          } else {
+            // Move to the previous column if available
+            if (colIndex > 0) {
+              const prevColumn = this.rows[rowIndex].columnsData[colIndex - 1];
+              prevColumn.widgets.push(
+                this.rows[rowIndex].columnsData[colIndex].widgets.shift(),
+              );
+              this.selectedColIndex = colIndex - 1;
+              this.selectedWidgetIndex = prevColumn.widgets.length - 1;
+            } else if (rowIndex > 0) {
+              // Move to the last column of the previous row
+              const prevRow = this.rows[rowIndex - 1];
+              const lastColumn =
+                prevRow.columnsData[prevRow.columnsData.length - 1];
+              lastColumn.widgets.push(
+                this.rows[rowIndex].columnsData[colIndex].widgets.shift(),
+              );
+
+              this.selectedRowIndex = rowIndex - 1;
+              this.selectedColIndex = prevRow.columnsData.length - 1;
+              this.selectedWidgetIndex = lastColumn.widgets.length - 1;
+            } else {
+              // Wrap around to the last column of the last row
+              const lastRow = this.rows[this.rows.length - 1];
+              const lastColumn =
+                lastRow.columnsData[lastRow.columnsData.length - 1];
+              lastColumn.widgets.push(
+                this.rows[rowIndex].columnsData[colIndex].widgets.shift(),
+              );
+
+              this.selectedRowIndex = this.rows.length - 1;
+              this.selectedColIndex = lastRow.columnsData.length - 1;
+              this.selectedWidgetIndex = lastColumn.widgets.length - 1;
+            }
+          }
+        },
+
+        moveWidgetDown(rowIndex, colIndex, widgetIndex) {
+          const widgets = this.rows[rowIndex].columnsData[colIndex].widgets;
+          if (widgetIndex < widgets.length - 1) {
+            // Swap the current widget with the next one in the same column
+            const temp = widgets[widgetIndex];
+            widgets[widgetIndex] = widgets[widgetIndex + 1];
+            widgets[widgetIndex + 1] = temp;
+
+            this.selectedWidgetIndex = widgetIndex + 1;
+          } else {
+            // Move to the next column if available
+            if (colIndex < this.rows[rowIndex].columnsData.length - 1) {
+              const nextColumn = this.rows[rowIndex].columnsData[colIndex + 1];
+              nextColumn.widgets.unshift(widgets.pop());
+
+              this.selectedColIndex = colIndex + 1;
+              this.selectedWidgetIndex = 0;
+            } else if (rowIndex < this.rows.length - 1) {
+              // Move to the first column of the next row
+              const nextRow = this.rows[rowIndex + 1];
+              const firstColumn = nextRow.columnsData[0];
+              firstColumn.widgets.unshift(widgets.pop());
+
+              this.selectedRowIndex = rowIndex + 1;
+              this.selectedColIndex = 0;
+              this.selectedWidgetIndex = 0;
+            } else {
+              // Wrap around to the first column of the first row
+              const firstRow = this.rows[0];
+              const firstColumn = firstRow.columnsData[0];
+              firstColumn.widgets.unshift(widgets.pop());
+
+              this.selectedRowIndex = 0;
+              this.selectedColIndex = 0;
+              this.selectedWidgetIndex = 0;
+            }
+          }
+        },
+
+        increaseColumns(row) {
+          if (row.columns < 3) {
+            row.columns++;
+            row.columnsData.push({ widgets: [] }); // Add a new column with an empty widgets array
+            this.adjustColumns(row);
+          }
+        },
+
+        decreaseColumns(row) {
+          if (row.columns > 1) {
+            row.columns--;
+            row.columnsData.pop(); // Remove the last column's data
+            this.adjustColumns(row);
+          }
+        },
+
+        adjustColumns(row) {
+          if (row.columns == 1 || row.columns == 3) {
+            row.widthType = "equal";
+          } else if (row.columns == 2 && row.widthType == "custom") {
+            row.customWidth1 = 50;
+            row.customWidth2 = 50;
+          }
+        },
+
+        updateCustomWidth(row) {
+          if (row.widthType == "custom") {
+            row.customWidth2 = 100 - row.customWidth1;
+          }
+        },
+
+        getColumnClasses(row, colIndex) {
+          if (row.columns == 3) {
+            return "col-4"; // 3 equal columns
+          } else if (row.columns == 2) {
+            switch (row.widthType) {
+              case "66-33":
+                return colIndex === 0 ? "col-8" : "col-4"; // 66% / 33%
+              case "33-66":
+                return colIndex === 0 ? "col-4" : "col-8"; // 33% / 66%
+              case "custom":
+                const col1 = Math.round((row.customWidth1 / 100) * 12);
+                const col2 = Math.round((row.customWidth2 / 100) * 12);
+                return colIndex === 0 ? `col-${col1}` : `col-${col2}`; // Custom percentage
+              default:
+                return "col-6"; // Equal width for 2 columns
+            }
+          } else {
+            return "col-12"; // Single column
+          }
+        },
+
+        // here
+        changeSingleWidget(rowIndex) {
+          this.rows[rowIndex].fullHeight = !this.rows[rowIndex].fullHeight;
+        },
+
+        changeAutoHeight(rowIndex) {
+          this.rows[rowIndex].autoHeight = !this.rows[rowIndex].autoHeight;
+        },
+        changeDisplay(rowIndex, colIndex) {
+          this.rows[rowIndex].columnsData[colIndex].displayGrid =
+            !this.rows[rowIndex].columnsData[colIndex].displayGrid;
+        },
+
+        increaseCols(rowIndex, colIndex) {
+          if (this.rows[rowIndex].columnsData[colIndex].gridCols < 6) {
+            this.rows[rowIndex].columnsData[colIndex].gridCols++;
+          }
+        },
+        decreaseCols(rowIndex, colIndex) {
+          if (this.rows[rowIndex].columnsData[colIndex].gridCols > 1) {
+            this.rows[rowIndex].columnsData[colIndex].gridCols--;
+          }
+        },
+
+        toggleFlexWrap(rowIndex, colIndex) {
+          this.rows[rowIndex].columnsData[colIndex].flexWrap =
+            !this.rows[rowIndex].columnsData[colIndex].flexWrap;
+        },
+
+        toggleViewConfig() {
+          this.viewConfig = !this.viewConfig;
+          this.saveEditorState();
+        },
+
+        toggleConfigStart() {
+          this.configStart = !this.configStart;
+          this.saveEditorState();
+        },
+
+        toggleConfigMinimized() {
+          this.configMinimized = !this.configMinimized;
+          this.saveEditorState();
+        },
+
+        saveConfig() {
+          localStorage.setItem("gridConfig", JSON.stringify(this.rows));
+          alert("Configuration saved!");
+        },
+
+        loadConfig() {
+          const savedConfig = localStorage.getItem("gridConfig");
+          if (savedConfig) {
+            this.rows = JSON.parse(savedConfig);
+          }
+        },
+
+        saveEditorState() {
+          const editorState = {
+            configStart: this.configStart,
+            configMinimized: this.configMinimized,
+            viewConfig: this.viewConfig,
+          };
+          localStorage.setItem("editorState", JSON.stringify(editorState));
+        },
+
+        loadEditorState() {
+          const savedState = localStorage.getItem("editorState");
+          if (savedState) {
+            const parsedState = JSON.parse(savedState);
+            this.configStart = parsedState.configStart;
+            this.configMinimized = parsedState.configMinimized;
+            this.viewConfig = parsedState.viewConfig;
+          }
+        },
+
+        // Function to load the configuration from a file
+        loadConfigFromFile(event) {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              const jsonConfig = e.target.result;
+              this.rows = JSON.parse(jsonConfig);
+            };
+            reader.readAsText(file);
+          }
+        },
+
+        // Function to export the current configuration as a JSON file
+        exportConfig() {
+          const jsonConfig = JSON.stringify(this.rows, null, 2);
+          const blob = new Blob([jsonConfig], { type: "application/json" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "grid-config.json";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        },
+      };
+    }
+  </script>
+{{ end }}

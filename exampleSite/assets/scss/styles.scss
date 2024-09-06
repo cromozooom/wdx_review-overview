@@ -59,7 +59,40 @@
 @import "utilities/overflow.scss";
 @import "utilities/z-index.scss";
 @import "utilities/focus.scss";
+@import "utilities/height.scss";
 @import "comp/user.scss";
+@import "comp/card-data.scss";
+
+// .dev * {
+//   outline: 1px solid red;
+//   outline-offset: -2px;
+// }
+
+.sideToggle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 100%;
+  transform: translate(0, -50%);
+
+  &.sideHidden {
+    background: rgba($primary, 0.15);
+    .hover-opacity_element {
+      opacity: 1;
+    }
+  }
+  &.sideVisible {
+    background: rgba($primary, 0);
+  }
+  &:hover {
+    background: rgba($primary, 0.15);
+  }
+}
+.sideVisible {
+  svg {
+    transform: rotate(180deg);
+  }
+}
 
 .hover-opacity {
   .hover-opacity_el {
@@ -236,4 +269,101 @@ body.dragging {
     bottom: 100%;
     right: 0;
   }
+}
+
+.hover-opacity {
+  &_element {
+    opacity: 0;
+  }
+  &:hover {
+    .hover-opacity_element {
+      opacity: 1;
+    }
+  }
+}
+
+.border-x-none {
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
+.scroll-thin {
+  scrollbar-width: thin;
+}
+
+.editor {
+  width: 20rem;
+  z-index: 30;
+}
+
+.start-0 {
+  left: 0;
+}
+.end-0 {
+  right: 0;
+}
+
+.widget-selected {
+  border: 1px dashed red;
+}
+.widget-notSelected {
+  border: 1px dashed transparent;
+}
+.col-selected {
+  outline: 1px solid blue;
+  outline-offset: 2px;
+}
+
+.selectorCol {
+  position: absolute;
+  top: 0;
+  left: 4px;
+  z-index: 20;
+  display: block;
+  transform: translateY(-100%);
+  font-size: small;
+}
+
+.selectorRow {
+  font-size: small;
+  transform: rotate(-90deg);
+}
+
+// .tile-card {
+//   min-width: 30rem;
+// }
+
+.d-template-1 {
+  grid-template-columns: 1fr;
+}
+.d-template-2 {
+  grid-template-columns: 1fr 1fr;
+}
+.d-template-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.d-template-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.d-template-5 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.d-template-6 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.left-border {
+  border-left: 3px !important;
+  border-left-style: solid !important;
+  border-left-color: $primary;
+}
+
+.controller {
+  z-index: 100;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+xbody * {
+  outline: 1px solid red;
 }

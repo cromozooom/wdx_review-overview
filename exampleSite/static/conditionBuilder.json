@@ -1,0 +1,112 @@
+{
+    "entities": [
+        {
+            "name": "user",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "value": "Razvan"
+                }
+            ],
+            "subEntities": [
+                {
+                    "name": "about",
+                    "attributes": [
+                        {
+                            "name": "age",
+                            "type": "number",
+                            "value": 34
+                        },
+                        {
+                            "name": "born",
+                            "type": "string",
+                            "value": "Bucharest"
+                        }
+                    ],
+                    "subEntities": [
+                        {
+                            "name": "address",
+                            "attributes": [
+                                {
+                                    "name": "street",
+                                    "type": "string",
+                                    "value": "59 Fleeetham garden"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "school",
+                            "attributes": [
+                                {
+                                    "name": "name",
+                                    "type": "string",
+                                    "value": "Architecture"
+                                },
+                                {
+                                    "name": "year",
+                                    "type": "number",
+                                    "value": 2000
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "friend",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "value": "Razvan"
+                }
+            ],
+            "subEntities": [
+                {
+                    "name": "on",
+                    "attributes": [
+                        {
+                            "name": "age",
+                            "type": "number",
+                            "value": 34
+                        },
+                        {
+                            "name": "born",
+                            "type": "string",
+                            "value": "Bucharest"
+                        }
+                    ],
+                    "subEntities": [
+                        {
+                            "name": "address",
+                            "attributes": [
+                                {
+                                    "name": "street",
+                                    "type": "string",
+                                    "value": "59 Fleeetham garden"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "training",
+                            "attributes": [
+                                {
+                                    "name": "name",
+                                    "type": "string",
+                                    "value": "Architecture"
+                                },
+                                {
+                                    "name": "year",
+                                    "type": "number",
+                                    "value": 2000
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

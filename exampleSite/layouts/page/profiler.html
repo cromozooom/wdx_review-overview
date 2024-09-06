@@ -1,0 +1,339 @@
+{{ define "main" }}
+<div
+  x-data="profilerComponent()"
+  x-init="loadData()"
+  class="tw-min-h-screen tw-flex tw-flex-col tw-w-full relative tw-accent-brand-500"
+>
+  <header
+    class="tw-border-b tw-border-b-gray-200 tw-bg-brand-500 tw-text-brand-50"
+  >
+    <h2
+      class="tw-p-4 tw-font-bold"
+      x-text="getCurrentSectionTitle(currentSectionIndex)"
+    ></h2>
+  </header>
+  <div
+    class="tw-flex tw-flex-col tw-w-full tw-h-full tw-overflow-y-scroll scrollbar-width-thin"
+  >
+    <template x-for="(section, index) in profiler" :key="index">
+      <section
+        :id="'section-' + index"
+        :class="currentSectionIndex === index ? '' : 'tw-opacity-30'"
+      >
+        <div
+          class="tw-flex tw-justify-self-stretch tw-flex-col tw-w-full tw-h-full xtw-min-h-screen tw-py-6"
+        >
+          <div class="tw-grow tw-flex tw-items-center tw-w-full">
+            <template x-if="section.type === 'dropdownLanguage'">
+              <div
+                class="tw-max-w-[90rem] tw-w-full tw-mx-auto tw-grid tw-grid-cols-[30px_repeat(2,_1fr)]"
+              >
+                <div class="tw-flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 512 512"
+                    class="tw-mt-1"
+                  >
+                    <use xlink:href="#far-circle-check"></use>
+                  </svg>
+                </div>
+                <div class="tw-flex tw-flex-col">
+                  <label class="tw-text-lg tw-font-bold" x-text="section.label">
+                  </label>
+                  <template x-if="section.details">
+                    <span x-text="section.details"></span>
+                  </template>
+                  <span x-text="section.type"></span>
+                </div>
+                <div>
+                  <select class="border rounded p-2 w-full">
+                    <option>Select Language</option>
+                    <template x-for="option in section.options" :key="option">
+                      <option x-text="option"></option>
+                    </template>
+                  </select>
+                </div>
+              </div>
+            </template>
+            <template x-if="section.type === 'info'">
+              <div
+                class="tw-max-w-[90rem] tw-w-full tw-mx-auto tw-grid tw-grid-cols-[30px_repeat(2,_1fr)]"
+              >
+                <div class="tw-flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 512 512"
+                    class="tw-mt-1"
+                  >
+                    <use xlink:href="#far-circle-check"></use>
+                  </svg>
+                </div>
+                <div class="tw-flex tw-flex-col">
+                  <label class="tw-text-lg tw-font-bold" x-text="section.label">
+                  </label>
+                  <template x-if="section.details">
+                    <span x-text="section.details"></span>
+                  </template>
+                  <!-- <span x-text="section.type"></span> -->
+                </div>
+                <div class="tw-w-full">
+                  <div
+                    class="tw-prose tw-max-h-[calc(100vh-50vh)] tw-w-full tw-overflow-y-scroll scrollbar-width-thin tw-p-4 tw-rounded tw-shadow-lg tw-border-t"
+                  >
+                    <p x-html="section.content"></p>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <template x-if="section.type === 'single_choice'">
+              <div
+                class="tw-max-w-[90rem] tw-w-full tw-mx-auto tw-grid tw-grid-cols-[30px_repeat(2,_1fr)]"
+              >
+                <div class="tw-flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 512 512"
+                    class="tw-mt-1"
+                  >
+                    <use xlink:href="#far-circle-check"></use>
+                  </svg>
+                </div>
+                <div class="tw-flex tw-flex-col">
+                  <label class="tw-text-lg tw-font-bold" x-text="section.label">
+                  </label>
+                  <template x-if="section.details">
+                    <span x-text="section.details"></span>
+                  </template>
+                  <span x-text="section.type"></span>
+                </div>
+                <div>
+                  <div class="tw-grid tw-grid-cols-4 tw-gap-2">
+                    <template
+                      x-for="(option, index) in section.options"
+                      :key="index"
+                    >
+                      <label class="tw-rounded-md tw-border-2 tw-p-2">
+                        <input
+                          class="tw-w-6 tw-h-6 tw-text-brand-600 tw-bg-gray-100 tw-border-gray-300 tw-focus:ring-brand-500 tw-dark:focus:ring-brand-600 tw-dark:ring-offset-gray-800 tw-focus:ring-2 tw-dark:bg-gray-700 tw-dark:border-gray-600 tw-mx-auto"
+                          type="radio"
+                          :name="section.id"
+                          :value="option"
+                        />
+                        <span class="ill tw-w-full tw-flex tw-justify-center">
+                          <template x-if="section.illustration === 'edge'">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="80"
+                              height="80"
+                              viewBox="0 0 60 60"
+                              class="tw-mt-1 tw-mx-auto"
+                            >
+                              <use x-show="!index" xlink:href="#edge-0"></use>
+                              <use
+                                x-show="index === 1"
+                                xlink:href="#edge-1"
+                              ></use>
+                              <use
+                                x-show="index === 2"
+                                xlink:href="#edge-2"
+                              ></use>
+                              <use
+                                x-show="index === 3"
+                                xlink:href="#edge-3"
+                              ></use>
+                            </svg>
+                          </template>
+                          <template x-if="section.illustration === 'money'">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="80"
+                              height="80"
+                              viewBox="0 0 60 60"
+                              class="tw-mt-1 tw-mx-auto"
+                            >
+                              <use x-show="!index" xlink:href="#money-0"></use>
+                              <use
+                                x-show="index === 1"
+                                xlink:href="#money-1"
+                              ></use>
+                              <use
+                                x-show="index === 2"
+                                xlink:href="#money-2"
+                              ></use>
+                              <use
+                                x-show="index === 3"
+                                xlink:href="#money-3"
+                              ></use>
+                            </svg>
+                          </template>
+                        </span>
+                        <span class="tw-w-full text-center"></span>
+                        <span
+                          class="tw-w-full text-center tw-font-bold"
+                          x-text="option"
+                        ></span>
+                      </label>
+                    </template>
+                  </div>
+                </div>
+              </div>
+            </template>
+            <template x-if="section.type === 'dropdown'">
+              <div class="">
+                <select class="border rounded p-2 w-full">
+                  <template x-for="option in section.options" :key="option">
+                    <option x-text="option"></option>
+                  </template>
+                </select>
+              </div>
+            </template>
+            <template x-if="section.type === 'group_inputs'">
+              <div
+                class="tw-max-w-[90rem] tw-w-full tw-mx-auto tw-grid tw-grid-cols-[30px_repeat(2,_1fr)]"
+              >
+                <div class="tw-flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 512 512"
+                    class="tw-mt-1"
+                  >
+                    <use xlink:href="#far-circle-check"></use>
+                  </svg>
+                </div>
+                <div class="tw-flex tw-flex-col">
+                  <div class="tw-flex tw-flex-col">
+                    <label
+                      class="tw-text-lg tw-font-bold"
+                      x-text="section.label"
+                    ></label>
+                    <span x-text="section.type"></span>
+                  </div>
+                  <div
+                    class="tw-grid tw-grid-cols-1 tw-mt-6 tw-rounded-lg tw-shadow"
+                  >
+                    <template
+                      x-for="(question, qIndex) in section.questions"
+                      :key="qIndex"
+                    >
+                      <div
+                        class="field_focused tw-flex tw-justify-between gap-3 tw-bg-slate-100 tw-bg-opacity-30 tw-p-3"
+                        :class="!qIndex ? '' : 'border-top tw-border-gray-200'"
+                      >
+                        <div class="tw-flex tw-flex-col gap-2">
+                          <label
+                            class="tw-text-base tw-font-bold tw-text-gray-700 tw-pt-1 tw-focus:ring-brand-500"
+                            x-text="question.label"
+                            :for="`question-${index}-${qIndex}`"
+                          ></label>
+                          <span
+                            class="tw-text-gray-600"
+                            x-text="question.details"
+                          ></span>
+                        </div>
+                        <div>
+                          <input
+                            class="tw-border tw-rounded tw-p-2 tw-w-[7rem]"
+                            :id="`question-${index}-${qIndex}`"
+                            type="number"
+                            x-model.number="question.value"
+                            @input="saveProfilerToLocalStorage()"
+                          />
+                        </div>
+                      </div>
+                    </template>
+                  </div>
+                  <div class="py-3">
+                    <p class="tw-font-bold tw-text-2xl">
+                      <span x-text="section.total"></span>
+                      <span
+                        class="tw-text-2xl"
+                        x-text="'£' + getTotal(section.questions)"
+                      ></span>
+                    </p>
+                  </div>
+                </div>
+                <div class="tw-flex tw-justify-center tw-text-center">
+                  <div x-html="drawPieChart(section.questions)"></div>
+                </div>
+              </div>
+            </template>
+
+            <div class="tooltip"></div>
+
+            <template x-if="section.type === 'slider'">
+              <div class="mt-2">
+                <input type="range" class="w-full" />
+              </div>
+            </template>
+
+            <template x-if="section.type === 'multiple_choice'">
+              <div class="mt-2">
+                <template
+                  x-for="(option, index) in section.options"
+                  :key="index"
+                >
+                  <div>
+                    <label>
+                      <input type="checkbox" />
+                      <span x-text="option"></span>
+                    </label>
+                  </div>
+                </template>
+              </div>
+            </template>
+
+            <template x-if="section.type === 'input'">
+              <div class="mt-2">
+                <input type="text" class="border rounded p-2 w-full" />
+              </div>
+            </template>
+          </div>
+        </div>
+      </section>
+    </template>
+  </div>
+  <div
+    x-show="tooltipVisible"
+    :style="{ top: tooltipPosition.y + 'px', left: tooltipPosition.x + 'px' }"
+    class="my_tooltip"
+  >
+    <span x-text="tooltipContent"></span>
+  </div>
+  <footer
+    class="tw-flex tw-border-t tw-border-gray-200 tw-justify-between tw-w-full tw-p-2"
+  >
+    <div>
+      <template x-if="currentSectionIndex !== 0">
+        <button
+          @click="previousSection"
+          class="tw-bg-brand-600 tw-text-white tw-rounded tw-px-3 tw-py-3 tw-min-w-[7rem]"
+          :disabled="currentSectionIndex === 0"
+        >
+          Back
+        </button>
+      </template>
+    </div>
+    <div>
+      <button
+        class="tw-bg-brand-600 tw-text-white tw-rounded tw-px-3 tw-py-3 tw-min-w-[7rem]"
+        @click="nextSection"
+      >
+        <span
+          x-text="getCurrentSectionCTA(currentSectionIndex) || 'Next'"
+        ></span>
+      </button>
+    </div>
+  </footer>
+  <!-- -->
+</div>
+
+{{ end }}

@@ -1,0 +1,30 @@
+<section
+  x-data="{ iFrame : false }"
+  class="tile-card d-flex flex-column overflow-hidden h-100 w-100 border rounded bg-white"
+>
+  <header class="p-2 bg-light" @click="iFrame = !iFrame">
+    <strong
+      x-text="widget.title ? widget.title : ['Long Name Widve' + widgetIndex]"
+    >
+    </strong>
+  </header>
+  <div class="flex-grow-1 overflow-hidden border-top">
+    <!-- src="https://www.calinalefter.com/" -->
+    <template x-if="!iFrame">
+      <iframe
+        src="https://www.google.com/maps"
+        title="description`"
+        width="100%"
+        height="100%"
+      ></iframe>
+    </template>
+    <template x-if="iFrame">
+      <iframe
+        src="https://www.calinalefter.com/"
+        title="description`"
+        width="100%"
+        height="100%"
+      ></iframe>
+    </template>
+  </div>
+</section>

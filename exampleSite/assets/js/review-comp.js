@@ -1,0 +1,684 @@
+function entityComponent() {
+  return {
+    entities: [],
+    lightMode: true,
+    showForms: true,
+    flagIcon: true,
+    switchColumns: true,
+    showBannerInfo: true,
+    showSideNav: false,
+    gridView: false,
+    widgetOnly: false,
+    showHistory: true,
+    filteredEntities: [],
+    searchQuery: "",
+    selectedEntity: null,
+    selectedEntityIndex: 0,
+    currentSection: 0,
+    contactTypeFilter: "All",
+    selectedRiskLevel: "All",
+    users: [
+      { name: "Razvan Nicu", role: "admin" },
+      { name: "Luna Nicu", role: "operator" },
+      { name: "Calina Nicu", role: "operator" },
+    ],
+    activeUser: "Luna Nicu",
+    // activeUser: "Razvan Nicu",
+    originalValues: {},
+
+    x: 0,
+    y: 0,
+    isDragging: false,
+    offsetX: 0,
+    offsetY: 0,
+
+    loadPositionFromLocalStorage() {
+      const storedX = localStorage.getItem("draggableElementX");
+      const storedY = localStorage.getItem("draggableElementY");
+
+      if (storedX !== null && storedY !== null) {
+        this.x = parseInt(storedX, 10);
+        this.y = parseInt(storedY, 10);
+      }
+    },
+
+    savePositionToLocalStorage() {
+      localStorage.setItem("draggableElementX", this.x);
+      localStorage.setItem("draggableElementY", this.y);
+    },
+
+    startDrag(event) {
+      this.isDragging = true;
+      this.offsetX = event.clientX - this.x;
+      this.offsetY = event.clientY - this.y;
+
+      const moveHandler = (event) => {
+        if (this.isDragging) {
+          // Calculate new positions
+          let newX = event.clientX - this.offsetX;
+          let newY = event.clientY - this.offsetY;
+
+          // Get the element dimensions
+          const element = this.$refs.draggableElement;
+          const elementWidth = element.offsetWidth;
+          const elementHeight = element.offsetHeight;
+
+          // Get the window dimensions
+          const windowWidth = window.innerWidth;
+          const windowHeight = window.innerHeight;
+
+          // Ensure the element stays within the viewport
+          newX = Math.max(0, Math.min(newX, windowWidth - elementWidth));
+          newY = Math.max(0, Math.min(newY, windowHeight - elementHeight));
+
+          // Update the position
+          this.x = newX;
+          this.y = newY;
+          this.updatePosition();
+          this.savePositionToLocalStorage();
+        }
+      };
+
+      const upHandler = () => {
+        this.isDragging = false;
+        document.body.classList.remove("dragging");
+        window.removeEventListener("mousemove", moveHandler);
+        window.removeEventListener("mouseup", upHandler);
+      };
+
+      document.body.classList.add("dragging");
+      window.addEventListener("mousemove", moveHandler);
+      window.addEventListener("mouseup", upHandler);
+    },
+
+    updatePosition() {
+      const element = this.$refs.draggableElement;
+      if (element) {
+        element.style.transform = `translate3d(${this.x}px, ${this.y}px, 0)`;
+
+        // Calculate the window width and height
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        // Determine the position class
+        let positionClass = "";
+
+        if (this.y < windowHeight / 2) {
+          if (this.x < windowWidth / 2) {
+            positionClass = "topStart";
+          } else {
+            positionClass = "topEnd";
+          }
+        } else {
+          if (this.x < windowWidth / 2) {
+            positionClass = "bottomStart";
+          } else {
+            positionClass = "bottomEnd";
+          }
+        }
+
+        // Remove any existing position classes
+        element.classList.remove(
+          "topStart",
+          "topEnd",
+          "bottomStart",
+          "bottomEnd"
+        );
+
+        // Add the new position class
+        element.classList.add(positionClass);
+      } else {
+        console.log("Element not found for updating position.");
+      }
+    },
+
+    calculateDragDropPosition() {
+      this.$nextTick(() => {
+        const element = this.$refs.draggableElement;
+        if (element) {
+          const storedX = localStorage.getItem("draggableElementX");
+          const storedY = localStorage.getItem("draggableElementY");
+
+          if (storedX !== null && storedY !== null) {
+            this.x = parseInt(storedX, 10);
+            this.y = parseInt(storedY, 10);
+          } else {
+            // Calculate the position if not in local storage
+            const elementWidth = element.offsetWidth;
+            const elementHeight = element.offsetHeight;
+            const rem = parseInt(
+              getComputedStyle(document.documentElement).fontSize
+            );
+
+            this.x = window.innerWidth - elementWidth - rem;
+            this.y = window.innerHeight - elementHeight - rem;
+          }
+
+          this.updatePosition();
+        }
+      });
+    },
+
+    toggleLightMode() {
+      this.lightMode = !this.lightMode;
+      this.applyTheme();
+      this.saveToLocalStorage();
+    },
+
+    applyTheme() {
+      const htmlTag = document.documentElement;
+      if (this.lightMode) {
+        htmlTag.removeAttribute("data-bs-theme");
+      } else {
+        htmlTag.setAttribute("data-bs-theme", "dark");
+      }
+    },
+
+    async loadData() {
+      const storedEntities = localStorage.getItem("entities");
+      const storedBooleans = localStorage.getItem("booleans");
+      const storedUser = localStorage.getItem("activeUser");
+      if (storedEntities) {
+        this.entities = JSON.parse(storedEntities);
+      } else {
+        const response = await fetch("entities.json");
+        const data = await response.json();
+        this.entities = data.persons_companies.map((entity, index) => ({
+          ...entity,
+          id: index + 1,
+        }));
+        this.saveToLocalStorage();
+      }
+      if (storedBooleans) {
+        const booleans = JSON.parse(storedBooleans);
+        Object.assign(this, booleans);
+      }
+      if (storedUser) {
+        this.activeUser = storedUser;
+      }
+      this.initializeEntityData();
+      this.filterEntities();
+      this.selectFirstEntity();
+      this.applyTheme();
+      this.loadPositionFromLocalStorage();
+      this.$nextTick(() => {
+        this.updatePosition();
+      });
+    },
+
+    validateSelectedEntity() {
+      if (
+        this.selectedEntityIndex === null ||
+        this.selectedEntityIndex < 0 ||
+        this.selectedEntityIndex >= this.filteredEntities.length ||
+        !this.filteredEntities[this.selectedEntityIndex]
+      ) {
+        this.selectedEntity = null;
+        this.selectedEntityIndex = null;
+      } else {
+        this.selectedEntity = this.filteredEntities[this.selectedEntityIndex];
+      }
+    },
+
+    saveActiveUser() {
+      localStorage.setItem("activeUser", this.activeUser);
+      this.calculateDragDropPosition();
+      this.updatePosition();
+    },
+
+    saveToLocalStorage() {
+      localStorage.setItem("entities", JSON.stringify(this.entities));
+      const booleans = {
+        lightMode: this.lightMode,
+        showForms: this.showForms,
+        flagIcon: this.flagIcon,
+        switchColumns: this.switchColumns,
+        showBannerInfo: this.showBannerInfo,
+        showSideNav: this.showSideNav,
+        gridView: this.gridView,
+        widgetOnly: this.widgetOnly,
+        showHistory: this.showHistory,
+      };
+      localStorage.setItem("booleans", JSON.stringify(booleans));
+      localStorage.setItem("activeUser", this.activeUser);
+    },
+
+    toggleBoolean(variableName) {
+      this[variableName] = !this[variableName];
+      this.saveToLocalStorage();
+    },
+
+    initializeEntityData() {
+      this.entities.forEach((entity) => {
+        entity.form.sections.forEach((section) => {
+          section.fields.forEach((field) => {
+            if (!field.history) {
+              field.history = []; // Initialize history as an empty array if it's not defined
+            }
+          });
+        });
+      });
+    },
+
+    saveForm() {
+      this.entities.forEach((entity, entityIndex) => {
+        entity.form.sections.forEach((section, sectionIndex) => {
+          section.fields.forEach((field, fieldIndex) => {
+            if (
+              this.isFieldChanged(
+                entityIndex,
+                sectionIndex,
+                fieldIndex,
+                field.value
+              )
+            ) {
+              // Save the previous value in the history before updating
+              const oldValue =
+                this.originalValues[
+                  `${entityIndex}-${sectionIndex}-${fieldIndex}`
+                ];
+
+              this.trackChange(field, oldValue);
+
+              // Check if the field is for name or surname and update accordingly
+              if (field.name === "first_name") {
+                this.entities[entityIndex].name = field.value;
+              }
+              if (field.name === "last_name") {
+                this.entities[entityIndex].surname = field.value;
+              }
+
+              // Update the originalValues with the new value
+              this.originalValues[
+                `${entityIndex}-${sectionIndex}-${fieldIndex}`
+              ] = field.value;
+            }
+          });
+        });
+      });
+      this.saveToLocalStorage();
+      alert("Form data saved successfully!");
+    },
+
+    getFullName(entity) {
+      if (entity.type === "person") {
+        return `${entity.name} ${entity.surname}`;
+      } else {
+        return entity.name;
+      }
+    },
+
+    selectEntity(entityId, index) {
+      const originalIndex = this.entities.findIndex(
+        (entity) => entity.id === entityId
+      );
+      this.selectedEntityIndex = index;
+      this.validateSelectedEntity();
+      this.currentSection = 0;
+      this.cacheOriginalValues();
+      this.$nextTick(() => {
+        this.scrollToSelectedEntity();
+      });
+    },
+
+    scrollToSelectedEntity() {
+      let selectedElement = document.querySelector(
+        '[x-ref="entity-' + this.selectedEntityIndex + '"]'
+      );
+      if (selectedElement) {
+        selectedElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    },
+
+    scrollFormToSection(index, type) {
+      let selectedElement = document.querySelector(
+        '[x-ref="' + type + index + '"]'
+      );
+
+      if (selectedElement) {
+        selectedElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        selectedElement.classList.add("spotted");
+
+        setTimeout(() => {
+          selectedElement.classList.remove("spotted");
+        }, 3000); // 3000 milliseconds = 3 seconds
+      }
+    },
+
+    scrollToSection(index) {
+      const sectionId = `section${index}`;
+      const sectionElement = document.getElementById(sectionId);
+      const container = document.getElementById("editContainer");
+      if (sectionElement && container) {
+        container.scrollTo({
+          top: sectionElement.offsetTop - container.offsetTop,
+          behavior: "smooth",
+        });
+      }
+    },
+
+    filterEntities() {
+      const query = this.searchQuery.toLowerCase();
+      const contactTypeFilter = this.contactTypeFilter.toLowerCase();
+      const riskLevelFilter = this.selectedRiskLevel.toLowerCase();
+
+      this.filteredEntities = this.entities.filter((entity) => {
+        const fullName =
+          entity.type === "account owner"
+            ? `${entity.name} ${entity.surname}`
+            : entity.name;
+        const matchesQuery = fullName.toLowerCase().includes(query);
+
+        const matchesContactType =
+          contactTypeFilter === "all" ||
+          entity.form.sections.some((section) =>
+            section.fields.some(
+              (field) =>
+                field.name === "connection role type" &&
+                field.value.toLowerCase().includes(contactTypeFilter)
+            )
+          );
+
+        const matchesRiskLevel =
+          riskLevelFilter === "all" ||
+          entity.form.sections.some((section) =>
+            section.fields.some(
+              (field) =>
+                field.name === "risk level" &&
+                field.value.toLowerCase() === riskLevelFilter
+            )
+          );
+
+        return matchesQuery && matchesContactType && matchesRiskLevel;
+      });
+
+      // Ensure the filtered entities are sorted by index
+      this.filteredEntities.sort((a, b) => a.id - b.id);
+
+      // Select the first entity in the filtered list
+      this.selectFirstEntity();
+    },
+
+    selectFirstEntity() {
+      if (this.filteredEntities.length > 0) {
+        this.selectedEntity = this.filteredEntities[0];
+        this.selectedEntityIndex = this.entities.findIndex(
+          (entity) => entity.id === this.selectedEntity.id
+        );
+      } else {
+        this.selectedEntity = null;
+        this.selectedEntityIndex = null;
+      }
+    },
+
+    setRiskLevelFilter(riskLevel) {
+      this.selectedRiskLevel = riskLevel;
+      this.filterEntities();
+    },
+
+    resetFilters() {
+      this.searchQuery = "";
+      this.contactTypeFilter = "All";
+      this.selectedRiskLevel = "All";
+      this.filterEntities();
+    },
+
+    nextEntity() {
+      if (this.selectedEntityIndex < this.filteredEntities.length - 1) {
+        this.selectedEntityIndex++;
+        const selectedEntityId =
+          this.filteredEntities[this.selectedEntityIndex].id;
+        this.selectEntity(selectedEntityId, this.selectedEntityIndex);
+      }
+    },
+
+    previousEntity() {
+      if (this.selectedEntityIndex > 0) {
+        this.selectedEntityIndex--;
+        const selectedEntityId =
+          this.filteredEntities[this.selectedEntityIndex].id;
+        this.selectEntity(selectedEntityId, this.selectedEntityIndex);
+      }
+    },
+
+    duplicateEntity() {
+      if (this.selectedEntity !== null) {
+        const newEntity = JSON.parse(JSON.stringify(this.selectedEntity));
+        newEntity.id = this.entities.length
+          ? Math.max(...this.entities.map((e) => e.id)) + 1
+          : 1;
+        newEntity.name = `${newEntity.name} Copy`;
+        this.entities.push(newEntity);
+        this.updateFilteredEntities();
+        this.saveToLocalStorage();
+      }
+    },
+
+    updateFilteredEntities() {
+      const query = this.searchQuery.toLowerCase();
+      this.filteredEntities = this.entities.filter((entity) => {
+        const fullName =
+          entity.type === "person"
+            ? `${entity.name} ${entity.surname}`
+            : entity.name;
+        return fullName.toLowerCase().includes(query);
+      });
+    },
+
+    downloadData() {
+      const dataStr = JSON.stringify(this.entities, null, 2);
+      const dataUri =
+        "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
+      const exportFileDefaultName = "entities.json";
+      const linkElement = document.createElement("a");
+      linkElement.setAttribute("href", dataUri);
+      linkElement.setAttribute("download", exportFileDefaultName);
+      linkElement.click();
+    },
+
+    uploadData(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const contents = e.target.result;
+          this.entities = JSON.parse(contents);
+          this.entities.forEach((entity, index) => (entity.id = index + 1));
+          this.updateFilteredEntities();
+          this.saveToLocalStorage();
+        };
+        reader.readAsText(file);
+      }
+    },
+
+    cacheOriginalValues() {
+      this.originalValues = {};
+      this.entities.forEach((entity, entityIndex) => {
+        entity.form.sections.forEach((section, sectionIndex) => {
+          section.fields.forEach((field, fieldIndex) => {
+            this.originalValues[
+              `${entityIndex}-${sectionIndex}-${fieldIndex}`
+            ] = field.value;
+          });
+        });
+      });
+    },
+
+    isFieldChanged(entityIndex, sectionIndex, fieldIndex, newValue) {
+      return (
+        this.originalValues[`${entityIndex}-${sectionIndex}-${fieldIndex}`] !==
+        newValue
+      );
+    },
+    trackChange(field, oldValue) {
+      const currentTime = new Date().toISOString(); // Save time in ISO format
+      const changeEntry = {
+        time: currentTime,
+        valueAfter: field.value,
+        value: oldValue,
+        user: this.activeUser,
+      };
+      if (!field.history) {
+        field.history = [];
+      }
+      field.history.push(changeEntry);
+    },
+
+    countFields(sectionIndex) {
+      if (
+        !this.selectedEntity ||
+        !this.selectedEntity.form ||
+        !this.selectedEntity.form.sections[sectionIndex]
+      ) {
+        return 0;
+      }
+      return this.selectedEntity.form.sections[sectionIndex].fields.length;
+    },
+
+    countFilledFields(sectionIndex) {
+      if (
+        !this.selectedEntity ||
+        !this.selectedEntity.form ||
+        !this.selectedEntity.form.sections[sectionIndex]
+      ) {
+        return 0;
+      }
+      return this.selectedEntity.form.sections[sectionIndex].fields.filter(
+        (field) => field.value
+      ).length;
+    },
+
+    calculateTimeDifference(entryTime) {
+      const currentTime = new Date();
+      const entryDate = new Date(entryTime); // Parsing the time in ISO format
+      const diffMilliseconds = currentTime - entryDate;
+
+      const diffDays = Math.floor(diffMilliseconds / (1000 * 60 * 60 * 24));
+      const diffHours = Math.floor(
+        (diffMilliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const diffMinutes = Math.floor(
+        (diffMilliseconds % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const diffSeconds = Math.floor((diffMilliseconds % (1000 * 60)) / 1000);
+
+      if (diffDays > 0) {
+        return `${diffDays} days ago`;
+      } else if (diffHours > 0) {
+        return `${diffHours} hr ago`;
+      } else if (diffMinutes > 0) {
+        return `${diffMinutes} min ago`;
+      } else {
+        return `${diffSeconds} sec ago`;
+      }
+    },
+
+    getRole(name) {
+      const user = this.users.find((user) => user.name === name);
+      return user ? user.role : null;
+    },
+
+    entityHasHistory(entity) {
+      return entity.form.sections.some((section) =>
+        section.fields.some(
+          (field) =>
+            field.name !== "risk level" &&
+            field.history &&
+            field.history.length > 0
+        )
+      );
+    },
+
+    riskLevelChange(field) {
+      const riskValues = {
+        low: 0,
+        medium: 1,
+        high: 2,
+      };
+
+      if (
+        !field ||
+        field.name !== "risk level" ||
+        !field.history ||
+        field.history.length === 0
+      ) {
+        return "stable";
+      } else {
+        let currentRiskValue = field.value ? field.value.toLowerCase() : "";
+        let previousRiskEntry = field.history[field.history.length - 1];
+        let previousRiskValue = previousRiskEntry.value
+          ? previousRiskEntry.value.toLowerCase()
+          : "";
+
+        let currentRiskNumber = riskValues[currentRiskValue];
+        let previousRiskNumber = riskValues[previousRiskValue];
+
+        if (currentRiskNumber > previousRiskNumber) {
+          return "increased";
+        } else if (currentRiskNumber < previousRiskNumber) {
+          return "decreased";
+        } else {
+          return "stable";
+        }
+      }
+    },
+    removeHistoryItem(sectionIndex, fieldIndex, historyIndex) {
+      const field =
+        this.selectedEntity.form.sections[sectionIndex].fields[fieldIndex];
+      const history = field.history.slice().reverse();
+      if (historyIndex >= 0 && historyIndex < history.length) {
+        field.history.splice(field.history.length - 1 - historyIndex, 1);
+        this.saveToLocalStorage();
+      }
+    },
+
+    revertHistoryItem(sectionIndex, fieldIndex, historyIndex) {
+      const field =
+        this.selectedEntity.form.sections[sectionIndex].fields[fieldIndex];
+      const history = field.history.slice().reverse();
+      if (historyIndex >= 0 && historyIndex < history.length) {
+        const historyItem = history[historyIndex];
+        field.value = historyItem.value; // Revert the field value to the historical value
+        this.saveToLocalStorage();
+      }
+    },
+
+    purgeData() {
+      localStorage.removeItem("entities"); // Remove the data from local storage
+      this.entities = []; // Reset the entities array
+      this.filteredEntities = []; // Reset the filtered entities array
+      this.selectedEntity = null;
+      this.selectedEntityIndex = null;
+      alert(
+        "Data purged successfully! The application will start from scratch."
+      );
+      location.reload();
+    },
+
+    get isFilterActive() {
+      return (
+        this.searchQuery.trim() !== "" ||
+        this.contactTypeFilter.trim() !== "All" ||
+        this.selectedRiskLevel !== "All"
+      );
+    },
+
+    get hasNext() {
+      return (
+        this.selectedEntityIndex !== null &&
+        this.selectedEntityIndex < this.filteredEntities.length - 1
+      );
+    },
+
+    get hasPrevious() {
+      return this.selectedEntityIndex !== null && this.selectedEntityIndex > 0;
+    },
+  };
+}
