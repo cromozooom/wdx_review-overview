@@ -1,0 +1,666 @@
+{{ define "main" }}
+  <div class="container-fluid px-0 h-100">
+    <div class="d-flex w-100 h-100">
+      <div class="h-100 w--6 overflow-y-scroll">
+        <div class="p-2 sticky-top border-bottom bg-white">
+          <strong><small>Entity evaluator</small></strong>
+        </div>
+        <div>
+          <section class="d-flex border-bottom py-3">
+            <div
+              class="px-2 d-flex align-items-start justify-content-center"
+              style="width: 5.5rem"
+            >
+              <span class="pt-1">Where</span>
+            </div>
+            <div class="flex-grow-1 pe-2">
+              <div class="d-flex flex-column gap-2">
+                <div class="input-group">
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select Entity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select SubEntity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select SubEntity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select SubEntity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select SubEntity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select SubEntity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select SubEntity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" for="exampleFormControlInput1"
+                    >Values</label
+                  >
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <div class="input-group w-auto">
+                        <button class="btn btn-sm btn-primary">Select</button>
+                        <button class="btn btn-sm btn-outline-primary">
+                          Type
+                        </button>
+                        <!--
+                      <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Type"
+                      aria-label="Type"
+                      />
+                      -->
+                        <select
+                          class="form-select form-select-sm"
+                          style="min-width: 15rem"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">Select</option>
+                          <option value="1">One something longer</option>
+                          <option value="2">Two something longer</option>
+                          <option value="3">Three something longer</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div>
+                      <button class="btn btn-link btn-sm">
+                        <svg
+                          class="bi bi-trash"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          viewbox="0 0 16 16"
+                        >
+                          <path
+                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                          ></path>
+                          <path
+                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="d-flex border-bottom py-3">
+            <div class="px-2" style="width: 5.5rem">
+              <select
+                class="form-select form-select-sm"
+                aria-label="Default select example"
+              >
+                <option value="1" selected="">And</option>
+                <option value="2">Or</option>
+              </select>
+            </div>
+            <div class="flex-grow-1 pe-2 pe-2">
+              <div class="d-flex flex-column gap-2">
+                <div class="input-group">
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select Entity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select SubEntity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select SubEntity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select SubEntity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="Default select example"
+                  >
+                    <option selected="">Select SubEntity</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <!--
+                <select class="form-select  form-select-sm" aria-label="Default select example">
+                <option selected>Select SubEntity</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                </select>
+                -->
+                  <!--
+                <select class="form-select  form-select-sm" aria-label="Default select example">
+                <option selected>Select SubEntity</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                </select>
+                -->
+                </div>
+                <div>
+                  <label class="form-label" for="exampleFormControlInput1"
+                    >Values</label
+                  >
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <div class="input-group w-auto">
+                        <button class="btn btn-sm btn-outline-primary">
+                          Select
+                        </button>
+                        <button class="btn btn-sm btn-primary">Type</button>
+                        <input
+                          class="form-control form-control-sm"
+                          type="text"
+                          style="min-width: 15rem"
+                          placeholder="Type"
+                          aria-label="Type"
+                        />
+                        <!--
+                      <select
+                      class="form-select  form-select-sm"
+                      aria-label="Default select example"
+                      >
+                      <option selected>Select</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                      </select>
+                      -->
+                      </div>
+                    </div>
+                    <div>
+                      <button class="btn btn-link btn-sm">
+                        <svg
+                          class="bi bi-trash"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          viewbox="0 0 16 16"
+                        >
+                          <path
+                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                          ></path>
+                          <path
+                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="d-flex border-bottom py-3">
+            <div class="px-2" style="width: 5.5rem">
+              <select
+                class="form-select form-select-sm"
+                aria-label="Default select example"
+              >
+                <option value="1" selected="">And</option>
+                <option value="2">Or</option>
+              </select>
+            </div>
+            <div class="flex-grow-1 pe-2">
+              <div class="border rounded">
+                <section class="d-flex border-bottom py-3">
+                  <div
+                    class="px-2 d-flex align-items-start justify-content-center"
+                    style="width: 5.5rem"
+                  >
+                    <span class="pt-1 text-muted">Where</span>
+                  </div>
+                  <div class="flex-grow-1 pe-2">
+                    <div class="d-flex flex-column gap-2">
+                      <div class="input-group">
+                        <select
+                          class="form-select form-select-sm"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">Select Entity</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <select
+                          class="form-select form-select-sm"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">Select SubEntity</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <select
+                          class="form-select form-select-sm"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">Select SubEntity</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <select
+                          class="form-select form-select-sm"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">Select SubEntity</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <select
+                          class="form-select form-select-sm"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">Select SubEntity</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <!--
+                      <select class="form-select  form-select-sm" aria-label="Default select example">
+                      <option selected>Select SubEntity</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                      </select>
+                      -->
+                        <!--
+                      <select class="form-select  form-select-sm" aria-label="Default select example">
+                      <option selected>Select SubEntity</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                      </select>
+                      -->
+                      </div>
+                      <div>
+                        <label class="form-label" for="exampleFormControlInput1"
+                          >Values</label
+                        >
+                        <div class="d-flex justify-content-between">
+                          <div>
+                            <div class="input-group w-auto">
+                              <button class="btn btn-sm btn-outline-primary">
+                                Select
+                              </button>
+                              <button class="btn btn-sm btn-primary">
+                                Type
+                              </button>
+                              <input
+                                class="form-control form-control-sm"
+                                type="text"
+                                style="min-width: 15rem"
+                                placeholder="Type"
+                                aria-label="Type"
+                              />
+                              <!--
+                            <select
+                            class="form-select  form-select-sm"
+                            aria-label="Default select example"
+                            >
+                            <option selected>Select</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            </select>
+                            -->
+                            </div>
+                          </div>
+                          <div>
+                            <button class="btn btn-link btn-sm">
+                              <svg
+                                class="bi bi-trash"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="18"
+                                height="18"
+                                fill="currentColor"
+                                viewbox="0 0 16 16"
+                              >
+                                <path
+                                  d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                                ></path>
+                                <path
+                                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                                ></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="d-flex border-bottom py-3">
+                  <div class="px-2" style="width: 5.5rem">
+                    <select
+                      class="form-select form-select-sm"
+                      aria-label="Default select example"
+                    >
+                      <option value="1" selected="">And</option>
+                      <option value="2">Or</option>
+                    </select>
+                  </div>
+                  <div class="flex-grow-1 pe-2">
+                    <div class="d-flex flex-column gap-2">
+                      <div class="input-group">
+                        <select
+                          class="form-select form-select-sm"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">Select Entity</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <select
+                          class="form-select form-select-sm"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">Select SubEntity</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <select
+                          class="form-select form-select-sm"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">Select SubEntity</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <select
+                          class="form-select form-select-sm"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">Select SubEntity</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <select
+                          class="form-select form-select-sm"
+                          aria-label="Default select example"
+                        >
+                          <option selected="">Select SubEntity</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <!--
+                      <select class="form-select  form-select-sm" aria-label="Default select example">
+                      <option selected>Select SubEntity</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                      </select>
+                      -->
+                        <!--
+                      <select class="form-select  form-select-sm" aria-label="Default select example">
+                      <option selected>Select SubEntity</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                      </select>
+                      -->
+                      </div>
+                      <div>
+                        <label class="form-label" for="exampleFormControlInput1"
+                          >Values</label
+                        >
+                        <div class="d-flex justify-content-between">
+                          <div>
+                            <div class="input-group w-auto">
+                              <button class="btn btn-sm btn-outline-primary">
+                                Select
+                              </button>
+                              <button class="btn btn-sm btn-primary">
+                                Type
+                              </button>
+                              <input
+                                class="form-control form-control-sm"
+                                type="text"
+                                style="min-width: 15rem"
+                                placeholder="Type"
+                                aria-label="Type"
+                              />
+                              <!--
+                            <select
+                            class="form-select  form-select-sm"
+                            aria-label="Default select example"
+                            >
+                            <option selected>Select</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            </select>
+                            -->
+                            </div>
+                          </div>
+                          <div>
+                            <button class="btn btn-link btn-sm">
+                              <svg
+                                class="bi bi-trash"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="18"
+                                height="18"
+                                fill="currentColor"
+                                viewbox="0 0 16 16"
+                              >
+                                <path
+                                  d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                                ></path>
+                                <path
+                                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                                ></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <div class="py-2">
+                  <div class="btn-group ms-2">
+                    <button class="btn btn-link text-decoration-none">
+                      + Filter
+                    </button>
+                    <button class="btn btn-link text-decoration-none">
+                      + Group Filter
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="py-2">
+            <div class="btn-group ms-2">
+              <button class="btn btn-link text-decoration-none">
+                + Filter
+              </button>
+              <button class="btn btn-link text-decoration-none">
+                + Group Filter
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-center border-end d-flex align-items-center justify-content-center bg-light"
+      >
+        ctas
+      </div>
+      <div
+        class="w--6 d-flex align-items-center justify-content-center overflow-y-scroll"
+      >
+        Something else ...
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .overflow-y-scroll {
+      overflow-y: scroll;
+    }
+
+    body {
+      height: 100vh;
+    }
+
+    .w--6 {
+      width: calc(100% - 16rem / 2);
+    }
+
+    .w-center {
+      width: 16rem;
+    }
+  </style>
+  <div class="d-none" x-data="conditionBuilder()" x-init="init()">
+    <div x-sortable="selectedConditions" class="sortable-container">
+      <template x-for="(condition, index) in selectedConditions" :key="index">
+        <div class="sortable-item">
+          <!-- Entity Selector -->
+          <select
+            x-model="condition.entity"
+            @change="condition.subEntity = null; condition.attribute = null"
+          >
+            <option value="" disabled>Select Entity</option>
+            <template x-for="entity in entities" :key="entity.name">
+              <option :value="entity" x-text="entity.name"></option>
+            </template>
+          </select>
+
+          <!-- Sub-Entity Selector -->
+          <template x-if="condition.entity && condition.entity.subEntities">
+            <select
+              x-model="condition.subEntity"
+              @change="condition.attribute = null"
+            >
+              <option value="" disabled>Select Sub-Entity</option>
+              <template
+                x-for="subEntity in condition.entity.subEntities"
+                :key="subEntity.name"
+              >
+                <option :value="subEntity" x-text="subEntity.name"></option>
+              </template>
+            </select>
+          </template>
+
+          <!-- Attribute Selector -->
+          <template
+            x-if="condition.subEntity && condition.subEntity.attributes"
+          >
+            <select x-model="condition.attribute">
+              <option value="" disabled>Select Attribute</option>
+              <template
+                x-for="attribute in condition.subEntity.attributes"
+                :key="attribute.name"
+              >
+                <option :value="attribute" x-text="attribute.name"></option>
+              </template>
+            </select>
+          </template>
+
+          <!-- Value Input -->
+          <template
+            x-if="condition.attribute && condition.attribute.type === 'string'"
+          >
+            <input type="text" x-model="condition.value" />
+          </template>
+          <template
+            x-if="condition.attribute && condition.attribute.type === 'number'"
+          >
+            <input type="number" x-model="condition.value" />
+          </template>
+
+          <!-- Remove Condition Button -->
+          <button @click="removeCondition(index)">Remove</button>
+        </div>
+      </template>
+    </div>
+
+    <!-- Add Condition Button -->
+    <button @click="addCondition()">Add Condition</button>
+
+    <!-- Show JSON Output -->
+    <pre x-text="JSON.stringify(selectedConditions, null, 2)"></pre>
+  </div>
+{{ end }}

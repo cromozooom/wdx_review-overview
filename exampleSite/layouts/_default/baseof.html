@@ -4,26 +4,61 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ .Title }}</title>
-    {{/* styles */}} {{/* Load Bootstrap SCSS. */}} {{ $options := dict
-    "enableSourceMap" true }} {{ if hugo.IsProduction}} {{ $options := dict
-    "enableSourceMap" false "outputStyle" "compressed" }} {{ end }} {{ $styles
-    := resources.Get "scss/styles.scss" }} {{ $styles = $styles |
-    resources.ToCSS $options }} {{ if hugo.IsProduction }} {{ $styles = $styles
-    | fingerprint }} {{ end }}
+    {{/* styles */}}
+    {{/* Load Bootstrap SCSS. */}}
+    {{ $options := dict
+      "enableSourceMap" true
+    }}
+    {{ if hugo.IsProduction }}
+      {{ $options := dict
+        "enableSourceMap" false "outputStyle" "compressed"
+      }}
+    {{ end }}
+    {{ $styles
+      := resources.Get "scss/styles.scss"
+    }}
+    {{ $styles = $styles |
+      resources.ToCSS $options
+    }}
+    {{ if hugo.IsProduction }}
+      {{ $styles = $styles
+        | fingerprint
+      }}
+    {{ end }}
     <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
 
-    {{/* styles */}} {{ $optionsTw := dict "inlineImports" true }} {{ $stylesTw
-    := resources.Get "css/stylesTw.css" }} {{ $stylesTw = $stylesTw |
-    resources.PostCSS $optionsTw }} {{ if hugo.IsProduction }} {{ $stylesTw =
-    $stylesTw | minify | fingerprint | resources.PostProcess }} {{ end }}
+    {{/* styles */}}
+    {{ $optionsTw := dict "inlineImports" true }}
+    {{ $stylesTw
+      := resources.Get "css/stylesTw.css"
+    }}
+    {{ $stylesTw = $stylesTw |
+      resources.PostCSS $optionsTw
+    }}
+    {{ if hugo.IsProduction }}
+      {{ $stylesTw =
+        $stylesTw | minify | fingerprint | resources.PostProcess
+      }}
+    {{ end }}
+
 
     <link href="{{ $stylesTw.RelPermalink }}" rel="stylesheet" />
 
-    {{/* Load Bootstrap JS and review-comp.js */}} {{ $jsIndex := resources.Get
-    "js/index.js" }} {{ $params := dict }} {{ $sourceMap := cond
-    hugo.IsProduction "" "inline" }} {{ $opts := dict "sourceMap" $sourceMap
-    "minify" hugo.IsProduction "target" "es2018" "params" $params }} {{ $jsIndex
-    = $jsIndex | js.Build $opts }}
+    {{/* Load Bootstrap JS and review-comp.js */}}
+    {{ $jsIndex := resources.Get
+      "js/index.js"
+    }}
+    {{ $params := dict }}
+    {{ $sourceMap := cond
+      hugo.IsProduction "" "inline"
+    }}
+    {{ $opts := dict "sourceMap" $sourceMap
+      "minify" hugo.IsProduction "target" "es2018" "params" $params
+    }}
+    {{ $jsIndex
+      = $jsIndex | js.Build $opts
+    }}
+
 
     <script src="{{ $jsIndex.Permalink }}"></script>
 
@@ -32,11 +67,14 @@
     <script src="https://unpkg.com/tippy.js@6"></script>
   </head>
   <body class="w-100 h-100 d-flex">
-    {{ partial "svg.html" . }} {{ block "main" . }} main {{ end }} {{
-    $jsReviewComp := resources.Get "js/review-comp.js" }}
+    {{ partial "svg.html" . }}
+    {{ block "main" . }}main{{ end }}
+    {{ $jsReviewComp := resources.Get "js/review-comp.js" }}
     <script src="{{ $jsReviewComp.Permalink }}"></script>
     {{ $jsProfiler := resources.Get "js/profiler.js" }}
     <script src="{{ $jsProfiler.Permalink }}"></script>
+    {{ $jsCondition := resources.Get "js/condition.js" }}
+    <script src="{{ $jsCondition.Permalink }}"></script>
     {{ partial "script.html" . }}
   </body>
 </html>
