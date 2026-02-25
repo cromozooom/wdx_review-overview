@@ -1,5 +1,5 @@
 
-baseURL = "https://example.com"
+baseURL = "https://wdx-review-overview.netlify.app/"
 
 [outputs]
 home = ["HTML"]
