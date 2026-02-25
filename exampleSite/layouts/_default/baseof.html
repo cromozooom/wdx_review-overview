@@ -61,7 +61,11 @@
 
 
     <script src="{{ $jsIndex.Permalink }}"></script>
-
+    <!-- Ensure review-comp.js is loaded before Alpine.js -->
+    {{ $jsReviewComp := resources.Get "js/review-comp.js" }}
+    <script src="{{ $jsReviewComp.Permalink }}"></script>
+    <!-- Attach entityComponent to window for Alpine global access -->
+    <script>window.entityComponent = entityComponent;</script>
     <script defer src="/js/cdn.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
@@ -69,8 +73,6 @@
   <body class="w-100 h-100 d-flex">
     {{ partial "svg.html" . }}
     {{ block "main" . }}main{{ end }}
-    {{ $jsReviewComp := resources.Get "js/review-comp.js" }}
-    <script src="{{ $jsReviewComp.Permalink }}"></script>
     {{ $jsProfiler := resources.Get "js/profiler.js" }}
     <script src="{{ $jsProfiler.Permalink }}"></script>
     {{ $jsCondition := resources.Get "js/condition.js" }}
