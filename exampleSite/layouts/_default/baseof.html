@@ -64,8 +64,11 @@
     <!-- Ensure review-comp.js is loaded before Alpine.js -->
     {{ $jsReviewComp := resources.Get "js/review-comp.js" }}
     <script src="{{ $jsReviewComp.Permalink }}"></script>
-    <!-- Attach entityComponent to window for Alpine global access -->
-    <script>window.entityComponent = entityComponent;</script>
+    <script>
+      if (typeof entityComponent !== 'undefined') {
+        window.entityComponent = entityComponent;
+      }
+    </script>
     <script defer src="/js/cdn.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
